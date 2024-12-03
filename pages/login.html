@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700" rel="stylesheet">
+    <title>Многоступенчатая форма</title>
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+    <div class="all">
+        <div class="general_flex">
+            <div class="menu">
+                <div class="menu_flex">
+                    <div class="logo">
+                        NUTRIFY
+                    </div>
+                    <div class="flex_menu">
+                        <div class="flex_menu_position">
+                            <div class="menu_title">
+                                <img src="../img/vector.png" id="img_1" alt="изображение">
+                                <div class="title">
+                                    Персональные данные
+                                </div>
+                            </div>
+                            <div class="menu_text">
+                                Укажите свое имя, email и пароль
+                            </div>
+                        </div>
+                        <div class="flex_menu_position">
+                            <div class="menu_title">
+                                <img src="../img/vector.png" id="img_2" alt="изображение">
+                                <div class="title">
+                                    Параметры
+                                </div>
+                            </div>
+                            <div class="menu_text">
+                                Укажите свой пол, возраст, рост, вес
+                            </div>
+                        </div>
+                        <div class="flex_menu_position">
+                            <div class="menu_title">
+                                <img src="../img/vector.png" id="img_3" alt="изображение">
+                                <div class="title">
+                                    Доп.информация
+                                </div>
+                            </div>
+                            <div class="menu_text">
+                                Укажите свою цель и активность
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    © Nutrify️ 2024
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="form-step" id="step-1">
+                    <div class="h1">Ваши персональные данные</div>
+                    <div class="h2">Укажите свое имя, email и пароль</div>
+
+                    <label for="name">Имя пользователя <span>*</span></label><br>
+                    <input type="text" id="name" placeholder="Введите имя пользователя" required>
+                    <span class="error"></span><br>
+
+                    <label for="email">Электронная почта<span>*</span></label><br>
+                    <input type="email" id="email" placeholder="Введите свой email" required>
+                    <span class="error"></span><br>
+
+                    <label for="password">Пароль<span>*</span></label><br>
+                    <input type="password" id="password" placeholder="Введите пароль" required>
+                    <span class="error"></span><br>
+
+                    <button id="button" class="button" type="button" onclick="nextStep(1)">Далее</button>
+
+                    <div class="flex_authorization">
+                        <div class="authorization_txt">Уже есть аккаунт?</div>
+                        <a href="../pages/authorization.html" class="authorization_link">Войти</a>
+                    </div>
+                </div>
+                <div class="form-step" id="step-2">
+                    <div class="h1">Ваши параметры</div>
+                    <div class="h2">Укажите свой пол, возраст, рост, вес</div>
+                    <label for="gender">Пол <span>*</span></label><br>
+                    <select id="gender">
+                        <option value="MALE">Мужской</option>
+                        <option value="FEMALE">Женский</option>
+                    </select>
+                    <div class="flex_parameters">
+                        <div>
+                            <label for="age">Возраст<span>*</span></label><br>
+                            <input  type="number" id="age" placeholder="Ваш возраст" required>
+                            <span class="error"></span><br>
+                        </div>
+                        <div>
+                            <label for="height">Рост<span>*</span></label><br>
+                            <input type="number" id="height" placeholder="Ваш рост (см)" required>
+                            <span class="error"></span><br>
+                        </div>
+                        <div>
+                            <label for="weight">Вес<span>*</span></label><br>
+                            <input type="number" id="weight" placeholder="Ваш вес (кг)" required>
+                            <span class="error"></span><br>
+                        </div>
+                    </div>
+                    <div class="button_flex">
+                        <button class="button_back" type="button" onclick="previousStep(2)">Назад</button>
+                        <button class="button_2" type="button" onclick="nextStep(2)">Далее</button>
+                    </div>
+                    <div class="flex_authorization">
+                        <div class="authorization_txt">Уже есть аккаунт?</div>
+                        <a href="../pages/authorization.html" class="authorization_link">Войти</a>
+                    </div>
+                </div>
+                <div class="form-step" id="step-3">
+                    <div class="h1">Доп. информация</div>
+                    <div class="h2">Укажите свою цель и активность</div>
+                    <label for="goal">Цель<span>*</span></label><br>
+                    <select id="goal" required>
+                        <option value="" disabled selected hidden>Ваша цель</option>
+                        <option value="LOSS">Похудение</option>
+                        <option value="GAIN">Набор мышечной массы</option>
+                        <option value="RETAIN">Поддержание</option>
+                    </select><br>
+                    <span class="error"></span><br>
+                    <label for="activity">Активность<span>*</span></label><br>
+                    <select id="activity" required>
+                        <option value="" disabled selected hidden>Оцените свою активность</option>
+                        <option value="MINIMAL" >Минимальный уровень активности (отсутсвие нагрузок) </option>
+                        <option value="WEAK">Слабый уровень активности</option>
+                        <option value="MIDDLE">Умеренный уровень активности</option>
+                        <option value="HARD">Тяжелая активность</option>
+                        <option value="EXTREME">Экстремальный уровень активности</option>
+                    </select>
+                    <span class="error"></span><br>
+                    <div class="button_flex">
+                        <button class="button_back" onclick="previousStep(3)">Назад</button>
+                        <button class="button_2" onclick="onSubmit()">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

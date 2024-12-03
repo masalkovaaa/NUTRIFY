@@ -1,0 +1,419 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Montserrat', sans-serif;
+}
+.all{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.form-container {
+    width: 572px;
+    margin: 0 ;
+    margin-top: 150px;
+    padding: 20px;
+}
+
+input {
+    outline: 0;
+    border: 0;
+}
+.general_flex{
+    display: flex;
+    justify-content: left;
+    gap: 200px;
+}
+.menu{
+    width: 416px;
+    background-color: rgba(248, 248, 248, 1);
+    padding: 50px 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.flex_menu{
+    display: flex;
+    flex-direction: column;
+}
+.flex_menu_position{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.menu_title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+.menu_text{
+    width: 295px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 150;
+    margin-left: 36px;
+}
+.title{
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+
+}
+.logo{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.logo_autorization{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+.copyright{
+    color: black;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.form-step {
+    display: none;
+}
+
+#step-1 input,
+#step-1 select,
+#step-1 textarea {
+    width: 572px;
+    padding: 15px 10px;
+    margin: 10px 0 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: rgba(24, 23, 40, 1);
+    color: white;
+    font-size: 20px;
+    width: 572px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.button_back {
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    font-size: 20px;
+    width: 150px;
+    border: 1px solid rgba(220, 220, 220, 1);
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.button_2 {
+    padding: 10px 20px;
+    background-color: rgba(24, 23, 40, 1);
+    color: white;
+    font-size: 20px;
+    width: 350px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.h1{
+    width: 572px;
+    color: black;
+    font-size: 39px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.h2{
+    width: 572px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+label{
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 600;
+}
+input {
+    outline: none;
+    border: 1px solid black;
+}
+
+label span{
+    color: rgba(158, 184, 72, 1);
+}
+.authorization_txt{
+    color: rgba(136, 136, 136, 1);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 300;
+
+}
+.authorization_link{
+    color: rgba(158, 184, 72, 1);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    text-decoration: none;
+}
+.flex_authorization{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.flex_parameters{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.flex_parameters > div {
+    flex: 0 0 170px;
+}
+
+#step-2 input,
+#step-2 select {
+    width: 150px;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+.button_flex{
+    display: flex;
+    justify-content:space-between;
+}
+#step-3 input,
+#step-3 select {
+    width: 532px;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+#goal > option[selected] {
+    background-color: #000;
+}
+
+select:required:invalid{
+    color: #ccc;
+}
+
+#step-1 input.input-error,
+#step-1 select.input-error,
+#step-1 textarea.input-error{
+    border-color: red;
+}
+#nameError{
+    color: red;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 150;
+}
+.copyright_autorization{
+    margin-top: 80px;
+    color: black;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    margin-top: 805px;
+}
+.error{
+    font-size: 12px;
+    color: red;
+    font-family: Inter;
+    font-weight: 150;
+}
+@media (max-width: 1250px){
+    .general_flex{
+        gap: 100px;
+    }
+}
+@media (max-width: 1100px){
+    #step-1 input,
+    #step-1 select,
+    #step-1 textarea {
+    width: 400px;
+    }
+    .h1{
+        width: 400px;
+        font-size: 32px;
+    }
+    .h2{
+        font-size: 20px;
+        width: 400px;
+    }
+    label{
+        font-size: 20px;
+    }
+
+    .button {
+    width: 400px;
+    }
+    .flex_authorization{
+    margin-top: 10px;
+    }
+    .form-container {
+        width: 400px;
+    }
+}
+@media (max-width: 900px){
+    .flex_menu{
+        display: none;
+    }
+    .copyright{
+        display: none;
+    }
+    .menu{
+        width: auto;
+        background-color: rgb(255, 255, 255);
+        height: 65px;
+    }
+    .general_flex{
+        flex-direction: column;
+        gap: 200px;
+    }
+    .form-container {
+        width: 500px;
+        margin: 0 auto;
+    }
+    #step-1 input,
+    #step-1 select,
+    #step-1 textarea {
+    width: 460px;
+    }
+    .button {
+        width: 460px;
+    }
+    #step-2 input,
+    #step-2 select {
+        width: 120px;
+    }
+    .button_flex{
+        display: flex;
+        justify-content:space-between;
+    }
+    #step-3 input,
+    #step-3 select {
+        width: 460px;
+    }
+    .button_back {
+        width: 120px;
+    }
+    .button_2 {
+        width: 300px;
+    }
+    .flex_parameters{
+        gap: 0px;
+    }
+}
+@media (max-width: 500px){
+    .logo{
+        font-size: 20px;
+    }
+    .logo_autorization{
+        font-size: 20px;
+    }
+    .menu{
+        padding: 20px 10px;
+    }
+    .menu_flex{
+        padding: 0 10px;
+    }
+    .general_flex{
+        gap: 120px;
+    }
+    .form-container {
+        width: 350px;
+        margin: 0 auto;
+    }
+    #step-1 input,
+    #step-1 select,
+    #step-1 textarea {
+        width: 310px;
+        padding: 10px 10px;
+    }
+    .button {
+        width: 310px;
+    }
+    #step-2 input,
+    #step-2 select {
+        width: 100px;
+        padding: 10px 10px;
+    }
+    .button_flex{
+        display: flex;
+        justify-content:space-between;
+    }
+    #step-3 input,
+    #step-3 select {
+        width: 310px;
+        padding: 10px 10px;
+    }
+    .button_back {
+        width: 100px;
+        font-size: 16px;
+    }
+    .button{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .button_2 {
+        width: 200px;
+        font-size: 16px;
+    }
+
+    .h1{
+        width: 320px;
+        font-size: 20px;
+    }
+    .h2{
+        font-size: 16px;
+        width: 320px;
+    }
+    label{
+        font-size: 16px;
+    }
+    .authorization_txt{
+        font-size: 12px;
+    }
+    .authorization_link{
+        font-size: 12px;
+    }
+    .flex_parameters > div {
+        flex: 0 0 0px;
+    }
+    
+}
+
+

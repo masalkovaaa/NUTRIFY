@@ -1,0 +1,153 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Montserrat', sans-serif;
+}
+.all{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.general_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    width: 310px;
+    background-color: #fcfcfc;
+    padding: 50px 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.flex_menu{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex_menu_position{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.menu_title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+.title{
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 300;
+    text-decoration: none;
+}
+.logo{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.copyright{
+    color: black;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.main_1{
+    width: 1100px;
+    padding: 50px 40px 10px 40px;
+}
+.main_title{
+    color: black;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 900;
+}
+.profile_all{
+    margin-top: 70px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: auto;
+}
+
+.profile_info{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(230, 230, 230, 1) ;
+    border-radius: 24px;
+    padding: 30px 40px;
+    gap: 10px;
+}
+.info_title_flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_title{
+    color: rgba(158, 184, 72, 1);
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Inter;
+}
+.values{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.info_values{
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.values_name{
+    color: rgba(136, 136, 136, 1);
+    font-size: 24px;
+    font-weight: 300;
+    font-family: Inter;
+}
+#name, #email, #password, 
+#age, #height, #weight, #gender, 
+#goal, #activity{
+    color: rgba(24, 23, 40, 1);
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Inter;
+}
+.main_2{
+    width: 300px;
+    background-color: #fcfcfc;
+    padding: 50px 20px;
+    height: 100vh;
+}
+.client{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left:  80px;
+    gap: 20px;
+    width: 180px;
+    border-radius: 24px;
+    border:1px solid rgb(245, 245, 245);
+    padding: 20px;
+}
+.name{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+}

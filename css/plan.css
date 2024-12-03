@@ -1,0 +1,192 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Montserrat', sans-serif;
+}
+.all{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.general_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    width: 310px;
+    background-color: #fcfcfc;
+    padding: 50px 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.flex_menu{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex_menu_position{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.menu_title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+.title{
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 300;
+    text-decoration: none;
+}
+.logo{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.copyright{
+    color: black;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.main_1{
+    width: 900px;
+    padding: 50px 40px;
+}
+.main_title{
+    color: black;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 900;
+}
+.main_goal{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+.goal_text{
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.goal_text span{
+    color:  rgba(158, 184, 72, 1);
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.main_2{
+    width: 500px;
+    background-color: #fcfcfc;
+    padding: 50px 20px;
+}
+.dish{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 30px;
+    gap: 30px;
+    max-width: 865px;
+    border-radius: 24px;
+    background-color: rgba(236, 248, 213, 1);
+}
+.dish_info{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.meal{
+    color:  rgba(158, 184, 72, 1);
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+}
+.dish_name{
+    font-size: 24px;
+    font-weight: 600;
+}
+.callory_dish{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.client{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left: 270px;
+    gap: 20px;
+    width: 180px;
+    border-radius: 24px;
+    border:1px solid rgb(245, 245, 245);
+    padding: 20px;
+}
+.name{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.look-calendar {
+    width:450px;
+    height: 400px;
+    border-radius: 24px;
+    border:1px solid rgb(245, 245, 245);
+    padding:6px;
+    margin: 0 auto; 
+    margin-top: 40px;   
+  }
+  #calendar {
+    width: 100%;
+    line-height: 47px;
+    font-size: 20px;
+    text-align: center;
+    border-spacing:0px;
+  }
+  #calendar tr.dn td {
+    font-size: 15px;
+  }
+  #calendar thead tr:last-child {
+    font-size: small;
+    color: #555555;
+  }
+  #calendar thead tr:nth-child(1) td:nth-child(2) {
+    color: #323232;
+  }
+  #calendar thead tr:nth-child(1) td:nth-child(1):hover,
+  #calendar thead tr:nth-child(1) td:nth-child(3):hover {
+    cursor: pointer;
+  }
+  #calendar tbody td {
+    color: rgba(24, 23, 40, 1);
+  }
+  #calendar tbody td:nth-child(n+6),
+  #calendar .holiday {
+    color: rgba(24, 23, 40, 1);
+  }
+  #calendar tbody td.today {
+    background-color: rgba(158, 184, 72, 1);
+    width: 45px;
+    border-radius: 12px;
+    color: #fff;
+  }

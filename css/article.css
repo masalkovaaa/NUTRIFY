@@ -1,0 +1,234 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Montserrat', sans-serif;
+}
+.all{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.general_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    width: 310px;
+    background-color: #fcfcfc;
+    padding: 50px 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.flex_menu{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex_menu_position{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.menu_title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+.title{
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 300;
+    text-decoration: none;
+}
+.logo{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.copyright{
+    color: black;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.main_1{
+    width: 1100px;
+    padding: 50px 40px 10px 40px;
+}
+.main_title{
+    color: black;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 900;
+}
+.articles{
+    margin-top: 70px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: auto;
+}
+.article{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(230, 230, 230, 1) ;
+    border-radius: 24px;
+    padding: 30px 40px;
+    gap: 10px;
+}
+.article_title{
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+}
+.article_text{
+    color: black;
+    font-size: 26px;
+    font-weight: 400;
+}
+.article_button{
+    text-decoration: none;
+    color: rgba(183, 197, 136, 1);
+    font-size: 26px;
+    font-weight: 600;
+}
+.main_2{
+    width: 300px;
+    background-color: #fcfcfc;
+    padding: 50px 20px;
+    height: 100vh;
+}
+.client{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left:  80px;
+    width: 180px;
+    gap: 20px;
+    border-radius: 24px;
+    border:1px solid rgb(245, 245, 245);
+    padding: 20px;
+}
+.name{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+}
+.article_text_new{
+    color: black;
+    font-size: 24px;
+    font-weight: 200;
+    margin-top: 50px;
+}
+.line{
+    height: 2px;
+    background-color: rgba(230, 230, 230, 1);
+    margin-top: 20px;
+}
+.green_title{
+    margin-top: 40px;
+    color: rgba(158, 184, 72, 1);
+    font-size: 28px;
+    font-weight: 600;
+}
+.text{
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.article_details{
+    overflow: scroll;
+    height: 80vh;
+    margin-top: 20px;
+}
+li{
+    list-style-type: disc;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+ul {
+  font-size: 1.5rem;
+  padding-left: 35px;
+}
+.text span{
+    color:rgba(158, 184, 72, 1) ;
+
+}
+.text_green{
+    font-size: 24px;
+    color:rgba(158, 184, 72, 1) ;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.new_menu{
+    display: none;
+}
+@media (max-width: 1600px){
+    .main_2{
+        display: none;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
+}
+@media (max-width: 1300px){
+    .main_1{
+        width: 900px;
+    }
+    .general_flex{
+        gap: 40px;
+    }
+}
+@media (max-width: 1100px){
+    .menu{
+        display: none;
+    }
+    .main_1{
+        width: 100vh;
+    }
+    .new_menu{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        bottom: 0;
+        position: sticky;
+    }
+    .articles{
+        gap: 20px;
+        overflow: auto;
+    }
+}
+@media (max-width: 500px){
+    .main_1{
+        width: 80vh;
+    }
+    .new_menu{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        bottom: 0;
+        position: sticky;
+    }
+    .articles{
+        gap: 20px;
+        overflow: auto;
+    }
+    
+}

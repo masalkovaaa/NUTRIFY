@@ -1,0 +1,163 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Inter', sans-serif;
+}
+.all{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.general_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    width: 310px;
+    background-color: #fcfcfc;
+    padding: 50px 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.flex_menu{
+    display: flex;
+    flex-direction: column;
+    
+}
+.flex_menu_position{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.menu_title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+.title{
+    color: black;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.logo{
+    text-align: left;
+    color: rgba(158, 184, 72, 1);
+    font-size: 30px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+.copyright{
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+.main_1{
+    width: 1100px;
+    padding: 50px 40px 10px 40px;
+}
+.main_title{
+    color: black;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 900;
+}
+.receipe_menu{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.receipe_menu_position,.receipe_menu_position_green {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 230px;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 24px;
+    border: 1px solid rgba(231, 231, 231, 1) ;
+    text-decoration: none;
+}
+.receipe_menu_position_green{
+    background-color: rgba(236, 248, 213, 1);
+}
+.receipe_menu_position_text{
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+.receipes{
+    display: grid;
+    grid-template-columns: repeat(4, 210px);
+    justify-content: space-between;
+    margin-top:40px ;
+    overflow: auto;
+    height: 70vh;
+}
+.receipe{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(244, 244, 244, 1) ;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.receipe_name{
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    padding: 0px 10px;
+}
+.receipe_cal{
+    display: flex;
+    justify-content: left;
+    gap: 8px ;
+    padding: 0px 10px 20px;
+}
+.cal{
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+.img_dish{
+    width: 208px;
+    height: 170px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.main_2{
+    width: 300px;
+    background-color: #fcfcfc;
+    padding: 50px 20px;
+    height: 100vh;
+}
+.client{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left:  80px;
+    gap: 20px;
+    width: 180px;
+    border-radius: 24px;
+    border:1px solid rgb(245, 245, 245);
+    padding: 20px;
+}
+.name{
+    font-size: 20px;
+    font-weight: 400;
+}
