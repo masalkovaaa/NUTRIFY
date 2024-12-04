@@ -67,6 +67,7 @@ html, body{
     font-weight: 400;
 }
 .main_1{
+    max-height: 100vh;
     width: 1100px;
     padding: 50px 40px 10px 40px;
 }
@@ -241,6 +242,7 @@ ul {
         gap: 20px;
         overflow: auto;
         margin-top: 20px;
+        max-height: calc(100vh - 180px);
     }
     .article_title{
         color: black;
@@ -276,6 +278,7 @@ ul {
 }
 @media (max-width: 400px){
     .articles{
+        max-height: calc(100vh - 65px);
         gap: 10px;
     }
     .article_title{
