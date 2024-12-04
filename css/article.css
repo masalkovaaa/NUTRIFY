@@ -206,13 +206,20 @@ ul {
     }
     .new_menu{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         padding: 20px;
         bottom: 0;
-        position: sticky;
     }
-    .articles{
+
+    .position_menu {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+
+    .articles {
         gap: 20px;
         overflow: auto;
 
@@ -224,20 +231,6 @@ ul {
         width: 100%;
     }
 
-    .position_menu {
-        width: 100%;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-    }
-
-    .new_menu{
-        display: flex;
-        justify-content: space-around;
-        padding: 20px;
-        bottom: 0;
-        position: sticky;
-    }
     .articles{
         gap: 20px;
         overflow: auto;
