@@ -33,7 +33,7 @@ html, body{
 .flex_menu{
     display: flex;
     flex-direction: column;
-    
+
 }
 .flex_menu_position{
     display: flex;
@@ -201,11 +201,10 @@ ul {
         display: none;
     }
     .main_1{
-        width: 100%;
+        width: 100vw;
     }
     .new_menu{
         display: flex;
-        height: 80px;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
@@ -214,18 +213,26 @@ ul {
     }
     .articles{
         gap: 20px;
-    }
-    .article_details{
-        height: 80vh;
+        overflow: auto;
+
+        max-height: calc(100vh - 250px);
     }
 }
 @media (max-width: 500px){
     .main_1{
-        padding: 50px 40px 0 40px
+        width: 100%;
     }
+
+    .position_menu {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+
     .new_menu{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 20px;
         bottom: 0;
         position: sticky;
