@@ -72,7 +72,7 @@ html, body{
 .main_title{
     color: black;
     font-size: 40px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 900;
 }
 .receipe_menu{
@@ -105,7 +105,7 @@ html, body{
     justify-content: space-between;
     margin-top:40px ;
     overflow: auto;
-    height: 70vh;
+    height: 90vh;
 }
 .receipe{
     display: flex;
@@ -121,13 +121,13 @@ html, body{
     font-size: 20px;
     font-weight: 400;
     color: black;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 .receipe_cal{
     display: flex;
     justify-content: left;
     gap: 8px ;
-    padding: 0px 10px 20px;
+    padding: 0 10px 20px;
 }
 .cal{
     font-size: 16px;
@@ -160,4 +160,63 @@ html, body{
 .name{
     font-size: 20px;
     font-weight: 400;
+}
+@media (max-width: 1600px){
+    .main_2{
+        display: none;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
+}
+@media (max-width: 1400px){
+    .general_flex{
+        gap: 0px;
+    }
+}
+@media (max-width: 1200px){
+    .menu{
+        display: none;
+    }
+    main_1{
+        width: 100%;
+    }
+    .general_flex{
+        justify-content: center;
+    }
+    .new_menu{
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        bottom: 0;
+        position: sticky;
+    }
+}
+@media (max-width: 1050px){
+    .receipe_menu_position_green,.receipe_menu_position {
+        width: 200px;
+        gap: 10px;
+        padding: 10px;
+    }
+    .receipe_menu_position_text{
+        font-size: 16px;
+    }
+    .img_dish{
+        width: 100%;
+        height: 150px;
+    }
+}
+@media (max-width: 950px){
+    .receipes{
+        grid-template-columns: repeat(3, 210px);
+    }
+    .img_menu{
+        display: none;
+    }
+    .receipe_menu_position_green,.receipe_menu_position {
+        width: 180px;
+    }
 }
