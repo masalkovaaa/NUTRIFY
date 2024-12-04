@@ -49,7 +49,7 @@ html, body{
 .title{
     color: black;
     font-size: 20px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 300;
     text-decoration: none;
 }
@@ -63,7 +63,7 @@ html, body{
 .copyright{
     color: black;
     font-size: 16px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 .main_1{
@@ -73,7 +73,7 @@ html, body{
 .main_title{
     color: black;
     font-size: 40px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 900;
 }
 .articles{
@@ -127,7 +127,7 @@ html, body{
 }
 .name{
     font-size: 20px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 .article_text_new{
@@ -201,23 +201,27 @@ ul {
         display: none;
     }
     .main_1{
-        width: 100vh;
+        width: 100%;
     }
     .new_menu{
         display: flex;
+        height: 80px;
         justify-content: space-between;
+        align-items: center;
         padding: 20px;
         bottom: 0;
         position: sticky;
     }
     .articles{
         gap: 20px;
-        overflow: auto;
+    }
+    .article_details{
+        height: 80vh;
     }
 }
 @media (max-width: 500px){
     .main_1{
-        width: 80vh;
+        padding: 50px 40px 0 40px
     }
     .new_menu{
         display: flex;
@@ -229,6 +233,60 @@ ul {
     .articles{
         gap: 20px;
         overflow: auto;
+        margin-top: 20px;
     }
-    
+    .article_title{
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .article{
+        padding: 15px 20px;
+    }
+    .article_text{
+        font-size: 16px;
+    }
+    .article_button{
+        font-size: 16px;
+    }
+    .main_title{
+        font-size: 32px;
+    }
+    .text{
+        font-size: 16px;
+    }
+    .article_text_new{
+        font-size: 16px;
+        margin-top: 5px;
+    }
+    .green_title{
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    li{
+        font-size: 16px;
+    }
+}
+@media (max-width: 400px){
+    .articles{
+        gap: 10px;
+    }
+    .article_title{
+        font-size: 12px;
+    }
+    .article_text{
+        font-size: 12px;
+    }
+    .article_button{
+        font-size: 12px;
+    }
+    .main_title{
+        font-size: 24px;
+    }
+    .main_1{
+        padding: 30px 30px 0 30px;
+    }
+    img{
+        width: 25px;
+    }
 }
