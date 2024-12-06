@@ -57,7 +57,7 @@ function onSubmit(){
         target: goal.value,
         activity: activity.value,
     }
-    fetch("http://localhost:8080/auth/register", {
+    fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/register", {
         method: 'POST',
         headers: {
             "Access-Control-Allow-Origin": "*",
@@ -67,9 +67,8 @@ function onSubmit(){
             registerRequest
         )
     }).then(ans => ans.json()).then(ans => {
-        console.log(ans.accessToken)
-        localStorage.setItem("TOKEN_KEY", ans.accessToken)
-        window.location.href="file:///Users/nyuta/Desktop/Курсовая%3Aдиплом%204ИСИП-621/pages/plan.html"
+        localStorage.setItem('user_token', ans.accessToken)
+        window.location.href="plan.html"
     })
 
 
@@ -116,7 +115,6 @@ function onBlurHandler(e) {
 });
 
 function validateAll(name, email, password, age, height, weight, goal, activity, stepNumber) {
-    console.log(stepNumber);
 
     const allFields = [name, email, password, age, height, weight, goal, activity]
 
