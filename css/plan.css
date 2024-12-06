@@ -33,7 +33,7 @@ html, body{
 .flex_menu{
     display: flex;
     flex-direction: column;
-    
+
 }
 .flex_menu_position{
     display: flex;
@@ -49,7 +49,7 @@ html, body{
 .title{
     color: black;
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 300;
     text-decoration: none;
 }
@@ -63,7 +63,7 @@ html, body{
 .copyright{
     color: black;
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 .main_1{
@@ -73,7 +73,7 @@ html, body{
 .main_title{
     color: black;
     font-size: 40px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 900;
 }
 .main_goal{
@@ -85,13 +85,13 @@ html, body{
 .goal_text{
     color: black;
     font-size: 24px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 .goal_text span{
     color:  rgba(158, 184, 72, 1);
     font-size: 24px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 600;
 }
 .main_2{
@@ -114,10 +114,18 @@ html, body{
     flex-direction: column;
     gap: 22px;
 }
+
+.dish_image {
+    max-width: 308px;
+    height: 151px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
 .meal{
     color:  rgba(158, 184, 72, 1);
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 600;
 }
 .dish_name{
@@ -126,7 +134,7 @@ html, body{
 }
 .callory_dish{
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 
@@ -143,7 +151,7 @@ html, body{
 }
 .name{
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 
@@ -153,15 +161,14 @@ html, body{
     border-radius: 24px;
     border:1px solid rgb(245, 245, 245);
     padding:6px;
-    margin: 0 auto; 
-    margin-top: 40px;   
-  }
+    margin: 40px auto 0;
+}
   #calendar {
     width: 100%;
     line-height: 47px;
     font-size: 20px;
     text-align: center;
-    border-spacing:0px;
+    border-spacing:0;
   }
   #calendar tr.dn td {
     font-size: 15px;
