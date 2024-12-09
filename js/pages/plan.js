@@ -104,7 +104,12 @@ const fetchRecipes = () => {
         });
 }
 
-
+const mealTypes = {
+    'LAUNCH': 'Обед',
+    'BREAKFAST': 'Завтрак',
+    'DINNER': 'Ужин',
+    'PART_MEAL': 'Закуска'
+}
 
 const displayRecipes = (recipes) => {
     const mainElement = document.querySelector('.main_1');
@@ -114,7 +119,7 @@ const displayRecipes = (recipes) => {
 
     recipesContainer.classList.add('recipes-container');
 
-    const totalCalories = recipes.reduce((sum, recipe) => sum + recipe.calories, 0);
+    const totalCalories = recipes.reduce((sum, recipe) => sum + recipe.recipe.calories, 0);
 
     mainGoal.querySelector('.goal_text').querySelector('span').textContent = totalCalories + ' Ккал'
 
@@ -124,15 +129,18 @@ const displayRecipes = (recipes) => {
     mainElement.appendChild(recipesContainer);
 
     recipes.forEach(recipe => {
+        const recipeInfo = recipe.recipe
+        const mealType = recipe.mealType
+
         const dishDiv = document.createElement('div');
         dishDiv.classList.add('dish');
-        dishDiv.setAttribute('data-id', recipe.id);
+        dishDiv.setAttribute('data-id', recipeInfo.id);
 
         const dishImageContainer = document.createElement('div')
         dishImageContainer.classList.add('dish_image_container')
         const dishImage = document.createElement('img');
-        dishImage.src = recipe.image;
-        dishImage.alt = recipe.name;
+        dishImage.src = recipeInfo.image;
+        dishImage.alt = recipeInfo.name;
         dishImage.classList.add('dish_image');
 
         dishImageContainer.appendChild(dishImage)
@@ -143,17 +151,17 @@ const displayRecipes = (recipes) => {
 
         const mealDiv = document.createElement('div');
         mealDiv.classList.add('meal');
-        mealDiv.textContent = 'Завтрак'; // Пример: можно добавить динамическое определение приема пищи
+        mealDiv.textContent = mealTypes[mealType];
         dishInfoDiv.appendChild(mealDiv);
 
         const dishNameDiv = document.createElement('div');
         dishNameDiv.classList.add('dish_name');
-        dishNameDiv.textContent = recipe.name;
+        dishNameDiv.textContent = recipeInfo.name;
         dishInfoDiv.appendChild(dishNameDiv);
 
         const caloriesDiv = document.createElement('div');
         caloriesDiv.classList.add('callory_dish');
-        caloriesDiv.textContent = `${recipe.calories} ккал`;
+        caloriesDiv.textContent = `${recipeInfo.calories} ккал`;
         dishInfoDiv.appendChild(caloriesDiv);
 
         dishDiv.appendChild(dishInfoDiv);
@@ -161,7 +169,7 @@ const displayRecipes = (recipes) => {
 
         dishDiv.addEventListener('click', () => {
             console.log(13131);
-            const recipeId = recipe.id;
+            const recipeId = recipeInfo.id;
             window.location.href = `receipe_information.html?id=${recipeId}`;
         });
     });

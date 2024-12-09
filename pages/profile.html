@@ -20,7 +20,7 @@
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/plan.html">
-                                    <img src="../img/plan.svg" id="img_3" alt="изображение">
+                                    <img src="../img/plan.svg" id="img_1" alt="изображение">
                                 </a>
                                 <a href="../pages/plan.html" class="title">
                                     План - питания
@@ -30,7 +30,7 @@
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/article.html">
-                                    <img src="../img/article.svg" id="img_3" alt="изображение">
+                                    <img src="../img/article.svg" id="img_2" alt="изображение">
                                 </a>
                                 <a href="../pages/article.html" class="title">
                                     Полезные статьи
@@ -50,7 +50,7 @@
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/profile.html">
-                                    <img src="../img/profile_green.svg" id="img_3" alt="изображение">
+                                    <img src="../img/profile_green.svg" id="img_4" alt="изображение">
                                 </a>
                                 <a href="../pages/profile.html" class="title">
                                     Профиль
@@ -63,79 +63,115 @@
                     © Nutrify️ 2024
                 </div>
             </div>
+
             <div class="main_1">
                 <div class="main_title">
                     Профиль
                 </div>
                 <div class="profile_all">
-                    <div class="profile_info">
+
+                    <div class="profile_info" id="user_info">
                         <div class="info_title_flex">
                             <div class="info_title">
                                 Персональная информация
                             </div>
-                            <img src="../img/editing.svg" alt="редактирование">
+                            <span class="edit_button_wrapper">
+                                <img src="../img/editIcon.svg" alt="редактирование" class="edit_button">
+                                <img src="../img/markIcon.svg" alt="подтвердить" class="confirm_button hidden"></span>
                         </div>
+
                         <div class="info_values">
                             <div class="values">
                                 <div class="values_name">Имя пользователя</div>
-                                <div id="name">Анна</div>
+                                <div id="name"></div>
+                                <input type="text" id="name_input" class="hidden">
                             </div>
                             <div class="values">
                                 <div class="values_name">Email</div>
-                                <div id="email">masalkovaaa@mail.ru</div>
+                                <div id="email"></div>
+                                <input type="email" id="email_input" class="hidden">
                             </div>
                             <div class="values">
                                 <div class="values_name">Пароль</div>
                                 <div id="password">******</div>
+                                <input type="password" id="password_input" class="hidden">
                             </div>
                         </div>
                     </div>
-                    <div class="profile_info">
+
+
+                    <div class="profile_info" id="user_params">
                         <div class="info_title_flex">
                             <div class="info_title">
                                 Параметры
                             </div>
-                            <img src="../img/editing.svg" alt="редактирование">
+                            <span class="edit_button_wrapper"><img src="../img/editIcon.svg" alt="редактирование" class="edit_button"><img src="../img/markIcon.svg" alt="подтвердить" class="confirm_button hidden"></span>
                         </div>
+
                         <div class="info_values">
                             <div class="values">
                                 <div class="values_name">Возраст</div>
-                                <div id="age">19</div>
+                                <div id="age"></div>
+                                <input type="number" id="age_input" class="hidden">
                             </div>
                             <div class="values">
                                 <div class="values_name">Рост</div>
-                                <div id="height">170 см</div>
+                                <div id="height"></div>
+                                <input type="number" id="height_input" class="hidden">
                             </div>
                             <div class="values">
                                 <div class="values_name">Вес</div>
-                                <div id="weight">55 кг</div>
+                                <div id="weight"></div>
+                                <input type="number" id="weight_input" class="hidden">
                             </div>
                             <div class="values">
                                 <div class="values_name">Пол</div>
-                                <div id="gender">женский</div>
+                                <div id="gender"></div>
+                                <select id="gender_select" class="hidden">
+                                    <option value="MALE">Мужской</option>
+                                    <option value="FEMALE">Женский</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <div class="profile_info">
+
+                    <div class="profile_info" id="user_additional">
                         <div class="info_title_flex">
                             <div class="info_title">
                                 Обо мне
                             </div>
-                            <img src="../img/editing.svg" alt="редактирование">
+                            <span class="edit_button_wrapper">
+                <img src="../img/editIcon.svg" alt="редактирование" class="edit_button">
+                <img src="../img/markIcon.svg" alt="подтвердить" class="confirm_button hidden">
+            </span>
                         </div>
                         <div class="info_values">
                             <div class="values">
                                 <div class="values_name">Цель</div>
-                                <div id="goal">Похудение</div>
+                                <div id="goal"></div>
+                                <select id="goal_select" class="hidden">
+                                    <option value="LOSS">Похудение</option>
+                                    <option value="GAIN">Набор мышечной массы</option>
+                                    <option value="RETAIN">Поддержание</option>
+                                </select>
                             </div>
                             <div class="values">
                                 <div class="values_name">Физическая активность</div>
-                                <div id="activity">Умеренный уровень активности</div>
+                                <div id="activity"></div>
+                                <select id="activity_select" class="hidden">
+                                    <option value="MINIMAL">Минимальный уровень активности</option>
+                                    <option value="WEAK">Слабый уровень активности</option>
+                                    <option value="MIDDLE">Умеренный уровень активности</option>
+                                    <option value="HARD">Тяжелая активность</option>
+                                    <option value="EXTREME">Экстремальный уровень активности</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <div class="main_2">
                 <div class="client_wrapper">
                     <div class="client" id="client">
@@ -153,5 +189,6 @@
     </div>
     <script src="../js/checkAuth.js"></script>
     <script src="../js/profileModal.js"></script>
+    <script src="../js/pages/profile.js"></script>
 </body>
 </html>

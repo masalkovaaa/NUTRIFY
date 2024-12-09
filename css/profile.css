@@ -49,7 +49,7 @@ html, body{
 .title{
     color: black;
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 300;
     text-decoration: none;
 }
@@ -64,7 +64,7 @@ html, body{
 .copyright{
     color: black;
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 .main_1{
@@ -74,7 +74,7 @@ html, body{
 .main_title{
     color: black;
     font-size: 40px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 900;
 }
 .profile_all{
@@ -93,23 +93,95 @@ html, body{
     border-radius: 24px;
     padding: 30px 40px;
     gap: 10px;
+    height: 210px;
+
 }
 .info_title_flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.edit_button_wrapper {
+    cursor: pointer;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #F4F4F4;
+}
+
+
+
 .info_title{
     color: rgba(158, 184, 72, 1);
     font-size: 24px;
     font-weight: 500;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
 }
-.values{
+
+#user_info .values {
+    min-width: 200px;
+}
+
+#user_params .values {
+    min-width: 110px;
+}
+
+#goal {
+    min-width: 200px;
+}
+
+#activity {
+    min-width: 400px;
+}
+
+#gender_select {
+    width: 150px;
+    padding: 14px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+#activity_select {
+    width: 300px;
+    padding: 14px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+#goal_select {
+    width: 200px;
+    padding: 14px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+#user_additional .values:first-child {
+    min-width: 100px;
+}
+
+#user_additional .values:last-child {
+    min-width: 400px;
+}
+
+.values {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
+.values input {
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+}
+
 .info_values{
     display: flex;
     width: 800px;
@@ -120,7 +192,7 @@ html, body{
     color: rgba(136, 136, 136, 1);
     font-size: 24px;
     font-weight: 300;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
 }
 #name, #email, #password,
 #age, #height, #weight, #gender,
@@ -128,7 +200,7 @@ html, body{
     color: rgba(24, 23, 40, 1);
     font-size: 24px;
     font-weight: 400;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
 }
 .main_2{
     flex-shrink: 0;
@@ -242,4 +314,14 @@ html, body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #dadada;
+}
+
+/* additional classes */
+
+.hidden {
+    display: none;
+}
+
+.confirm_button_active {
+    background-color: #9EB848;
 }
