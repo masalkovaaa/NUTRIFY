@@ -81,7 +81,13 @@ html, body{
     justify-content: space-between;
     margin-top: 40px;
 }
+
+.receipe_menu_position {
+    outline: 1px solid rgba(231, 231, 231, 1) ;
+}
+
 .receipe_menu_position,.receipe_menu_position_green {
+    transition: background-color .1s ease;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -89,7 +95,7 @@ html, body{
     padding: 10px 20px;
     align-items: center;
     border-radius: 24px;
-    border: 1px solid rgba(231, 231, 231, 1) ;
+
     text-decoration: none;
 }
 .receipe_menu_position_green{
@@ -101,6 +107,7 @@ html, body{
     color: black;
 }
 .receipes{
+    padding-right: 10px;
     display: grid;
     grid-template-columns: repeat(4, 210px);
     justify-content: space-between;
@@ -108,16 +115,21 @@ html, body{
     overflow: auto;
     height: 90vh;
 }
-.receipe{
+.receipe {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     border: 1px solid rgba(244, 244, 244, 1) ;
     border-radius: 12px;
     text-decoration: none;
     margin-bottom: 40px;
-    gap: 20px;
+    gap: 15px;
 }
+
+.receipe:hover .img_dish {
+    transform: scale(1.05);
+}
+
+
 .receipe_name{
     font-size: 20px;
     font-weight: 400;
@@ -135,12 +147,23 @@ html, body{
     font-weight: 400;
     color: black;
 }
-.img_dish{
+
+.img_dish_wrapper {
     width: 208px;
     height: 170px;
     border-radius: 12px;
-    object-fit: cover;
+    overflow: hidden;
 }
+
+.img_dish {
+    background-color: #ECF8D5;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform .2s ease;
+}
+
 .main_2{
     flex-shrink: 0;
     flex-grow: 1;
@@ -148,6 +171,14 @@ html, body{
     background-color: #fcfcfc;
     padding: 50px 20px;
     height: 100vh;
+}
+
+.position_menu {
+    display: none;
+}
+
+.receipe_menu_position, .receipe_menu_position_green {
+    cursor: pointer;
 }
 
 /* PROFILE MODAL */

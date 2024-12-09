@@ -138,12 +138,21 @@ const displayRecipes = (recipes) => {
 
         const dishImageContainer = document.createElement('div')
         dishImageContainer.classList.add('dish_image_container')
-        const dishImage = document.createElement('img');
-        dishImage.src = recipeInfo.image;
-        dishImage.alt = recipeInfo.name;
-        dishImage.classList.add('dish_image');
 
-        dishImageContainer.appendChild(dishImage)
+        if (recipeInfo.image) {
+            const dishImage = document.createElement('img');
+            dishImage.src = recipeInfo.image;
+            dishImage.alt = recipeInfo.name;
+            dishImage.classList.add('dish_image');
+
+            dishImageContainer.appendChild(dishImage)
+        } else {
+            const dishImage = document.createElement('div');
+            dishImage.classList.add('dish_image');
+
+            dishImageContainer.appendChild(dishImage)
+        }
+
         dishDiv.appendChild(dishImageContainer);
 
         const dishInfoDiv = document.createElement('div');
