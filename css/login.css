@@ -73,6 +73,7 @@ input {
 
 }
 .logo{
+    text-decoration: none;
     text-align: left;
     color: rgba(158, 184, 72, 1);
     font-size: 30px;
@@ -193,7 +194,7 @@ label span{
 .flex_parameters{
     display: flex;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .flex_parameters > div {
@@ -413,7 +414,7 @@ select:required:invalid{
     .flex_parameters > div {
         flex: 0 0 0px;
     }
-    
+
 }
 
 

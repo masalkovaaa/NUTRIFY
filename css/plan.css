@@ -54,6 +54,7 @@ html, body{
     text-decoration: none;
 }
 .logo{
+    text-decoration: none;
     text-align: left;
     color: rgba(158, 184, 72, 1);
     font-size: 30px;
