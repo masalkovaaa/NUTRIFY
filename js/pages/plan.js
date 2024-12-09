@@ -41,14 +41,14 @@ function calendar(id, year, month) {
     if (!selectedDate) {
         selectedDate = new Date();
     }
-    document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toISOString();
+    document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
 
     document.querySelectorAll(`#${id} tbody td[data-day]`).forEach(td => {
         td.onclick = function() {
             document.querySelectorAll(`#${id} tbody td.today`).forEach(cell => cell.classList.remove('today'));
             selectedDate = new Date(this.dataset.year, this.dataset.month, this.dataset.day);
             this.classList.add('today');
-            document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toISOString();
+            document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
             document.querySelector(`#${id} thead td:nth-child(2)`).textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
             fetchRecipes();
         };
@@ -73,7 +73,8 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
 const getSelectedDate = () => {
     const selectedDateString = document.querySelector('#calendar').dataset.selectedDate;
     if (selectedDateString) {
-        return new Date(selectedDateString).toISOString().split('T')[0]; // Форматируем дату в ISO
+        const splittedSelectedDate = selectedDateString.split('.')
+        return `${splittedSelectedDate[2]}-${splittedSelectedDate[1]}-${splittedSelectedDate[0]}`;
     } else {
         return null;
     }

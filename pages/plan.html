@@ -73,10 +73,18 @@
 
             </div>
             <div class="main_2">
-                <div class="client">
-                    <div class="name"> Имя</div>
-                    <img src="../img/arrow_down.svg" alt="меню">
+                <div class="client_wrapper">
+                    <div class="client" id="client">
+                        <div class="name"></div>
+                        <img src="../img/arrow_down.svg" alt="меню">
+                    </div>
+                    <div class="modal" id="modal">
+                        <ul class="modal-menu">
+                            <li class="modal-item" id="logout">Выйти из профиля</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="look-calendar">
                     <table id="calendar">
                       <thead>
@@ -93,6 +101,7 @@
         </div>
         <script src="../js/checkAuth.js"></script>
         <script src="../js/pages/plan.js"></script>
+        <script src="../js/profileModal.js"></script>
     </div>
 </body>
 </html>
