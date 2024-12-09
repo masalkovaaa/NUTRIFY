@@ -142,26 +142,99 @@ html, body{
     object-fit: cover;
 }
 .main_2{
-    width: 300px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    max-width: 400px;
     background-color: #fcfcfc;
     padding: 50px 20px;
     height: 100vh;
 }
-.client{
+
+/* PROFILE MODAL */
+
+.client_wrapper {
+    position: relative;
+}
+
+.client {
+    min-height: 47px;
+    cursor: pointer;
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-left:  80px;
+    margin-left: auto;
     gap: 20px;
-    width: 180px;
+    width: fit-content;
     border-radius: 24px;
-    border:1px solid rgb(245, 245, 245);
-    padding: 20px;
+    border: 1px solid rgb(245, 245, 245);
+    padding: 11px 25px 10px 40px;
+    position: relative;
+    transition: border .2s ease;
 }
-.name{
+
+.client:hover {
+    border: 1px solid #e8e8e8;
+}
+
+.client.active {
+    border: 1px solid #e8e8e8;
+}
+
+.client img {
+    transition: transform .2s ease;
+}
+
+.client.active img {
+    transform: rotate(180deg);
+}
+
+.name {
+    margin-right: 10px;
+}
+
+.modal {
+    position: absolute;
+    top: 115%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 24px;
+    display: none;
+    z-index: 10;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.modal-item {
+    border-radius: 24px;
+    padding: 14px 30px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    list-style-type: none;
+    margin-top: 0;
+}
+
+.modal-item:hover {
+    background: #f5f5f5;
+}
+
+.name {
     font-size: 20px;
-    font-weight: 400;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
 }
+
 @media (max-width: 1600px){
     .main_2{
         display: none;
