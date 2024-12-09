@@ -6,21 +6,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700" rel="stylesheet">
     <title>Рецепты</title>
     <link rel="stylesheet" href="../css/receipe_info.css">
-    
+
 </head>
-<body> 
+<body>
     <div class="all">
         <div class="general_flex">
             <div class="menu">
                 <div class="menu_flex">
-                    <div class="logo">
+                    <a class="logo" href="plan.html">
                         NUTRIFY
-                    </div>
+                    </a>
                     <div class="flex_menu">
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/plan.html">
-                                    <img src="../img/plan.svg" id="img_3" alt="изображение">
+                                    <img src="../img/plan.svg" id="img_1" alt="изображение">
                                 </a>
                                 <a href="../pages/plan.html" class="title">
                                     План - питания
@@ -30,7 +30,7 @@
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/article.html">
-                                    <img src="../img/article.svg" id="img_3" alt="изображение">
+                                    <img src="../img/article.svg" id="img_2" alt="изображение">
                                 </a>
                                 <a href="../pages/article.html" class="title">
                                     Полезные статьи
@@ -50,7 +50,7 @@
                         <div class="flex_menu_position">
                             <div class="menu_title">
                                 <a href="../pages/profile.html">
-                                    <img src="../img/profile.svg" id="img_3" alt="изображение">
+                                    <img src="../img/profile.svg" id="img_4" alt="изображение">
                                 </a>
                                 <a href="../pages/profile.html" class="title">
                                     Профиль
@@ -67,58 +67,28 @@
                 <div class="main_title">
                     Название блюда
                 </div>
-                <img src="../img/dishes/cauliflower.jpg" class="img_receipe">
-                <div class="step_receipe">Пошаговый рецепт</div>
-                <div class="steps">
-                    <div class="step">
-                        <img src="../img/step.svg">
-                        <div class="step_text">
-                            Промойте гречку и отварите до готовности согласно инструкции на упаковке. 
-                        </div>
-                    </div>
-                    <div class="step">
-                        <img src="../img/step_2.svg">
-                        <div class="step_text">
-                            В говяжий фарш добавьте яйцо, рисовую муку, специи и тщательно перемешайте. 
-                        </div>
-                    </div>
-                    <div class="step">
-                        <img src="../img/step_3.svg">
-                        <div class="step_text">
-                            Сформируйте из фарша небольшие котлеты.
-                        </div>
-                    </div>
+                <div class="recipe_wrapper">
+                    <div class="recipe_img_wrapper"></div>
+
+                    <div class="step_receipe">Пошаговый рецепт</div>
+                    <div class="steps"></div>
                 </div>
             </div>
             <div class="main_2">
-                <div class="client">
-                    <div class="name"> Имя</div>
-                    <img src="../img/arrow_down.svg" alt="меню">
+                <div class="client_wrapper">
+                    <div class="client" id="client">
+                        <div class="name"></div>
+                        <img src="../img/arrow_down.svg" alt="меню">
+                    </div>
+                    <div class="modal" id="modal">
+                        <ul class="modal-menu">
+                            <li class="modal-item" id="logout">Выйти из профиля</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="ingredients">
                     <div class="ingredient_title">Ингредиенты</div>
-                    <div class="ingredient_positions">
-                        <div class="position">
-                            <div class="position_name">Фарш говяжий</div>
-                            <div class="quantity">100г</div>
-                        </div>
-                        <div class="position">
-                            <div class="position_name">Фарш</div>
-                            <div class="quantity">100г</div>
-                        </div>
-                        <div class="position">
-                            <div class="position_name">Фарш</div>
-                            <div class="quantity">100г</div>
-                        </div>
-                        <div class="position">
-                            <div class="position_name">Фарш</div>
-                            <div class="quantity">100г</div>
-                        </div>
-                        <div class="position">
-                            <div class="position_name">Фарш</div>
-                            <div class="quantity">100г</div>
-                        </div>
-                    </div>
+                    <div class="ingredient_positions"></div>
                 </div>
                 <div class="nutrient_composition">
                     <div class="nutrient">
@@ -127,24 +97,24 @@
                         </div>
                         <div class="nutrient_cal">
                             <img src="../img/nutrient.svg">
-                            <div class="cal">489 ккал</div>
+                            <div class="cal">0 ккал</div>
                         </div>
                     </div>
                     <div class="nutrient_flex">
                         <div class="flex_nutrient_position">
-                            <div class="number">520</div>
+                            <div class="number">0</div>
                             <div class="nutrient_name">Ккал </div>
                         </div>
                         <div class="flex_nutrient_position">
-                            <div class="number">32</div>
+                            <div class="number">0</div>
                             <div class="nutrient_name">Белки</div>
                         </div>
                         <div class="flex_nutrient_position">
-                            <div class="number">20</div>
+                            <div class="number">0</div>
                             <div class="nutrient_name">Жиры</div>
                         </div>
                         <div class="flex_nutrient_position">
-                            <div class="number">48</div>
+                            <div class="number">0</div>
                             <div class="nutrient_name">Углеводы</div>
                         </div>
                     </div>
@@ -152,5 +122,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/profileModal.js"></script>
+    <script src="../js/pages/recipeDescription.js"></script>
 </body>
-</html>       
+</html>

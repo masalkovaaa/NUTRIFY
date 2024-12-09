@@ -3,7 +3,6 @@ const modal = document.getElementById('modal');
 const logout = document.getElementById('logout');
 
 const clientName = client.querySelector('.name')
-console.log(clientName);
 
 const fetchUser = () => {
     fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users`, {

@@ -126,12 +126,17 @@ const displayRecipes = (recipes) => {
     recipes.forEach(recipe => {
         const dishDiv = document.createElement('div');
         dishDiv.classList.add('dish');
+        dishDiv.setAttribute('data-id', recipe.id);
 
+        const dishImageContainer = document.createElement('div')
+        dishImageContainer.classList.add('dish_image_container')
         const dishImage = document.createElement('img');
         dishImage.src = recipe.image;
         dishImage.alt = recipe.name;
         dishImage.classList.add('dish_image');
-        dishDiv.appendChild(dishImage);
+
+        dishImageContainer.appendChild(dishImage)
+        dishDiv.appendChild(dishImageContainer);
 
         const dishInfoDiv = document.createElement('div');
         dishInfoDiv.classList.add('dish_info');
@@ -153,6 +158,12 @@ const displayRecipes = (recipes) => {
 
         dishDiv.appendChild(dishInfoDiv);
         recipesContainer.appendChild(dishDiv);
+
+        dishDiv.addEventListener('click', () => {
+            console.log(13131);
+            const recipeId = recipe.id;
+            window.location.href = `receipe_information.html?id=${recipeId}`;
+        });
     });
 }
 
