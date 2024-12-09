@@ -79,6 +79,7 @@ html, body{
     font-weight: 900;
 }
 .articles{
+    padding-right: 10px;
     margin-top: 70px;
     height: 80vh;
     display: flex;
@@ -365,4 +366,25 @@ ul {
     img{
         width: 25px;
     }
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E6E6E6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dadada;
 }

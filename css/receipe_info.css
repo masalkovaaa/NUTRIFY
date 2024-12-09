@@ -67,13 +67,14 @@ html, body{
     font-weight: 400;
 }
 .main_1{
-    width: 850px;
+    width: 820px;
     padding: 50px 10px 10px 30px;
+    max-height: 100vh;
 }
 .main_title{
     color: black;
     font-size: 40px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 900;
 }
 .main_2{
@@ -166,24 +167,59 @@ html, body{
     font-family: Inter, sans-serif;
     font-weight: 500;
 }
-.img_receipe{
+
+.recipe_wrapper {
+    padding-right: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 94%;
+}
+
+.recipe_img_wrapper {
+    height: 420px;
     width: 750px;
     border-radius: 12px;
     margin-top: 30px;
+
+}
+
+.recipe_img_wrapper .img_receipe{
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .step{
     display: flex;
     justify-content: left;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
 .steps{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-bottom: 20px;
 }
+
+.step_counter {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    width: 50px;
+    color: #9EB848;
+    background-color: #ECF8D5;
+    aspect-ratio: 1 / 1;
+    font-size: 24px;
+    font-weight: 600;
+    padding-right: 1px;
+}
+
 .step_text{
     font-size: 24px;
     font-weight: 200;
@@ -192,6 +228,7 @@ html, body{
     font-size: 32px;
     font-weight: 600;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 .ingredients{
     border:1px solid rgb(245, 245, 245);
@@ -271,4 +308,25 @@ html, body{
     font-size: 16px;
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E6E6E6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dadada;
 }

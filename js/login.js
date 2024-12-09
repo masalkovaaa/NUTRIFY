@@ -1,7 +1,7 @@
 let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 
-function onSubmit(){
+async function onSubmit(){
     validateAll(email, password)
     const validate = validateFormBeforeSubmit(email, password);
     if (!validate){
@@ -13,19 +13,33 @@ function onSubmit(){
         password: password.value,
     }
 
-    fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/login", {
-        method: 'POST',
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-            loginBody
-        )
-    }).then(ans => ans.json()).then(ans => {
-        localStorage.setItem('user_token', ans.accessToken)
+    try {
+        const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/login", {
+            method: 'POST',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(
+                loginBody
+            )
+        })
+
+        if (!response.ok) {
+            throw new Error(response.status)
+        }
+
+        const jsonResponse = await response.json()
+
+        console.log(jsonResponse);
+        localStorage.setItem('user_token', jsonResponse.accessToken)
         window.location.href="plan.html"
-    })
+
+        return await response.json()
+    } catch (e) {
+        console.error(e)
+    }
+
 }
 
 const errorClass = 'input-error';
