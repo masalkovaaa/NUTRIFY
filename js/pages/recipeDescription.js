@@ -43,37 +43,41 @@ function renderRecipe(data) {
         imageWrapper.appendChild(img)
     }
 
-    // Подробный рецепт
-    const stepsContainer = document.querySelector(".steps");
-    if (stepsContainer) {
-        stepsContainer.innerHTML = "";
-        const stepsArray = data.description
-            .split('.')
-            .filter(description => description.length >= 1)
-            .map(description => {
-            if (description.length >= 1) return description.trim() + '.'})
-        console.log(stepsArray);
+    if (data.description.trim()) {
+        // Подробный рецепт
+        document.querySelector('.step_receipe').classList.remove('step_hidden')
 
-        stepsArray.forEach((step, index) => {
-            const stepDiv = document.createElement("div");
-            stepDiv.classList.add("step");
+        const stepsContainer = document.querySelector(".steps");
+        if (stepsContainer) {
+            stepsContainer.innerHTML = "";
+            const stepsArray = data.description
+                .split('.')
+                .filter(description => description.length >= 1)
+                .map(description => {
+                    if (description.length >= 1) return description.trim() + '.'})
+            console.log(stepsArray);
 
-            const stepCounter = document.createElement('span')
+            stepsArray.forEach((step, index) => {
+                const stepDiv = document.createElement("div");
+                stepDiv.classList.add("step");
 
-            const stepNumber = index + 1 < 10 ? `0${index + 1}` : index + 1
+                const stepCounter = document.createElement('span')
 
-            stepCounter.textContent = String(stepNumber);
-            stepCounter.classList.add('step_counter')
+                const stepNumber = index + 1 < 10 ? `0${index + 1}` : index + 1
 
-            const stepText = document.createElement('p')
-            stepText.textContent = step
-            stepText.classList.add('step_text')
+                stepCounter.textContent = String(stepNumber);
+                stepCounter.classList.add('step_counter')
 
-            stepDiv.appendChild(stepCounter)
-            stepDiv.appendChild(stepText)
+                const stepText = document.createElement('p')
+                stepText.textContent = step
+                stepText.classList.add('step_text')
 
-            stepsContainer.appendChild(stepDiv);
-        });
+                stepDiv.appendChild(stepCounter)
+                stepDiv.appendChild(stepText)
+
+                stepsContainer.appendChild(stepDiv);
+            });
+        }
     }
 
     // Ингредиенты

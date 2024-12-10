@@ -330,3 +330,9 @@ html, body{
 ::-webkit-scrollbar-thumb:hover {
     background: #dadada;
 }
+
+/* additional classes */
+
+.step_hidden {
+    display: none;
+}
