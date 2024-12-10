@@ -271,7 +271,7 @@ ul {
         gap: 40px;
     }
 }
-@media (max-width: 1100px){
+@media (max-width: 1200px){
     .menu{
         display: none;
     }
@@ -349,7 +349,7 @@ ul {
         gap: 10px;
     }
     .article_title{
-        font-size: 12px;
+        font-size: 16px;
     }
     .article_text{
         font-size: 12px;
@@ -363,10 +363,8 @@ ul {
     .main_1{
         padding: 30px 30px 0 30px;
     }
-    img{
-        width: 25px;
-    }
 }
+
 
 /* scroll bar */
 
