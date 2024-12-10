@@ -83,6 +83,7 @@ html, body{
     align-items: center;
     gap: 15px;
     margin-top: 30px;
+    margin-bottom: 5px;
 }
 .goal_text{
     color: black;
@@ -158,6 +159,12 @@ html, body{
     font-size: 20px;
     font-family: Inter, sans-serif;
     font-weight: 400;
+}
+
+.recipes-container {
+    overflow: auto;
+    height: calc(100vh - 200px);
+    padding-right: 10px;
 }
 
 /* PROFILE MODAL */
