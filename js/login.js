@@ -2,9 +2,16 @@ let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 
 async function onSubmit(){
+    const errorTextElement = document.getElementById('login-error')
+
+    const textError = 'Ошибка при авторизации. Неверный пароль или почта!';
+    errorTextElement.textContent = ''
+
     validateAll(email, password)
+
     const validate = validateFormBeforeSubmit(email, password);
-    if (!validate){
+
+    if (!validate) {
         return
     }
 
@@ -37,6 +44,7 @@ async function onSubmit(){
 
         return await response.json()
     } catch (e) {
+        errorTextElement.textContent = textError
         console.error(e)
     }
 
