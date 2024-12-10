@@ -33,6 +33,7 @@ async function onSubmit(){
         })
 
         if (!response.ok) {
+            errorTextElement.textContent = textError
             throw new Error(response.status)
         }
 
@@ -44,7 +45,6 @@ async function onSubmit(){
 
         return await response.json()
     } catch (e) {
-        errorTextElement.textContent = textError
         console.error(e)
     }
 
