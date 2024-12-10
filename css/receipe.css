@@ -33,7 +33,7 @@ html, body{
 .flex_menu{
     display: flex;
     flex-direction: column;
-    
+
 }
 .flex_menu_position{
     display: flex;
@@ -53,6 +53,7 @@ html, body{
     text-decoration: none;
 }
 .logo{
+    text-decoration: none;
     text-align: left;
     color: rgba(158, 184, 72, 1);
     font-size: 30px;
@@ -80,7 +81,13 @@ html, body{
     justify-content: space-between;
     margin-top: 40px;
 }
+
+.receipe_menu_position {
+    outline: 1px solid rgba(231, 231, 231, 1) ;
+}
+
 .receipe_menu_position,.receipe_menu_position_green {
+    transition: background-color .1s ease;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -88,7 +95,7 @@ html, body{
     padding: 10px 20px;
     align-items: center;
     border-radius: 24px;
-    border: 1px solid rgba(231, 231, 231, 1) ;
+
     text-decoration: none;
 }
 .receipe_menu_position_green{
@@ -100,6 +107,7 @@ html, body{
     color: black;
 }
 .receipes{
+    padding-right: 10px;
     display: grid;
     grid-template-columns: repeat(4, 210px);
     justify-content: space-between;
@@ -107,16 +115,21 @@ html, body{
     overflow: auto;
     height: 90vh;
 }
-.receipe{
+.receipe {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     border: 1px solid rgba(244, 244, 244, 1) ;
     border-radius: 12px;
     text-decoration: none;
     margin-bottom: 40px;
     gap: 15px;
 }
+
+.receipe:hover .img_dish {
+    transform: scale(1.05);
+}
+
+
 .receipe_name{
     font-size: 20px;
     font-weight: 400;
@@ -139,8 +152,18 @@ html, body{
     width: 208px;
     height: 170px;
     border-radius: 12px;
-    object-fit: cover;
+    overflow: hidden;
 }
+
+.img_dish {
+    background-color: #ECF8D5;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform .2s ease;
+}
+
 .main_2{
     flex-shrink: 0;
     flex-grow: 1;
@@ -170,7 +193,7 @@ html, body{
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-left:  80px;
+    margin-left: auto;
     gap: 20px;
     width: fit-content;
     border-radius: 24px;
@@ -242,6 +265,7 @@ html, body{
     font-family: Inter, sans-serif;
     font-weight: 500;
 }
+
 @media (max-width: 1600px){
     .main_2{
         display: none;
@@ -300,4 +324,25 @@ html, body{
     .receipe_menu_position_green,.receipe_menu_position {
         width: 180px;
     }
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E6E6E6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #dadada;
 }
