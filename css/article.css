@@ -87,7 +87,7 @@ html, body{
     gap: 40px;
     overflow: auto;
 }
-.article{
+.article {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(230, 230, 230, 1) ;
@@ -228,6 +228,7 @@ html, body{
     margin-top: 10px;
 }
 .article_details{
+    padding-right: 15px;
     overflow: scroll;
     height: 80vh;
     margin-top: 20px;
