@@ -68,8 +68,8 @@ html, body{
     font-weight: 400;
 }
 .main_1{
-    width: 900px;
-    padding: 50px 40px;
+    max-width: 900px;
+    padding: 50px 20px;
 }
 .main_title{
     color: black;
@@ -96,7 +96,7 @@ html, body{
     font-weight: 600;
 }
 .main_2 {
-    width: 500px;
+    width: 470px;
     background-color: #fcfcfc;
     padding: 50px 20px;
 }
@@ -117,10 +117,13 @@ html, body{
     transform: scale(1.05);
 }
 
-.dish_info{
+.dish_info {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 5px;
+    height: 121px;
+    justify-content: space-between;
+    padding-right: 10px;
 }
 
 .dish_image_container {
@@ -239,10 +242,10 @@ html, body{
 }
 
 .look-calendar {
-    width: 470px;
+    width: 426px;
     border-radius: 24px;
     border:1px solid rgb(245, 245, 245);
-    padding: 30px;
+    padding: 20px;
     margin-top: 40px;
     display: flex;
     align-items: center;
@@ -318,4 +321,9 @@ html, body{
     background: #dadada;
 }
 
-
+@media screen and (max-width: 1420px){
+    .dish_image_container {
+        min-width: 270px;
+        width: 270px;
+    }
+}
