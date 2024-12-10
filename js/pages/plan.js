@@ -108,7 +108,7 @@ const mealTypes = {
     'LAUNCH': 'Обед',
     'BREAKFAST': 'Завтрак',
     'DINNER': 'Ужин',
-    'PART_MEAL': 'Закуска'
+    'PART_MEAL': 'Перекус'
 }
 
 const displayRecipes = (recipes) => {
