@@ -68,6 +68,7 @@ html, body{
     font-weight: 400;
 }
 .main_1{
+    max-height: 97vh;
     max-width: 900px;
     padding: 50px 20px;
 }
