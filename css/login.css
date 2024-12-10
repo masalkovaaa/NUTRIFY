@@ -62,14 +62,14 @@ input {
     width: 295px;
     color: rgba(136, 136, 136, 1);
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 150;
     margin-left: 36px;
 }
 .title{
     color: black;
     font-size: 20px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 600;
 
 }
@@ -92,7 +92,7 @@ input {
 .copyright{
     color: black;
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
 }
 .form-step {
@@ -146,14 +146,14 @@ input {
     width: 572px;
     color: black;
     font-size: 39px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 600;
 }
 .h2{
     width: 572px;
     color: rgba(136, 136, 136, 1);
     font-size: 24px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -161,7 +161,7 @@ input {
 label{
     color: black;
     font-size: 24px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 600;
 }
 input {
@@ -175,14 +175,14 @@ label span{
 .authorization_txt{
     color: rgba(136, 136, 136, 1);
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 300;
 
 }
 .authorization_link{
     color: rgba(158, 184, 72, 1);
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
     text-decoration: none;
 }
@@ -239,21 +239,21 @@ select:required:invalid{
 #nameError{
     color: red;
     font-size: 12px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 150;
 }
 .copyright_autorization{
     margin-top: 80px;
     color: black;
     font-size: 16px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 400;
     margin-top: 805px;
 }
 .error{
     font-size: 12px;
     color: red;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 150;
 }
 @media (max-width: 1250px){
@@ -308,6 +308,7 @@ select:required:invalid{
         width: 500px;
         margin: 0 auto;
     }
+
     #step-1 input,
     #step-1 select,
     #step-1 textarea {
@@ -335,7 +336,7 @@ select:required:invalid{
         width: 300px;
     }
     .flex_parameters{
-        gap: 0px;
+        gap: 0;
     }
 }
 @media (max-width: 500px){
@@ -412,9 +413,17 @@ select:required:invalid{
         font-size: 12px;
     }
     .flex_parameters > div {
-        flex: 0 0 0px;
+        flex: 0 0 0;
     }
+}
 
+/* additional classes */
+
+.text-error {
+    text-align: center;
+    color: red;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
 }
 
 
