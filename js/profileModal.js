@@ -15,7 +15,7 @@ const fetchUser = () => {
     })
         .then(ans => ans.json())
         .then(ans => {
-            clientName.textContent=ans.email
+            clientName.textContent=ans.name
         })
         .catch(error => {
             console.error('Ошибка при запросе:', error);

@@ -131,7 +131,7 @@ html, body{
     min-width: 110px;
 }
 
-#goal {
+#target {
     min-width: 200px;
 }
 
@@ -153,7 +153,7 @@ html, body{
     border-radius: 12px;
 }
 
-#goal_select {
+#target_select {
     width: 200px;
     padding: 14px 10px;
     border: 1px solid #ccc;
@@ -196,7 +196,7 @@ html, body{
 }
 #name, #email, #password,
 #age, #height, #weight, #gender,
-#goal, #activity{
+#target, #activity{
     color: rgba(24, 23, 40, 1);
     font-size: 24px;
     font-weight: 400;
@@ -324,4 +324,9 @@ html, body{
 
 .confirm_button_active {
     background-color: #9EB848;
+}
+
+.hidden_edit_button {
+    visibility: hidden;
+    pointer-events: none;
 }

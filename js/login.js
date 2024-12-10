@@ -33,13 +33,13 @@ async function onSubmit(){
         })
 
         if (!response.ok) {
+            console.log(response);
             errorTextElement.textContent = textError
             throw new Error(response.status)
         }
 
         const jsonResponse = await response.json()
 
-        console.log(jsonResponse);
         localStorage.setItem('user_token', jsonResponse.accessToken)
         window.location.href="plan.html"
 
@@ -47,7 +47,6 @@ async function onSubmit(){
     } catch (e) {
         console.error(e)
     }
-
 }
 
 const errorClass = 'input-error';

@@ -29,9 +29,8 @@ async function fetchUserData() {
         document.getElementById("age").textContent = data.personalData.age;
         document.getElementById("height").textContent = `${data.personalData.height} см`;
         document.getElementById("weight").textContent = `${data.personalData.weight} кг`;
-        document.getElementById("gender").textContent = data.personalData.sex === "MALE" ? "мужской" : "женский";
-        document.getElementById("goal").textContent = goalMap[data.personalData.target];
-        document.getElementById("goal").setAttribute('data-key', data.personalData.target)
+        document.getElementById("target").textContent = goalMap[data.personalData.target];
+        document.getElementById("target").setAttribute('data-key', data.personalData.target)
 
         document.getElementById("activity").textContent = activityMap[data.personalData.activity]
         document.getElementById("activity").setAttribute('data-key', data.personalData.activity)
@@ -54,7 +53,7 @@ function toggleEditUserInfo() {
     editButton.addEventListener("click", () => {
         inputs.forEach((input, index) => {
             input.classList.remove("hidden");
-            input.value = divs[index].textContent.trim(); // TODO replace
+            input.value = divs[index].textContent.trim();
             if (input.id === 'password_input') input.value = ''
             divs[index].classList.add("hidden");
         });
@@ -77,9 +76,9 @@ function toggleEditUserInfo() {
             }
         });
 
-        if (Object.keys(body).length < 3) {
-            return
-        }
+        // if (Object.keys(body).length < 3) {
+        //     return
+        // }
 
         try {
             const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users", {
@@ -103,8 +102,10 @@ function toggleEditUserInfo() {
                 input.classList.add("hidden");
                 divs[index].classList.remove("hidden");
             });
+            const jsonResponce = await response.json()
+            document.getElementById('client').querySelector('.name').textContent=jsonResponce.name
 
-            return response.json()
+            return jsonResponce
         } catch (e) {
             console.error(e)
         }
@@ -133,9 +134,11 @@ async function toggleEditUserParams() {
         .then(response => response.json())
         .catch(() => false);
 
-    if (!isEditable) {
-        console.warn("Редактирование параметров недоступно");
-        return;
+    if (isEditable) {
+        document
+            .querySelector('#user_params')
+            .querySelector('.edit_button_wrapper').classList
+            .remove('hidden_edit_button')
     }
 
     // Переключение в режим редактирования
@@ -143,7 +146,6 @@ async function toggleEditUserParams() {
         inputs.forEach((input, index) => {
             input.classList.remove("hidden");
             if (input.tagName === "INPUT") {
-                console.log('yes');
                 input.value = divs[index].textContent.split(' ')[0].trim();
             } else if (input.tagName === "SELECT") {
                 input.value = divs[index].textContent === "мужской" ? "MALE" : "FEMALE";
@@ -160,24 +162,19 @@ async function toggleEditUserParams() {
     confirmButton.addEventListener("click", async () => {
         const body = {};
 
-        body['target'] = document.getElementById("goal").getAttribute('data-key')
+        body['target'] = document.getElementById("target").getAttribute('data-key')
         body['activity'] = document.getElementById("activity").getAttribute('data-key')
 
         inputs.forEach((input, index) => {
             const newValue = input.value.trim();
             if (newValue) {
                 const fieldId = input.id.replace("_input", "").replace("_select", "");
-                body[fieldId] = newValue;
+                body[fieldId] = +newValue;
                 divs[index].textContent = input.tagName === "SELECT" ?
                     (newValue === "MALE" ? "Мужской" : "Женский") :
                     newValue;
             }
         });
-
-        if (Object.keys(body).length < 4) {
-            console.warn("Заполните все поля");
-            return;
-        }
 
         try {
             const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/personal_data", {
@@ -230,17 +227,19 @@ async function toggleEditUserAdditional() {
         .then(response => response.json())
         .catch(() => false);
 
-    if (!isEditable) {
-        console.warn("Редактирование информации недоступно");
-        return;
+    if (isEditable) {
+        document
+            .querySelector('#user_additional')
+            .querySelector('.edit_button_wrapper').classList
+            .remove('hidden_edit_button')
     }
 
     editButton.addEventListener("click", () => {
         selects.forEach((select, index) => {
             select.classList.remove("hidden");
             const divText = divs[index].textContent.trim();
-            if (select.id === "goal_select") {
-                select.value = document.getElementById("goal").getAttribute('data-key');
+            if (select.id === "target_select") {
+                select.value = document.getElementById("target").getAttribute('data-key');
             } else if (select.id === "activity_select") {
                 select.value = document.getElementById("activity").getAttribute('data-key');
             }
@@ -255,23 +254,24 @@ async function toggleEditUserAdditional() {
     confirmButton.addEventListener("click", async () => {
         const body = {};
 
-        body['age'] = document.getElementById("age").textContent.trim();
-        body['height'] = document.getElementById("height").textContent.split(' ')[0].trim();
-        body['weight'] = document.getElementById("weight").textContent.trim().split(' ')[0].trim();
-        body['gender'] = document.getElementById("gender").textContent === 'Мужской' ? 'MALE' : 'FEMALE';
+        body['age'] = +document.getElementById("age").textContent.trim();
+        body['height'] = +document.getElementById("height").textContent.split(' ')[0].trim();
+        body['weight'] = +document.getElementById("weight").textContent.trim().split(' ')[0].trim();
+        // body['gender'] = document.getElementById("gender").textContent === 'Мужской' ? 'MALE' : 'FEMALE';
 
         selects.forEach((select, index) => {
             const newValue = select.value.trim();
+            console.log(newValue);
             if (newValue) {
                 const fieldId = select.id.replace("_select", "");
                 body[fieldId] = newValue;
 
-                divs[index].textContent = select.id === "goal_select" ?
+                divs[index].textContent = select.id === "target_select" ?
                     (newValue === "LOSS" ? "Похудение" :
                         newValue === "GAIN" ? "Набор мышечной массы" : "Поддержание") :
-                    (newValue === "MINIMAL" ? "Минимальный" :
-                        newValue === "WEAK" ? "Слабый" :
-                            newValue === "MIDDLE" ? "Умеренный" :
+                    (newValue === "MINIMAL" ? "Минимальный уровень активности" :
+                        newValue === "WEAK" ? "Слабый уровень активности" :
+                            newValue === "MIDDLE" ? "Умеренный уровень активности" :
                                 newValue === "HARD" ? "Тяжелая активность" : "Экстремальный уровень активности");
             }
         });
