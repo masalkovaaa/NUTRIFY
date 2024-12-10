@@ -97,7 +97,11 @@ const fetchRecipes = () => {
     })
         .then(ans => ans.json())
         .then(ans => {
-            displayRecipes(ans);
+            if (Array.isArray(ans) && ans.length === 0) {
+                setTimeout(fetchRecipes, 2000);
+            } else {
+                displayRecipes(ans);
+            }
         })
         .catch(error => {
             console.error('Ошибка при запросе:', error);
