@@ -181,7 +181,6 @@ const displayRecipes = (recipes) => {
         recipesContainer.appendChild(dishDiv);
 
         dishDiv.addEventListener('click', () => {
-            console.log(13131);
             const recipeId = recipeInfo.id;
             window.location.href = `receipe_information.html?id=${recipeId}`;
         });
