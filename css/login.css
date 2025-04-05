@@ -30,7 +30,7 @@ input {
 .menu{
     width: 416px;
     background-color: #fff;
-    border: 1px solid rgb(245, 245, 245);
+    border-right: 1px solid rgb(245, 245, 245);
     padding: 50px 40px;
     height: 100vh;
     display: flex;
@@ -243,12 +243,10 @@ select:required:invalid{
     font-weight: 150;
 }
 .copyright_autorization{
-    margin-top: 80px;
     color: black;
     font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: 400;
-    margin-top: 805px;
 }
 .error{
     font-size: 12px;
@@ -265,61 +263,61 @@ select:required:invalid{
     #step-1 input,
     #step-1 select,
     #step-1 textarea {
-    width: 400px;
+        width: 500px;
     }
     .h1{
-        width: 400px;
+        width: 500px;
         font-size: 32px;
     }
     .h2{
         font-size: 20px;
-        width: 400px;
+        width: 500px;
     }
     label{
         font-size: 20px;
     }
 
     .button {
-    width: 400px;
+        width: 500px;
+        margin-top: 10px;
     }
     .flex_authorization{
-    margin-top: 10px;
+        margin-top: 10px;
     }
     .form-container {
-        width: 400px;
+        width: 500px;
     }
-}
-@media (max-width: 900px){
     .flex_menu{
         display: none;
     }
     .copyright{
         display: none;
     }
+    .copyright_autorization{
+        display: none;
+    }
+    .logo_autorization{
+        font-size: 24px;
+        padding: 0;
+    }
     .menu {
         width: auto;
-        height: 65px;
+        height: auto;
+        border-bottom: 1px solid rgb(245, 245, 245);
+        padding: 20px;
     }
     .general_flex{
         flex-direction: column;
-        gap: 200px;
+        gap: 300px;
     }
     .form-container {
-        width: 500px;
+        width: auto;
         margin: 0 auto;
     }
 
-    #step-1 input,
-    #step-1 select,
-    #step-1 textarea {
-    width: 460px;
-    }
-    .button {
-        width: 460px;
-    }
     #step-2 input,
     #step-2 select {
-        width: 120px;
+        width: 150px;
     }
     .button_flex{
         display: flex;
@@ -327,33 +325,36 @@ select:required:invalid{
     }
     #step-3 input,
     #step-3 select {
-        width: 460px;
+        width: 500px;
     }
     .button_back {
-        width: 120px;
+        width: 150px;
     }
     .button_2 {
-        width: 300px;
+        width: 320px;
     }
     .flex_parameters{
         gap: 0;
     }
+    .logo{
+        font-size: 24px;
+    }
 }
+
 @media (max-width: 500px){
     .logo{
-        font-size: 20px;
+        font-size: 16px;
+        padding: 0;
     }
     .logo_autorization{
-        font-size: 20px;
+        font-size: 16px;
+        padding: 0;
     }
     .menu{
-        padding: 20px 10px;
-    }
-    .menu_flex{
-        padding: 0 10px;
+        padding: 15px 20px;
     }
     .general_flex{
-        gap: 120px;
+        gap: 200px;
     }
     .form-container {
         width: 350px;
@@ -393,6 +394,10 @@ select:required:invalid{
     .button_2 {
         width: 200px;
         font-size: 16px;
+        margin: 0;
+    }
+    .button_back{
+        margin: 0;
     }
 
     .h1{
@@ -402,6 +407,7 @@ select:required:invalid{
     .h2{
         font-size: 16px;
         width: 320px;
+        margin: 5px 0 20px;
     }
     label{
         font-size: 16px;
@@ -414,6 +420,11 @@ select:required:invalid{
     }
     .flex_parameters > div {
         flex: 0 0 0;
+    }
+}
+@media (max-height: 750px){
+    .general_flex{
+        gap: 100px;
     }
 }
 

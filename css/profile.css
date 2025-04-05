@@ -330,3 +330,33 @@ html, body{
     visibility: hidden;
     pointer-events: none;
 }
+.getout_button{
+    display: none;
+}
+@media (max-width: 1600px){
+    .main_2{
+        display: none;
+    }
+    .getout_button{
+        display: block;
+    }
+    .title_adaptive{
+        display: flex;
+        justify-content: space-between;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
+}
+@media (max-width: 1400px) {
+    .general_flex{
+        gap: 0;
+    }
+    .receipes{
+        grid-template-columns: repeat(4, 170px);
+    }
+    .img_dish{
+        width: 170px;
+    }
+}

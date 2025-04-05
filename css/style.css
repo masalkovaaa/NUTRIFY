@@ -56,6 +56,9 @@ p{
     height: 700px;
     padding: 30px 0;
 }
+.img_secondversion{
+    display: none;
+}
 .container_main_1{
     max-width: 1440px;
     margin: 0 auto;
@@ -288,6 +291,13 @@ p{
     .main_3{
         padding: 20px 0;
     }
+    .img{
+        width: 500px;
+    }
+    .main_1{
+        background: none;
+        height: auto;
+    }
     .container_main_3{
         max-width: 1400px;
         padding: 0 10px;
@@ -448,6 +458,7 @@ p{
     }
     .callory{
         font-size: 14px;
+        margin-top: 10px;
     }
     .button_main_4{
         width: 150px;
@@ -456,11 +467,12 @@ p{
         margin-top: 10px;
     }
     .footer{
-        padding: 15px 0;
+        padding: 15px 10px;
     }
     .container_footer{
-        max-width: 750px;
+        max-width: 100%;
         padding: 0 10px;
+        margin: 0;
     }
     .name_company{
         font-size: 20px;
@@ -473,37 +485,53 @@ p{
 }
 @media (max-width: 750px){
     .img{
-        display: none;
-     }
+        width: 200px;;
+    }
 }
+
 @media (max-width: 500px){
     .header{
-        padding: 15px 0;
+        padding: 15px 20px;
+    }
+    .title_black, .title_green{
+        font-size: 24px;
+    }
+    .main_1_text{
+        font-size: 20px;
+        width: 350px;
+    }
+    .img_secondversion{
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+    }
+    .img{
+        display: none;;
     }
     .container_header{
-        max-width: 350px;
+        max-width: 100%;
         padding: 0;
     }
     .button_header{
         display: none;
     }
     p{
-        font-size: 20px;
+        font-size: 16px;
     }
     .main_1{
         max-width: 100%;
         background: none;
         height: 100%;
-        padding: 20px 0;
+        padding: 10px 10px 20px;
     }
     .container_main_1{
-        max-width: 350px;
+        max-width: 100%;
     }
     .img{
         display: none;
     }
     .main_1_flex_general{
-        gap: 0px;
+        gap: 5px;
     }
     .main_1_flex_text{
         max-width: 100%;
@@ -526,13 +554,14 @@ p{
         padding: 10px 16px;
         font-size: 12px;
         margin: 0 auto;
+        margin-top: 10px;
     }
     .main_2{
         padding: 20px 0;
     }
     .container_main_2{
         max-width: 350px;
-        padding: 0 10px;
+        padding: 0 20px;
     }
     .main_2_title{
         font-size: 20px;
@@ -543,7 +572,7 @@ p{
         margin-top: 10px;
     }
     .main_3{
-        padding: 10px 0;
+        padding: 20px 0 10px;
     }
     .container_main_3{
         max-width: 350px;
@@ -611,17 +640,17 @@ p{
         padding: 10px 16px;
         font-size: 12px;
         margin: 0 auto;
-
+        margin-top: 10px;
     }
     .img_main_4{
-        width: 130px;
+        width: 120px;
     }
     .footer{
-        padding: 15px 0;
+        padding: 15px 20px;
     }
     .container_footer{
-        max-width: 350px;
-        padding: 0 10px;
+        max-width: 100%;
+        padding: 0;
     }
     .footer_flex{
         flex-direction: column;

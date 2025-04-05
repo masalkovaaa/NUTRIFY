@@ -203,8 +203,6 @@ html, body{
     font-family: Inter, sans-serif;
     font-weight: 500;
 }
-
-
 .article_text_new{
     color: black;
     font-size: 24px;
@@ -255,9 +253,20 @@ ul {
 .new_menu{
     display: none;
 }
+.getout_button{
+    display: none;
+}
 @media (max-width: 1600px){
     .main_2{
         display: none;
+    }
+    .getout_button{
+        display: block;
+    }
+    .title_adaptive{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .general_flex{
         justify-content: left;
@@ -272,7 +281,7 @@ ul {
         gap: 40px;
     }
 }
-@media (max-width: 1100px){
+@media (max-width: 1150px){
     .menu{
         display: none;
     }
@@ -286,39 +295,59 @@ ul {
         padding: 20px;
         bottom: 0;
     }
-
     .position_menu {
         width: 100%;
         position: fixed;
         left: 0;
         bottom: 0;
     }
-
     .articles {
         gap: 20px;
         overflow: auto;
-
         max-height: calc(100vh - 250px);
     }
 }
+@media (max-width: 950px) {
+    .main_title {
+        font-size: 32px;
+    }
+    .articles{
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 500px){
     .main_1{
         width: 100%;
+        padding: 40px 30px 0;
     }
-
+    .main_title{
+        font-size: 20px;
+    }
+    .client{
+        gap: 10px;
+        padding: 6px 15px 5px 20px;
+    }
+    .client img{
+        width: 10px;
+    }
+    .name{
+        font-size: 16px;
+    }
     .articles{
         gap: 20px;
         overflow: auto;
         margin-top: 20px;
-        max-height: calc(100vh - 180px);
+        max-height: calc(100vh - 70px);
     }
     .article_title{
         color: black;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 600;
     }
     .article{
         padding: 15px 20px;
+        gap: 5px;
     }
     .article_text{
         font-size: 16px;
@@ -326,10 +355,10 @@ ul {
     .article_button{
         font-size: 16px;
     }
-    .main_title{
-        font-size: 32px;
-    }
     .text{
+        font-size: 16px;
+    }
+    .text_green{
         font-size: 16px;
     }
     .article_text_new{
@@ -349,25 +378,12 @@ ul {
         max-height: calc(100vh - 65px);
         gap: 10px;
     }
-    .article_title{
-        font-size: 12px;
-    }
-    .article_text{
-        font-size: 12px;
-    }
-    .article_button{
-        font-size: 12px;
-    }
-    .main_title{
-        font-size: 24px;
-    }
-    .main_1{
-        padding: 30px 30px 0 30px;
-    }
+
     img{
         width: 25px;
     }
 }
+
 
 /* scroll bar */
 

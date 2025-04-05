@@ -130,8 +130,6 @@ html, body{
 .receipe:hover .img_dish {
     transform: scale(1.05);
 }
-
-
 .receipe_name{
     font-size: 20px;
     font-weight: 400;
@@ -173,10 +171,6 @@ html, body{
     background-color: #fcfcfc;
     padding: 50px 20px;
     height: 100vh;
-}
-
-.position_menu {
-    display: none;
 }
 
 .receipe_menu_position, .receipe_menu_position_green {
@@ -261,16 +255,28 @@ html, body{
 .modal-item:hover {
     background: #f5f5f5;
 }
-
+.new_menu{
+    display: none;
+}
 .name {
     font-size: 20px;
     font-family: Inter, sans-serif;
     font-weight: 500;
 }
-
+.getout_button{
+    display: none;
+}
 @media (max-width: 1600px){
     .main_2{
         display: none;
+    }
+    .getout_button{
+        display: block;
+    }
+    .title_adaptive{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .general_flex{
         justify-content: left;
@@ -279,29 +285,73 @@ html, body{
 }
 @media (max-width: 1400px){
     .general_flex{
-        gap: 0px;
+        gap: 20px;
+    }
+    .receipes{
+        grid-template-columns: repeat(4, 180px);
+    }
+    .img_dish_wrapper {
+        width: 178px;
+        height: 150px;
+    }
+    .main_1{
+        width: 100%;
+    }
+    .img_menu{
+        display: none;
+    }
+    .receipe_menu_position{
+        width: 200px;
+    }
+    .receipe_menu_position_green{
+        width: 200px;
     }
 }
-@media (max-width: 1200px){
+@media (max-width: 1150px){
     .menu{
         display: none;
     }
-    main_1{
+    .general_flex{
+        gap: 20px;
+    }
+    .receipes{
+        grid-template-columns: repeat(4, 210px);
+        height: calc(100vh - 300px);
+    }
+    .img_dish_wrapper {
+        width: 208px;
+        height: 170px;
+    }
+    .receipe_menu_position{
+        width: 230px;
+    }
+    .receipe_menu_position_green{
+        width: 230px;
+    }
+    .main_1{
+        max-height: calc(100vh - 70px);
+    }
+    .position_menu {
         width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
     }
     .general_flex{
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .new_menu{
         display: flex;
-        height: 80px;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         padding: 20px;
         bottom: 0;
-        position: sticky;
+    }
+    .img_menu{
+        display: block;
     }
 }
+
 @media (max-width: 1050px){
     .receipe_menu_position_green,.receipe_menu_position {
         width: 200px;
@@ -313,12 +363,16 @@ html, body{
     }
     .img_dish{
         width: 100%;
-        height: 150px;
+        height: 170px;
     }
 }
 @media (max-width: 950px){
     .receipes{
         grid-template-columns: repeat(3, 210px);
+        margin-top: 25px;
+    }
+    .receipe{
+        gap: 5px;
     }
     .img_menu{
         display: none;
@@ -326,7 +380,84 @@ html, body{
     .receipe_menu_position_green,.receipe_menu_position {
         width: 180px;
     }
+    .main_title{
+        font-size: 32px;
+    }
+    .receipe_menu{
+        margin-top: 20px;
+    }
+    .receipe_name{
+        font-size: 16px;
+    }
 }
+@media (max-width: 850px){
+    .receipe_menu{
+        display: grid;
+        flex: none;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .receipe_menu_position_text{
+        display: none;
+    }
+    .img_menu{
+        display: block;
+    }
+    .receipe_menu_position_green,.receipe_menu_position {
+        width: 100%;
+    }
+}
+@media (max-width: 780px) {
+    .receipes {
+        grid-template-columns: repeat(3, 180px);
+    }
+    .img_dish{
+        width: 178px;
+        height: 150px;
+    }
+}
+@media (max-width: 680px) {
+    .receipes {
+        grid-template-columns: repeat(2, 200px);
+    }
+    .img_dish{
+        width: 198px;
+        height: 170px;
+    }
+}
+@media (max-width: 550px) {
+    .receipes {
+        grid-template-columns: repeat(1, 300px);
+        justify-content: center;
+        height: calc(100vh - 270px);
+    }
+    .img_dish{
+        width: 298px;
+        height: 180px;
+    }
+    .img_menu{
+        width: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .main_title{
+        font-size: 20px;
+    }
+    .main_1{
+        width: 100%;
+        padding: 40px 30px 0;
+    }
+    .client{
+        gap: 10px;
+        padding: 6px 15px 5px 20px;
+    }
+    .client img{
+        width: 10px;
+    }
+    .name{
+        font-size: 16px;
+    }
+}
+
 
 /* scroll bar */
 
