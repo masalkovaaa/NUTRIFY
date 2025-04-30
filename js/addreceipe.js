@@ -11,6 +11,7 @@ openPopup.addEventListener("click", function (e){
 closePopup.addEventListener("click", ()=>{
     popup.classList.remove("active");
 })
+
 addIngredientBtn.onclick = () => {
     const row = document.createElement('div');
     row.classList.add('ingredient_row');

@@ -49,22 +49,26 @@ function calendar(id, year, month) {
             selectedDate = new Date(this.dataset.year, this.dataset.month, this.dataset.day);
             this.classList.add('today');
             document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
-            document.querySelector(`#${id} thead td:nth-child(2)`).textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
+            document.querySelector(`#${id} thead td:nth-child(2)`).textContent =
+                `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
             fetchRecipes();
         };
     });
 
-    document.querySelector(`#${id} thead td:nth-child(2)`).textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
+    document.querySelector(`#${id} thead td:nth-child(2)`).textContent =
+        `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
 }
 
 calendar("calendar", new Date().getFullYear(), new Date().getMonth());
 
 document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
-    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) - 1);
+    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year,
+        parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) - 1);
 };
 
 document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
-    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
+    calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year,
+        parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
 };
 
 
@@ -125,7 +129,8 @@ const displayRecipes = (recipes) => {
 
     const totalCalories = recipes.reduce((sum, recipe) => sum + recipe.recipe.calories, 0);
 
-    mainGoal.querySelector('.goal_text').querySelector('span').textContent = totalCalories + ' Ккал'
+    mainGoal.querySelector('.goal_text').querySelector('span')
+        .textContent = totalCalories + ' Ккал'
 
     mainElement.innerHTML = '';
     mainElement.appendChild(mainTitle);
@@ -186,6 +191,5 @@ const displayRecipes = (recipes) => {
         });
     });
 }
-
 
 fetchRecipes();

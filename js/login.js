@@ -1,6 +1,5 @@
 let email = document.querySelector("#email")
 let password = document.querySelector("#password")
-let name = document.querySelector("#name")
 
 async function onSubmit(){
     const errorTextElement = document.getElementById('login-error')
@@ -8,16 +7,15 @@ async function onSubmit(){
     const textError = 'Ошибка при авторизации. Неверный пароль или почта!';
     errorTextElement.textContent = ''
 
-    validateAll(email, password, name)
+    validateAll(email, password)
 
-    const validate = validateFormBeforeSubmit(email, password, name);
+    const validate = validateFormBeforeSubmit(email, password);
 
     if (!validate) {
         return
     }
 
     let loginBody = {
-        name: name.value,
         email: email.value,
         password: password.value,
     }
@@ -53,6 +51,8 @@ async function onSubmit(){
 
 const errorClass = 'input-error';
 function onBlurHandler(e) {
+    console.log(131);
+
     const id = e.target.id;
     const value = e.target.value.trim();
     const errorClass = 'input-error';
@@ -62,14 +62,6 @@ function onBlurHandler(e) {
     if (e.target.hasAttribute('required') && value === '') {
         isValid = false;
         errorText = 'Обязательное поле'
-    }
-
-    if (id === 'name') {
-        const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]+$/; // Только буквы, пробел и дефис
-        if (!nameRegex.test(value)) {
-            isValid = false;
-            errorText = 'Имя должно содержать только буквы';
-        }
     }
 
     if (id === 'email') {
@@ -95,13 +87,12 @@ function onBlurHandler(e) {
         e.target.classList.add(errorClass);
     }
 }
-[email, password, name].forEach(field => {
+[email, password].forEach(field => {
     field.addEventListener('blur', onBlurHandler);
 });
 
-function validateAll(email, password, name) {
-
-    const allFields = [email, password, name]
+function validateAll(email, password) {
+    const allFields = [email, password]
 
     allFields.forEach(field => {
         let isValid = true;
@@ -119,13 +110,7 @@ function validateAll(email, password, name) {
                     errorText = 'Некорректная почта'
             }
         }
-        if (field.id === 'name') {
-            const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]+$/;
-            if (!nameRegex.test(field.value.trim())) {
-                isValid = false;
-                errorText = 'Имя должно содержать только буквы, пробелы или дефис';
-            }
-        }
+
 
         if (field.id === 'password') {
             if (field.value.trim().length < 6) {
@@ -145,10 +130,10 @@ function validateAll(email, password, name) {
     )
 }
 
-function validateFormBeforeSubmit(email, password, name) {
+function validateFormBeforeSubmit(email, password) {
     let hasError = false;
 
-    [email, password, name].forEach(field => {
+    [email, password].forEach(field => {
         if (field.classList.contains('input-error')) {
             hasError = true;
         }

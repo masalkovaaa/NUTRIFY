@@ -87,6 +87,14 @@ function onBlurHandler(e) {
         errorText = 'Обязательное поле'
     }
 
+    if (e.target.id === 'name') {
+        const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]+$/;
+        if (!nameRegex.test(e.target.value.trim())) {
+            isValid = false;
+            errorText = 'Имя должно содержать только буквы, пробелы или дефис';
+        }
+    }
+
     if (id === 'email') {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -126,6 +134,19 @@ function validateAll(name, email, password, age, height, weight, goal, activity,
             if (field.hasAttribute('required') && field.value.trim() === '') {
                 isValid = false;
                 errorText = 'Обязательное поле'
+            }
+
+            if (field.id === 'name') {
+                if (Boolean(field.value)) {
+                    const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]+$/;
+                    if (!nameRegex.test(field.value.trim())) {
+                        isValid = false;
+                        errorText = 'Имя должно содержать только буквы, пробелы или дефис';
+                    }
+                } else {
+                    errorText = 'Имя должно содержать только буквы, пробелы или дефис';
+                }
+
             }
 
             if (field.id === 'email') {
