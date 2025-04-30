@@ -194,6 +194,7 @@ p{
 .container_main_4{
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 .main_4_title{
     color: black;
@@ -300,7 +301,7 @@ p{
     }
     .container_main_3{
         max-width: 1400px;
-        padding: 0 10px;
+        padding: 0 20px;
     }
     .main_3_title{
         font-size: 40px;

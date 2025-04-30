@@ -169,6 +169,7 @@ html, body{
 
 /* PROFILE MODAL */
 
+.
 .client_wrapper {
     position: relative;
 }
@@ -307,6 +308,9 @@ html, body{
     border-radius: 12px;
     color: #fff;
 }
+.getout_button{
+    display: none;
+}
 
 /* scroll bar */
 
@@ -335,3 +339,4 @@ html, body{
         width: 270px;
     }
 }
+

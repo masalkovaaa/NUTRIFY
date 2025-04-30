@@ -76,9 +76,6 @@ function toggleEditUserInfo() {
             }
         });
 
-        // if (Object.keys(body).length < 3) {
-        //     return
-        // }
 
         try {
             const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users", {

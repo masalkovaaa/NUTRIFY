@@ -30,16 +30,7 @@ html, body{
     justify-content: flex-start;
     gap: 100px;
 }
-.flex_menu{
-    display: flex;
-    flex-direction: column;
 
-}
-.flex_menu_position{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
 .menu_title{
     display: flex;
     justify-content: left;
@@ -77,139 +68,154 @@ html, body{
     font-family: Inter, sans-serif;
     font-weight: 900;
 }
-.profile_all{
-    margin-top: 70px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    overflow: auto;
-}
 
-.profile_info{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(230, 230, 230, 1) ;
-    border-radius: 24px;
-    padding: 30px 40px;
-    gap: 10px;
-    height: 210px;
-
-}
-.info_title_flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.edit_button_wrapper {
-    cursor: pointer;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    aspect-ratio: 1 / 1;
-    border: 1px solid #F4F4F4;
-}
-
-
-
-.info_title{
-    color: rgba(158, 184, 72, 1);
-    font-size: 24px;
-    font-weight: 500;
-    font-family: Inter, sans-serif;
-}
-
-#user_info .values {
-    min-width: 200px;
-}
-
-#user_params .values {
-    min-width: 110px;
-}
-
-#target {
-    min-width: 200px;
-}
-
-#activity {
-    min-width: 400px;
-}
-
-#gender_select {
+.open_pop_up {
     width: 150px;
-    padding: 14px 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-}
-
-#activity_select {
-    width: 300px;
-    padding: 14px 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-}
-
-#target_select {
-    width: 200px;
-    padding: 14px 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-}
-
-#user_additional .values:first-child {
-    min-width: 100px;
-}
-
-#user_additional .values:last-child {
-    min-width: 400px;
-}
-
-.values {
-    align-items: flex-start;
+    height: 200px;
+    border: 2px solid rgba(158, 184, 72, .8);
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    font-size: 60px;
+    color: rgba(158, 184, 72, .8);
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.values input {
-    padding: 15px 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    outline: none;
+.plus-sign {
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1;
 }
-
-.info_values{
+.pop_up{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(136,136,136, .8);
+    z-index: 2;
+}
+.pop_up.active{
+    display: block;
+}
+.pop_up_container{
     display: flex;
-    width: 800px;
-    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.pop_up_body{
+    margin:  auto;
+    position: relative;
+    border-radius: 24px;
+    background-color: white;
+    border: 5px solid  rgba(158, 184, 72, .8);
+    padding: 30px 15px;
+    width: 500px;
+}
+
+.pop_up_close{
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    width: 30px;
+    right: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 20px;
 }
-.values_name{
-    color: rgba(136, 136, 136, 1);
-    font-size: 24px;
-    font-weight: 300;
+ h4 {
+    font-size: 16px;
+    font-weight: normal;
+     margin-top: 15px;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 10px;
     font-family: Inter, sans-serif;
 }
-#name, #email, #password,
-#age, #height, #weight, #gender,
-#target, #activity{
-    color: rgba(24, 23, 40, 1);
-    font-size: 24px;
-    font-weight: 400;
-    font-family: Inter, sans-serif;
+
+.mealTypes {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 5px;
+    margin-top: 10px;
 }
-.main_2{
-    flex-shrink: 0;
-    flex-grow: 1;
-    max-width: 400px;
+
+.mealTypes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+label input{
+    margin-top: 0;
+}
+
+#recipeForm textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.ingredient_row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#addIngredient {
+    background-color: #8BAA36;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.kbju {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 5px;
+}
+
+#recipeForm button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #141414;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#recipeForm button[type="submit"]:hover {
+    background-color: #000;
+}
+
+.main_2 {
+    width: 470px;
     background-color: #fcfcfc;
     padding: 50px 20px;
-    height: 100vh;
 }
+
 /* PROFILE MODAL */
 
 .client_wrapper {
@@ -357,12 +363,6 @@ html, body{
     .general_flex{
         gap: 0;
     }
-    .receipes{
-        grid-template-columns: repeat(4, 170px);
-    }
-    .img_dish{
-        width: 170px;
-    }
 }
 @media (max-width: 1150px){
     .menu{
@@ -375,65 +375,98 @@ html, body{
         max-height: calc(100vh - 70px);
         overflow: hidden;
     }
-    .new_menu{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 20px;
-        bottom: 0;
-    }
-    .position_menu {
-        width: 100%;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-    }
 }
 @media (max-width: 950px) {
     .main_title {
         font-size: 32px;
     }
-    .profile_all{
-        margin-top: 30px;
-    }
-    .info_values{
-        width: 100%;
-    }
 }
-@media (max-width: 850px) {
-  .values_name, #name, #email, #password, #age, #height, #weight, #gender, #target, #activity {
-      font-size: 20px;
-  }
-    #user_additional .values:last-child {
-        min-width: 300px;
-    }
-}
-@media (max-width: 650px) {
-    .values{
-        justify-content: left;
-        flex-direction: row;
-    }
-    .info_values {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 0;
-    }
-    .profile_info{
-        height: auto;
-    }
-}
+
 @media (max-width: 550px) {
-    .new_menu img{
-        width: 26px;
+    .pop_up_body{
+        padding: 30px 15px;
+        width: 350px;
     }
-    #activity{
-        min-width: auto;
+
+    .pop_up_close{
+        width: 20px;
+        right: 10px;
     }
-    .profile_all{
-        gap: 20px;
+
+    h2 {
+        font-size: 20px;
+        margin-top: 20px;
     }
-    .profile_info{
-        padding: 15px 30px;
+    h4 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    input, textarea, select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 10px;
+        font-family: Inter, sans-serif;
+    }
+
+    .mealTypes {
+        grid-template-columns: repeat(2, 150px);
+        gap: 5px;
+        margin-top: 10px;
+
+    }
+
+    .mealTypes label {
+        gap: 8px;
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+
+    }
+    label input{
+        margin-top: 0;
+        font-size: 12px;
+        width: 20px;
+    }
+
+    #recipeForm textarea {
+        resize: vertical;
+        min-height: 40px;
+    }
+
+    .ingredient_row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #addIngredient {
+        background-color: #8BAA36;
+        color: white;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 12px;
+        font-size: 12px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .kbju {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 5px;
+    }
+
+    #recipeForm button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        background-color: #141414;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin-top: 20px;
     }
 }
 @media (max-width: 500px) {
@@ -459,16 +492,6 @@ html, body{
         font-size: 16px;
     }
 
-    .info_title {
-        font-size: 16px;
-    }
-
-    .values_name, #name, #email, #password, #age, #height, #weight, #gender, #target, #activity {
-        font-size: 16px;
-    }
-    #activity {
-        min-width: 200px;
-    }
     .edit_button_wrapper {
         width: 30px;
         height: 30px;
@@ -476,6 +499,15 @@ html, body{
     }
     .edit_button_wrapper img {
         width: 15px;
+    }
+
+    .open_pop_up {
+        width: 100px;
+        height: 150px;
+        margin-top: 20px;
+    }
+    .plus-sign {
+        font-size: 40px;
     }
 }
 @media (max-width: 400px) {

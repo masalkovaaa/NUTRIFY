@@ -312,10 +312,20 @@ ul {
         font-size: 32px;
     }
     .articles{
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+    .article_title{
+        font-size: 24px;
+    }
+    .article_text, .article_button{
+        font-size: 24px;
     }
 }
-
+@media (max-width: 550px) {
+    .new_menu img{
+        width: 26px;
+    }
+}
 @media (max-width: 500px){
     .main_1{
         width: 100%;
@@ -372,6 +382,10 @@ ul {
     li{
         font-size: 16px;
     }
+    .modal-item{
+        font-size: 12px;
+        padding: 10px 20px;
+    }
 }
 @media (max-width: 400px){
     .articles{
@@ -381,6 +395,17 @@ ul {
 
     img{
         width: 25px;
+    }
+    /*.main_title{*/
+    /*    font-size: 20px;*/
+    /*}*/
+    .name{
+        font-size: 12px;
+        margin-right: 3px;
+    }
+    .client{
+        gap: 5px;
+        padding: 3px 10px 3px 20px;
     }
 }
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700" rel="stylesheet">
+    <title>Админ</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="all">
+        <div class="general_flex">
+            <div class="menu">
+                <div class="menu_flex">
+                    <a class="logo" href="plan.html">
+                        NUTRIFY
+                    </a>
+
+                </div>
+                <div class="copyright">
+                    © Nutrify️ 2025
+                </div>
+            </div>
+
+            <div class="main_1">
+                <div class="title_adaptive">
+                    <div class="main_title">
+                        Добавление рецепта
+                    </div>
+                    <div class="getout_button">
+                        <div class="client_wrapper">
+                            <div class="client" id="client">
+                                <div class="name"></div>
+                                <img src="../img/arrow_down.svg" alt="меню">
+                            </div>
+                            <div class="modal" id="modal">
+                                <ul class="modal-menu">
+                                    <li class="modal-item" id="logout">Выйти из профиля</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Кнопка с зелёным крестом -->
+                <button id="open_pop_up" class="open_pop_up">
+                    <span class="plus-sign">+</span>
+                </button>
+
+                <!-- Модальное окно -->
+                <div class="pop_up" id="pop_up">
+                    <div class="pop_up_container">
+                        <div class="pop_up_body">
+                            <h2>Добавить новый рецепт</h2>
+                            <form id="recipeForm">
+                                <input type="text" placeholder="Название блюда" required><br>
+                                <h4>Фото блюда</h4>
+                                <input type="file" id="dish-photo" accept="image/*">
+                                <h4>Тип блюда</h4>
+                                <div class="mealTypes">
+                                    <label><input type="checkbox" name="mealType" value="завтрак">Завтрак</label>
+                                    <label><input type="checkbox" name="mealType" value="обед">Обед</label>
+                                    <label><input type="checkbox" name="mealType" value="ужин">Ужин</label>
+                                    <label><input type="checkbox" name="mealType" value="перекус">Перекус</label>
+                                </div>
+
+                                <textarea placeholder="Пошаговый рецепт" required></textarea><br>
+
+                                <div id="ingredients">
+                                    <div class="ingredient_row">
+                                        <input type="text" placeholder="Ингредиент" required>
+                                        <input type="number" placeholder="Количество" required>
+                                        <select>
+                                            <option value="граммы">граммы</option>
+                                            <option value="штуки">штуки</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="button" id="addIngredient">+ Добавить ингредиент</button><br><br>
+
+                                <h4>КБЖУ</h4>
+                                <div class="kbju">
+                                    <input type="number" placeholder="Калории (ккал)" required>
+                                    <input type="number" placeholder="Белки (г)" required>
+                                    <input type="number" placeholder="Жиры (г)" required>
+                                    <input type="number" placeholder="Углеводы (г)" required>
+                                </div>
+
+                                <button type="submit">Сохранить рецепт</button>
+                            </form>
+                            <div id="pop_up_close" class="pop_up_close">&#215</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_2">
+                <div class="client_wrapper">
+                    <div class="client" id="client">
+                        <div class="name"></div>
+                        <img src="../img/arrow_down.svg" alt="меню">
+                    </div>
+                    <div class="modal" id="modal">
+                        <ul class="modal-menu">
+                            <li class="modal-item" id="logout">Выйти</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/addreceipe.js"></script>
+    <script src="../js/profileModal.js"></script>
+</body>
+</html>
