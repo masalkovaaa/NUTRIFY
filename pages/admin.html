@@ -50,28 +50,31 @@
                 <div class="pop_up" id="pop_up">
                     <div class="pop_up_container">
                         <div class="pop_up_body">
-                            <h2>Добавить новый рецепт</h2>
+                            <div class="pop_up_top_line">
+                                <h2>Добавить новый рецепт</h2>
+                                <div id="pop_up_close" class="pop_up_close">&#215</div>
+                            </div>
                             <form id="recipeForm">
-                                <input type="text" placeholder="Название блюда" required><br>
+                                <input type="text" placeholder="Название блюда" required id="recipe-name"><br>
                                 <h4>Фото блюда</h4>
-                                <input type="file" id="dish-photo" accept="image/*">
+                                <input type="file" id="recipe-photo" accept="image/*">
                                 <h4>Тип блюда</h4>
                                 <div class="mealTypes">
-                                    <label><input type="checkbox" name="mealType" value="завтрак">Завтрак</label>
-                                    <label><input type="checkbox" name="mealType" value="обед">Обед</label>
-                                    <label><input type="checkbox" name="mealType" value="ужин">Ужин</label>
-                                    <label><input type="checkbox" name="mealType" value="перекус">Перекус</label>
+                                    <label><input type="checkbox" name="mealType" value="BREAKFAST">Завтрак</label>
+                                    <label><input type="checkbox" name="mealType" value="LAUNCH">Обед</label>
+                                    <label><input type="checkbox" name="mealType" value="DINNER">Ужин</label>
+                                    <label><input type="checkbox" name="mealType" value="PART_MEAL">Перекус</label>
                                 </div>
 
-                                <textarea placeholder="Пошаговый рецепт" required></textarea><br>
+                                <textarea placeholder="Пошаговый рецепт" required id="recipe-description"></textarea><br>
 
                                 <div id="ingredients">
                                     <div class="ingredient_row">
-                                        <input type="text" placeholder="Ингредиент" required>
-                                        <input type="number" placeholder="Количество" required>
-                                        <select>
-                                            <option value="граммы">граммы</option>
-                                            <option value="штуки">штуки</option>
+                                        <input class="ingredient-name" type="text" placeholder="Ингредиент" required>
+                                        <input class="ingredient-count" type="number" placeholder="Количество" required>
+                                        <select class="ingredient-measure">
+                                            <option value="GRAM">граммы</option>
+                                            <option value="COUNT">штуки</option>
                                         </select>
                                     </div>
                                 </div>
@@ -80,15 +83,14 @@
 
                                 <h4>КБЖУ</h4>
                                 <div class="kbju">
-                                    <input type="number" placeholder="Калории (ккал)" required>
-                                    <input type="number" placeholder="Белки (г)" required>
-                                    <input type="number" placeholder="Жиры (г)" required>
-                                    <input type="number" placeholder="Углеводы (г)" required>
+                                    <input id="recipe-calories" type="number" placeholder="Калории (ккал)" required>
+                                    <input id="recipe-protein" type="number" placeholder="Белки (г)" required>
+                                    <input id="recipe-fats" type="number" placeholder="Жиры (г)" required>
+                                    <input id="recipe-carbs" type="number" placeholder="Углеводы (г)" required>
                                 </div>
 
                                 <button type="submit">Сохранить рецепт</button>
                             </form>
-                            <div id="pop_up_close" class="pop_up_close">&#215</div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +111,7 @@
             </div>
         </div>
     </div>
-    <script src="../js/addreceipe.js"></script>
+    <script src="../js/addRecipe.js"></script>
     <script src="../js/profileModal.js"></script>
 </body>
 </html>
