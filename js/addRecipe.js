@@ -1,16 +1,9 @@
-const openPopup=document.getElementById("open_pop_up");
+
 const closePopup= document.getElementById("pop_up_close");
 const popup = document.getElementById("pop_up");
 const addIngredientBtn = document.getElementById('addIngredient');
 const ingredientsContainer = document.getElementById('ingredients');
 
-openPopup.addEventListener("click", function (e){
-    e.preventDefault();
-    popup.classList.add("active");
-})
-closePopup.addEventListener("click", ()=>{
-    popup.classList.remove("active");
-})
 
 addIngredientBtn.onclick = () => {
     const row = document.createElement('div');
@@ -103,5 +96,67 @@ recipeForm.addEventListener('submit', async (e) => {
     // add photo for new recipe
     // process
 })
+
+async function loadReceipes() {
+
+    try {
+        const response = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food`, {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+                'Auth': 'Bearer ' + localStorage.getItem('user_token')
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Ошибка загрузки: ${response.statusText}`);
+        }
+
+        const recipes = await response.json();
+
+        receipesContainer.innerHTML = `
+            <button id="open_pop_up" class="open_pop_up">
+                        <span class="plus-sign">+</span>
+            </button>
+        `;
+        const openPopup=document.getElementById("open_pop_up");
+        openPopup.addEventListener("click", function (e){
+            e.preventDefault();
+            popup.classList.add("active");
+        })
+        closePopup.addEventListener("click", ()=>{
+            popup.classList.remove("active");
+        })
+
+        recipes.forEach(recipe => {
+            const recipeDiv = document.createElement('a');
+            recipeDiv.href = `receipe_information.html?id=${recipe.id}`;
+            recipeDiv.classList.add('receipe');
+
+            const imgContent = recipe.image
+                ? `<img src="${recipe.image}" class="img_dish" alt="${recipe.name}">`
+                : `<div class="img_dish"></div>`;
+
+            recipeDiv.innerHTML = `
+            <div class="img_dish_wrapper">
+                ${imgContent}
+            </div>
+            <div class="receipe_name">${recipe.name}</div>
+            <div class="receipe_cal">
+                <img src="../img/cal.svg" alt="калории">
+                <div class="cal">${recipe.calories} ккал</div>
+            </div>
+        `;
+            receipesContainer.appendChild(recipeDiv);
+        });
+
+    } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+    }
+
+}
+const receipesContainer = document.querySelector('.receipes');
+loadReceipes();
 
 

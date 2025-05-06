@@ -57,7 +57,7 @@ logout.addEventListener('click', () => {
     client.classList.remove('active');
 
     localStorage.removeItem('user_token')
-    window.location.href = 'authorization.html' || '404.html';
+    window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
 });
 
 logoutCollapsed.addEventListener('click', () => {
@@ -65,5 +65,5 @@ logoutCollapsed.addEventListener('click', () => {
     clientCollapsed.classList.remove('active');
 
     localStorage.removeItem('user_token')
-    window.location.href = 'authorization.html' || '404.html';
+    window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
 });

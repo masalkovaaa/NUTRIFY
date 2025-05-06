@@ -5,17 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700" rel="stylesheet">
     <title>Админ</title>
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../../css/admin_recipe.css">
 </head>
 <body>
     <div class="all">
         <div class="general_flex">
             <div class="menu">
                 <div class="menu_flex">
-                    <a class="logo" href="plan.html">
+                    <a class="logo" href="../plan.html">
                         NUTRIFY
                     </a>
-
+                    <div class="flex_menu">
+                        <div class="flex_menu_position">
+                            <div class="menu_title">
+                                <a href="../plan.html">
+                                    <img src="../../img/plan_green.png" id="img_1" alt="изображение">
+                                </a>
+                                <a href="../admin/admin_receipe.html" class="title">
+                                    База рецептов
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex_menu_position">
+                            <div class="menu_title">
+                                <a href="../article.html">
+                                    <img src="../../img/profile.svg" id="img_2" alt="изображение">
+                                </a>
+                                <a href="../admin/admin_users.html" class="title">
+                                    Пользователи
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">
                     © Nutrify️ 2025
@@ -29,24 +50,24 @@
                     </div>
                     <div class="getout_button">
                         <div class="client_wrapper">
-                            <div class="client" id="client">
+                            <div class="client" id="clientCollapsed">
                                 <div class="name"></div>
-                                <img src="../img/arrow_down.svg" alt="меню">
+                                <img src="../../img/arrow_down.svg" alt="меню">
                             </div>
-                            <div class="modal" id="modal">
+                            <div class="modal" id="modalCollapsed">
                                 <ul class="modal-menu">
-                                    <li class="modal-item" id="logout">Выйти из профиля</li>
+                                    <li class="modal-item" id="logoutCollapsed">Выйти</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Кнопка с зелёным крестом -->
-                <button id="open_pop_up" class="open_pop_up">
-                    <span class="plus-sign">+</span>
-                </button>
+                <div class="grid_element">
 
-                <!-- Модальное окно -->
+                    <div class="receipes">
+                    </div>
+                </div>
+
                 <div class="pop_up" id="pop_up">
                     <div class="pop_up_container">
                         <div class="pop_up_body">
@@ -100,7 +121,7 @@
                 <div class="client_wrapper">
                     <div class="client" id="client">
                         <div class="name"></div>
-                        <img src="../img/arrow_down.svg" alt="меню">
+                        <img src="../../img/arrow_down.svg" alt="меню">
                     </div>
                     <div class="modal" id="modal">
                         <ul class="modal-menu">
@@ -111,7 +132,8 @@
             </div>
         </div>
     </div>
-    <script src="../js/addRecipe.js"></script>
-    <script src="../js/profileModal.js"></script>
+    <script src="../../js/checkAuth.js"></script>
+    <script src="../../js/addRecipe.js"></script>
+    <script src="../../js/profileModal.js"></script>
 </body>
 </html>

@@ -51,8 +51,6 @@ async function onSubmit(){
 
 const errorClass = 'input-error';
 function onBlurHandler(e) {
-    console.log(131);
-
     const id = e.target.id;
     const value = e.target.value.trim();
     const errorClass = 'input-error';
