@@ -69,7 +69,9 @@ html, body{
 }
 .main_1{
     width: 1100px;
-    padding: 50px 40px 10px 40px;
+    padding: 50px 40px 20px 40px;
+    max-height: 100vh;
+    overflow: auto;
 }
 .main_title{
     color: black;
@@ -413,10 +415,17 @@ label input{
     object-fit: cover;
     transition: transform .2s ease;
 }
+
+.TableWrapper {
+    max-height: calc(100vh - 250px);
+    overflow: auto;
+    margin-top: 60px;
+
+}
+
 table {
     border-collapse: collapse;
     width: 60%;
-    margin-top: 60px;
 }
 th, td {
     border: 1px solid #aaa;

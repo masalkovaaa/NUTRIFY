@@ -169,7 +169,7 @@ html, body{
 
 /* PROFILE MODAL */
 
-.
+
 .client_wrapper {
     position: relative;
 }
@@ -238,6 +238,10 @@ html, body{
     font-size: 18px;
     font-family: Inter, sans-serif;
     font-weight: 300;
+}
+
+.disabledItem {
+    display: none;
 }
 
 .modal-item:hover {

@@ -70,6 +70,7 @@ html, body{
 .main_1{
     width: 1100px;
     padding: 50px 40px 10px 40px;
+    max-height: 100vh;
 }
 .main_title{
     color: black;

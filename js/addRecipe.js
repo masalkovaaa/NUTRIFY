@@ -21,18 +21,17 @@ addIngredientBtn.onclick = () => {
 
 const recipeForm = document.getElementById('recipeForm')
 recipeForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const recipeName = recipeForm.querySelector('#recipe-name').value;
-
     const recipePhoto = recipeForm.querySelector('#recipe-photo').files[0];
 
-    const recipeTypes = recipeForm.querySelector('.mealTypes').querySelectorAll('input[name="mealType"]:checked')
+    const recipeTypes = recipeForm.querySelector('.mealTypes').querySelectorAll('input[name="mealType"]:checked');
     const recipeTypesArray = Array.from(recipeTypes).map(recipeType => recipeType.value);
 
     const recipeDescription = recipeForm.querySelector('#recipe-description').value.replace(/\n/g, ' ');
 
-    const recipeIngredients = ingredientsContainer.querySelectorAll('.ingredient_row')
+    const recipeIngredients = ingredientsContainer.querySelectorAll('.ingredient_row');
     const recipeIngredientArray = Array.from(recipeIngredients);
     const recipeIngredientsArrayFormatted = recipeIngredientArray.map((ingredient, index) => {
         const recIngName = ingredient.querySelector('.ingredient-name').value;
@@ -45,8 +44,8 @@ recipeForm.addEventListener('submit', async (e) => {
             name: recIngName,
             weight: recIngCount,
             weightType: recIngMeasure
-        }
-    })
+        };
+    });
 
     const recipeCalories = document.querySelector('#recipe-calories').value;
     const recipeProtein = document.querySelector('#recipe-protein').value;
@@ -60,13 +59,13 @@ recipeForm.addEventListener('submit', async (e) => {
         protein: recipeProtein,
         fats: recipeFats,
         carbs: recipeCarbs
-    }
+    };
 
     const preparedRecipeBody = {
         recipe: formattedRecipeObject,
         mealTypes: recipeTypesArray,
         ingredients: recipeIngredientsArrayFormatted
-    }
+    };
 
     // Add new recipe
     try {
@@ -80,22 +79,35 @@ recipeForm.addEventListener('submit', async (e) => {
             body: JSON.stringify(preparedRecipeBody)
         });
 
-        if (response.status !== 201) {
+        if (response.status !== 200) {
             throw new Error(`Ошибка сервера: ${response.status}`);
         }
 
-        alert('Рецепт успешно добавлен')
-        console.log('Рецепт успешно сохранён:');
+        const data = await response.json();
 
+        const formData = new FormData();
+        formData.append('file', recipePhoto);
+
+        const uploadResponse = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food/${data.id}`, {
+            method: 'POST',
+            headers: {
+                'Auth': 'Bearer ' + localStorage.getItem('user_token')
+            },
+            body: formData
+        });
+
+        if (!uploadResponse.ok) {
+            throw new Error(`Ошибка загрузки фото: ${uploadResponse.status}`);
+        }
+
+        alert('Рецепт успешно добавлен');
         popup.classList.remove("active");
+        loadReceipes()
     } catch (error) {
-        alert(`Ошибка отправки: ${error}`)
-        console.error('Ошибка отправки:', error);
+        alert(`Ошибка: ${error.message}`);
+        console.error(error);
     }
-
-    // add photo for new recipe
-    // process
-})
+});
 
 async function loadReceipes() {
 
@@ -144,7 +156,7 @@ async function loadReceipes() {
             </div>
             <div class="receipe_name">${recipe.name}</div>
             <div class="receipe_cal">
-                <img src="../img/cal.svg" alt="калории">
+                <img src="../../img/cal.svg" alt="калории">
                 <div class="cal">${recipe.calories} ккал</div>
             </div>
         `;

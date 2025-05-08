@@ -1,14 +1,17 @@
 const client = document.getElementById('client');
 const modal = document.getElementById('modal');
 const logout = document.getElementById('logout');
+const adminPanel = document.getElementById('adminPanel');
+const adminPanelCollapsed = document?.getElementById('adminPanelCollapsed');
 
-const clientCollapsed = document.getElementById('clientCollapsed');
-const modalCollapsed = document.getElementById('modalCollapsed');
-const logoutCollapsed = document.getElementById('logoutCollapsed');
+const clientCollapsed = document?.getElementById('clientCollapsed');
+const modalCollapsed = document?.getElementById('modalCollapsed');
+const logoutCollapsed = document?.getElementById('logoutCollapsed');
+
 
 const clientName = client.querySelector('.name')
-const clientNameCollapsed = clientCollapsed.querySelector('.name')
-console.log(client);
+const clientNameCollapsed = clientCollapsed?.querySelector('.name')
+
 const fetchUser = () => {
     fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users`, {
         method: 'GET',
@@ -27,18 +30,29 @@ const fetchUser = () => {
             console.error('Ошибка при запросе:', error);
         });
 }
-
-fetchUser()
+const user_role = localStorage.getItem('user_role')
+if (user_role) {
+  if (user_role === 'ADMIN') {
+      if (clientNameCollapsed) clientNameCollapsed.textContent='Администратор';
+      clientName.textContent='Администратор'
+  }  else {
+      if (adminPanel) adminPanel.classList.add('disabledItem')
+      if (adminPanelCollapsed) adminPanelCollapsed.classList.add('disabledItem')
+      fetchUser()
+  }
+}
 
 client.addEventListener('click', () => {
     modal.classList.toggle('active');
     client.classList.toggle('active');
 });
 
-clientCollapsed.addEventListener('click', () => {
-    modalCollapsed.classList.toggle('active');
-    clientCollapsed.classList.toggle('active');
-});
+if (clientCollapsed) {
+    clientCollapsed.addEventListener('click', () => {
+        modalCollapsed.classList.toggle('active');
+        clientCollapsed.classList.toggle('active');
+    });
+}
 
 document.addEventListener('click', (event) => {
     if (!client.contains(event.target) && !modal.contains(event.target)) {
@@ -46,7 +60,7 @@ document.addEventListener('click', (event) => {
         client.classList.remove('active');
     }
 
-    if (!clientCollapsed.contains(event.target) && !modal.contains(event.target)) {
+    if (!clientCollapsed.contains(event.target) && !modalCollapsed.contains(event.target)) {
         modalCollapsed.classList.remove('active');
         clientCollapsed.classList.remove('active');
     }
@@ -60,10 +74,24 @@ logout.addEventListener('click', () => {
     window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
 });
 
-logoutCollapsed.addEventListener('click', () => {
-    modalCollapsed.classList.remove('active');
-    clientCollapsed.classList.remove('active');
+if (logoutCollapsed) {
+    logoutCollapsed.addEventListener('click', () => {
+        modalCollapsed.classList.remove('active');
+        clientCollapsed.classList.remove('active');
 
-    localStorage.removeItem('user_token')
-    window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
-});
+        localStorage.removeItem('user_token')
+        window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
+    });
+}
+
+if (adminPanel) {
+    adminPanel.addEventListener('click', () => {
+        window.location.href = window.location.origin + '/NUTRIFY/pages/admin/admin_receipe.html';
+    });
+}
+
+if (adminPanelCollapsed) {
+    adminPanelCollapsed.addEventListener('click', () => {
+        window.location.href = window.location.origin + '/NUTRIFY/pages/admin/admin_receipe.html';
+    });
+}
