@@ -14,7 +14,7 @@ const activityMap = {
 
 async function fetchUserData() {
     try {
-        const response = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users`, {
+        const response = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/users`, {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",

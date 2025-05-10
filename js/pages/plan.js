@@ -72,6 +72,7 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
 };
 
 
+
 // plan recipes
 
 const getSelectedDate = () => {
@@ -91,7 +92,7 @@ const fetchRecipes = () => {
         return;
     }
 
-    fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food/diet?date=${selectedDate}`, {
+    fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food/diet?date=${selectedDate}`, {
         method: 'GET',
         headers: {
             "Access-Control-Allow-Origin": "*",

@@ -57,7 +57,7 @@ function onSubmit(){
         target: goal.value,
         activity: activity.value,
     }
-    fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/register", {
+    fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/auth/register", {
         method: 'POST',
         headers: {
             "Access-Control-Allow-Origin": "*",

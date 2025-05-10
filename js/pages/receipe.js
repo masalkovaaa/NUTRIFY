@@ -5,7 +5,7 @@ async function loadReceipes(type) {
     const params = type === 'ALL' ? '' :`?type=${type}`
 
     try {
-        const response = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food${params}`, {
+        const response = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food${params}`, {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",

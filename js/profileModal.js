@@ -13,7 +13,7 @@ const clientName = client.querySelector('.name')
 const clientNameCollapsed = clientCollapsed?.querySelector('.name')
 
 const fetchUser = () => {
-    fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users`, {
+    fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/users`, {
         method: 'GET',
         headers: {
             "Access-Control-Allow-Origin": "*",

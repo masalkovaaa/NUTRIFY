@@ -1,4 +1,3 @@
-
 const closePopup= document.getElementById("pop_up_close");
 const popup = document.getElementById("pop_up");
 const addIngredientBtn = document.getElementById('addIngredient');
@@ -69,7 +68,7 @@ recipeForm.addEventListener('submit', async (e) => {
 
     // Add new recipe
     try {
-        const response = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food`, {
+        const response = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food`, {
             method: 'POST',
             headers: {
                 "Access-Control-Allow-Origin": "*",

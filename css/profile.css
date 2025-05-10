@@ -80,7 +80,7 @@ html, body{
 }
 .profile_all{
     margin-top: 70px;
-    height: 80vh;
+    height: 77vh;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -373,7 +373,7 @@ html, body{
         width: 100vw;
     }
     .profile_all{
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - 80px);
         overflow: hidden;
     }
     .new_menu{
@@ -382,6 +382,7 @@ html, body{
         align-items: center;
         padding: 20px;
         bottom: 0;
+        background-color: white;
     }
     .position_menu {
         width: 100%;

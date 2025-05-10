@@ -81,7 +81,7 @@ html, body{
 .articles{
     padding-right: 10px;
     margin-top: 70px;
-    height: 80vh;
+    height: 77vh;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -294,6 +294,7 @@ ul {
         align-items: center;
         padding: 20px;
         bottom: 0;
+        background-color: white;
     }
     .position_menu {
         width: 100%;
@@ -304,7 +305,7 @@ ul {
     .articles {
         gap: 20px;
         overflow: auto;
-        max-height: calc(100vh - 250px);
+        height: 85vh;
     }
 }
 @media (max-width: 950px) {

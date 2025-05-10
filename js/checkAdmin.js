@@ -4,7 +4,7 @@ const checkAdminAuth = () => {
     if (!token) {
         window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
     } else {
-        fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/check`, {
+        fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/auth/check`, {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",

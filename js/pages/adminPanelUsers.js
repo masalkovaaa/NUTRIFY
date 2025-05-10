@@ -1,6 +1,6 @@
 const token = localStorage.getItem('user_token');
 
-fetch('https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/admin/users', {
+fetch('https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/admin/users', {
     method: 'GET',
     headers: {
         "Content-Type": "application/json",

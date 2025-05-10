@@ -21,7 +21,7 @@ async function onSubmit(){
     }
 
     try {
-        const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/auth/login", {
+        const response = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/auth/login", {
             method: 'POST',
             headers: {
                 "Access-Control-Allow-Origin": "*",

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = 'plan.html';
     }
 
-    fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/recipes/${recipeId}`, {
+    fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/recipes/${recipeId}`, {
         method: 'GET',
         headers: {
             "Access-Control-Allow-Origin": "*",

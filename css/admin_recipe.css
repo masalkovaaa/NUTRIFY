@@ -81,8 +81,8 @@ html, body{
 }
 
 .open_pop_up {
-    width: 150px;
-    height: 200px;
+    width: 210px;
+    height: 290px;
     border: 2px solid rgba(158, 184, 72, .8);
     background-color: white;
     position: relative;
@@ -93,7 +93,6 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
 }
 
 .plus-sign {
@@ -368,7 +367,7 @@ label input{
     justify-content: space-between;
     margin-top:40px ;
     overflow: auto;
-    height: calc(100vh - 250px);
+    height: calc(100vh - 170px);
 }
 .receipe {
     display: flex;

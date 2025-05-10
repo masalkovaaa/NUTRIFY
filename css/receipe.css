@@ -346,6 +346,7 @@ html, body{
         align-items: center;
         padding: 20px;
         bottom: 0;
+        background-color: white;
     }
     .img_menu{
         display: block;
