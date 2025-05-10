@@ -321,9 +321,16 @@ html, body{
     padding: 20px;
     color: #555;
 }
-.new_calendar{
+.hidden {
     display: none;
 }
+.position_menu{
+    display: none;
+}
+#calendarToggle{
+    display: none;
+}
+
 /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -348,10 +355,14 @@ html, body{
     .main_2{
         display: none;
     }
+    .main_1{
+        width: 1100px;
+        padding: 50px 40px 10px 40px;
+    }
     .getout_button{
         display: block;
     }
-    .title_adaptive{
+    .title-wrapper{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -360,33 +371,40 @@ html, body{
         justify-content: left;
         gap: 80px;
     }
-
-    .new_calendar{
-        margin-top: 30px;
-        display: inline;
-    }
     .goalWithCalendar{
         display: flex;
-        justify-content: left;
-        gap: 500px;
+        align-items: center;
+        justify-content: space-between;
+
     }
-    .hidden {
+    #calendarToggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    #calendarToggle img {
+        margin-top: 30px;
+    }
+    #newCalendar {
         display: none;
-    }
-    #calendarToggle{
-        outline: none;
-        border: 0;
-        background: transparent;
-    }
-    .calendar-wrapper {
         position: absolute;
-        background: white;
-        z-index: -10;
-        padding: 10px;
-        left: 750px;
+        top: 80px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #fcfcfc;
+        border-radius: 16px;
+    }
+    .look-calendar {
+        margin-top: 0;
+    }
+
+    #newCalendar.active {
+        display: block;
     }
 
 }
+
 @media screen and (max-width: 1420px){
     .dish_image_container {
         min-width: 270px;
@@ -397,8 +415,15 @@ html, body{
     .menu{
         display: none;
     }
+    .position_menu{
+        display: inline;
+    }
     .general_flex{
         gap: 20px;
+    }
+    .dish{
+        max-width: 100%;
+        height: auto;
     }
     .main_1{
         max-height: calc(100vh - 70px);
@@ -421,4 +446,151 @@ html, body{
         background-color: white;
     }
 }
+@media (max-width: 950px) {
+    .main_title {
+        font-size: 32px;
+    }
+    .recipes-container {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .new_menu img {
+        width: 26px;
+    }
+
+    .dish_image_container {
+        min-width: 200px;
+        width: 200px;
+    }
+
+    .goal_text span {
+        font-size: 20px;
+    }
+    .dish_name{
+        font-size: 20px;
+    }
+    .look-calendar {
+        width: 350px;
+    }
+    #calendar {
+        width:300px;
+        height: 240px;
+        line-height: 35px;
+        font-size: 16px;
+        border-spacing: 5px;
+    }
+
+    #calendar tr.dn td {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main_1 {
+        width: 100%;
+        padding: 40px 30px 0;
+    }
+    .main_title {
+        font-size: 20px;
+    }
+    .meal{
+        font-size: 16px;
+    }
+    .main_goal{
+        margin-top: 10px;
+    }
+    .main_goal img{
+        height: 26px;
+    }
+    .goal_text span {
+        font-size: 16px;
+    }
+    .goal_text {
+        font-size: 16px;
+    }
+    .dish_name{
+        font-size: 16px;
+    }
+    .client {
+        gap: 10px;
+        padding: 6px 15px 5px 20px;
+    }
+
+    .client img {
+        width: 10px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .edit_button_wrapper {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+    .edit_button_wrapper img {
+        width: 15px;
+    }
+    #calendarToggle img {
+        width: 24px;
+        margin-top: 10px;
+    }
+    .dish {
+        height: 120px;
+        margin-top: 20px;
+    }
+    .dish_info{
+        height: 90px;
+    }
+    .dish_image_container {
+        height: 120px;
+        min-width: 180px;
+        width: 160px;
+    }
+    .callory_dish{
+        font-size: 16px;
+    }
+    .look-calendar {
+        width: 300px;
+    }
+    #calendar {
+        width:240px;
+        height: 190px;
+        line-height: 25px;
+        font-size: 16px;
+        border-spacing: 5px;
+    }
+
+    #calendar tr.dn td {
+        font-size: 15px;
+    }
+
+}
+@media (max-width: 400px) {
+    .name{
+        font-size: 12px;
+        margin-right: 3px;
+    }
+    .client{
+        gap: 5px;
+        padding: 3px 10px 3px 20px;
+    }
+}
+@media (max-width: 375px) {
+    .dish {
+        height: 100px;
+        margin-top: 20px;
+    }
+    .dish_info{
+        height: 90px;
+    }
+    .dish_image_container {
+        height: 100px;
+        min-width: 150px;
+    }
+}
+
 

@@ -71,19 +71,7 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
         parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
 };
 
-const calendarIcon = document.getElementById('calendarToggle');
-const calendarPopup = document.getElementById('newCalendar');
 
-calendarIcon.addEventListener('click', (e) => {
-    e.stopPropagation();
-    calendarPopup.classList.toggle('hidden');
-});
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.calendar-wrapper') && !e.target.closest('#calendarToggle')) {
-        calendarPopup.classList.add('hidden');
-    }
-});
 
 // plan recipes
 
@@ -137,18 +125,36 @@ const displayRecipes = (recipes) => {
     const mainTitle = mainElement.querySelector('.main_title');
     const mainGoal = mainElement.querySelector('.main_goal');
     const recipesContainer = document.createElement('div');
+    const calendarToggle = document.getElementById('calendarToggle');
+    const newCalendar = document.getElementById('newCalendar');
+    const getOutButton = document.getElementById('getOutButton');
+    const position_menu = document.getElementById('position_menu');
 
     recipesContainer.classList.add('recipes-container');
 
     const totalCalories = recipes.reduce((sum, recipe) => sum + recipe.recipe.calories, 0);
 
+    const titleWrapper = document.createElement('div');
+    titleWrapper.classList.add('title-wrapper');
+    titleWrapper.appendChild(mainTitle);
+    titleWrapper.appendChild(getOutButton);
+
+    const goalWithCalendar = document.createElement('div');
+    goalWithCalendar.classList.add('goalWithCalendar');
+    goalWithCalendar.appendChild(mainGoal);
+    goalWithCalendar.appendChild(calendarToggle);
+
+    mainElement.appendChild(goalWithCalendar);
+
     mainGoal.querySelector('.goal_text').querySelector('span')
         .textContent = totalCalories + ' Ккал'
 
     mainElement.innerHTML = '';
-    mainElement.appendChild(mainTitle);
-    mainElement.appendChild(mainGoal);
+    mainElement.appendChild(titleWrapper);
+    mainElement.appendChild(goalWithCalendar);
+    mainElement.appendChild(newCalendar);
     mainElement.appendChild(recipesContainer);
+    mainElement.appendChild(position_menu);
 
     recipes.forEach(recipe => {
         const recipeInfo = recipe.recipe
@@ -206,3 +212,22 @@ const displayRecipes = (recipes) => {
 }
 
 fetchRecipes();
+
+const calendarToggleBtn = document.getElementById('calendarToggle');
+const newCalendar = document.getElementById('newCalendar');
+
+calendarToggleBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    newCalendar.classList.toggle('active');
+});
+
+document.addEventListener('click', (event) => {
+    if (
+        newCalendar.classList.contains('active') &&
+        !newCalendar.contains(event.target) &&
+        !calendarToggleBtn.contains(event.target)
+    ) {
+        newCalendar.classList.remove('active');
+    }
+});
+

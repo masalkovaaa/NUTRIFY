@@ -373,16 +373,29 @@ html, body{
     .ingredientsAndNutrient{
         display: inline;
     }
-    .recipe_img_wrapper .img_receipe{
-        width: 859px;
+    .recipe_img_wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        overflow: hidden;
     }
+
+    .recipe_img_wrapper .img_receipe {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+    }
+
 }
 @media (max-width: 1150px){
     .menu{
         display: none;
     }
-    .main_1{
-        width: 100vw;
+    .recipe_wrapper{
+        height: 92%;
     }
     .new_menu{
         display: flex;
@@ -392,21 +405,96 @@ html, body{
         bottom: 0;
         background-color: white;
     }
+    .nutrient_title{
+        font-size: 32px;
+    }
     .position_menu {
         width: 100%;
         position: fixed;
         left: 0;
         bottom: 0;
     }
-    .articles {
-        gap: 20px;
-        overflow: auto;
-        height: 95vh;
+
+}
+@media (max-width: 950px) {
+    .main_title {
+        font-size: 32px;
     }
-    .article_details{
-        height: 87vh;
+    .ingredient_title{
+        font-size: 24px;
     }
-    .recipe_img_wrapper .img_receipe{
-        margin: 0 auto;
+    .step_receipe{
+        font-size: 24px;
+    }
+    .step_text{
+        font-size: 20px;
+    }
+}
+@media (max-width: 550px) {
+    .new_menu img{
+        width: 26px;
+    }
+}
+@media (max-width: 500px){
+    .main_1{
+        width: 100%;
+        padding: 40px 30px 0;
+    }
+    .main_title{
+        font-size: 20px;
+    }
+    .ingredient_title{
+        font-size: 20px;
+    }
+    .step_receipe{
+        font-size: 20px;
+    }
+    .step_text{
+        font-size: 16px;
+    }
+    .nutrient_title{
+        font-size: 20px;
+    }
+    .cal{
+        font-size: 20px;
+    }
+    .number{
+        font-size: 20px;
+    }
+    .client{
+        gap: 10px;
+        padding: 6px 15px 5px 20px;
+    }
+    .client img{
+        width: 10px;
+    }
+    .name{
+        font-size: 16px;
+    }
+    li{
+        font-size: 16px;
+    }
+    .modal-item{
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    .recipe_wrapper{
+        height: 87%;
+    }
+    .position_name{
+        font-size: 16px;
+    }
+}
+@media (max-width: 400px){
+    img{
+        width: 25px;
+    }
+    .name{
+        font-size: 12px;
+        margin-right: 3px;
+    }
+    .client{
+        gap: 5px;
+        padding: 3px 10px 3px 20px;
     }
 }
