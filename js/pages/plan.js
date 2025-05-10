@@ -71,7 +71,19 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
         parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
 };
 
+const calendarIcon = document.getElementById('calendarToggle');
+const calendarPopup = document.getElementById('newCalendar');
 
+calendarIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    calendarPopup.classList.toggle('hidden');
+});
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.calendar-wrapper') && !e.target.closest('#calendarToggle')) {
+        calendarPopup.classList.add('hidden');
+    }
+});
 
 // plan recipes
 

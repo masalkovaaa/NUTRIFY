@@ -309,6 +309,15 @@ html, body{
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
 }
+.new_menu{
+    display: none;
+}
+.getout_button{
+    display: none;
+}
+.ingredientsAndNutrient{
+    display: none
+}
 
 /* scroll bar */
 
@@ -335,4 +344,69 @@ html, body{
 
 .step_hidden {
     display: none;
+}
+@media (max-width: 1600px){
+    .main_2{
+        display: none;
+    }
+    .getout_button{
+        display: block;
+    }
+    .title_adaptive{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
+    .main_1{
+        max-height: 100vh;
+        width: 1100px;
+        padding: 50px 40px 10px 40px;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
+    .ingredientsAndNutrient{
+        display: inline;
+    }
+    .recipe_img_wrapper .img_receipe{
+        width: 859px;
+    }
+}
+@media (max-width: 1150px){
+    .menu{
+        display: none;
+    }
+    .main_1{
+        width: 100vw;
+    }
+    .new_menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        bottom: 0;
+        background-color: white;
+    }
+    .position_menu {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+    .articles {
+        gap: 20px;
+        overflow: auto;
+        height: 95vh;
+    }
+    .article_details{
+        height: 87vh;
+    }
+    .recipe_img_wrapper .img_receipe{
+        margin: 0 auto;
+    }
 }

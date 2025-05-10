@@ -435,7 +435,7 @@ html, body{
     .receipes {
         grid-template-columns: repeat(2, 160px);
         justify-content: center;
-        height: calc(100vh - 230px);
+        height: calc(100vh - 260px);
     }
     .img_dish_wrapper{
         width: 158px;

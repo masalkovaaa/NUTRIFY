@@ -321,7 +321,9 @@ html, body{
     padding: 20px;
     color: #555;
 }
-
+.new_calendar{
+    display: none;
+}
 /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -342,11 +344,81 @@ html, body{
 ::-webkit-scrollbar-thumb:hover {
     background: #dadada;
 }
+@media (max-width: 1600px){
+    .main_2{
+        display: none;
+    }
+    .getout_button{
+        display: block;
+    }
+    .title_adaptive{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .general_flex{
+        justify-content: left;
+        gap: 80px;
+    }
 
+    .new_calendar{
+        margin-top: 30px;
+        display: inline;
+    }
+    .goalWithCalendar{
+        display: flex;
+        justify-content: left;
+        gap: 500px;
+    }
+    .hidden {
+        display: none;
+    }
+    #calendarToggle{
+        outline: none;
+        border: 0;
+        background: transparent;
+    }
+    .calendar-wrapper {
+        position: absolute;
+        background: white;
+        z-index: -10;
+        padding: 10px;
+        left: 750px;
+    }
+
+}
 @media screen and (max-width: 1420px){
     .dish_image_container {
         min-width: 270px;
         width: 270px;
+    }
+}
+@media (max-width: 1150px){
+    .menu{
+        display: none;
+    }
+    .general_flex{
+        gap: 20px;
+    }
+    .main_1{
+        max-height: calc(100vh - 70px);
+    }
+    .position_menu {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+    .general_flex{
+        justify-content: space-evenly;
+    }
+    .new_menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        bottom: 0;
+        background-color: white;
     }
 }
 
