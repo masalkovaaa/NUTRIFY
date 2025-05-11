@@ -488,7 +488,7 @@ html, body{
 @media (max-width: 400px) {
     .receipes {
         grid-template-columns: repeat(2, 140px);
-        height: 70vh;
+        height: calc(100vh - 240px);
     }
     .img_dish_wrapper{
         width: 138px;
