@@ -6,12 +6,12 @@ function calendar(id, year, month) {
     const DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay();
     const DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay();
     const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-    let calendar = '<tr>';
+    let calendarHtml = '<tr>';
 
     if (DNfirst !== 0) {
-        for (let i = 1; i < DNfirst; i++) calendar += '<td>';
+        for (let i = 1; i < DNfirst; i++) calendarHtml += '<td>';
     } else {
-        for (let i = 0; i < 6; i++) calendar += '<td>';
+        for (let i = 0; i < 6; i++) calendarHtml += '<td>';
     }
 
     for (let i = 1; i <= Dlast; i++) {
@@ -21,69 +21,86 @@ function calendar(id, year, month) {
             selectedDate = new Date(D.getFullYear(), D.getMonth(), i);
         }
 
-        calendar += `<td ${dayClass} data-day="${i}" data-month="${D.getMonth()}" data-year="${D.getFullYear()}">${i}</td>`;
+        calendarHtml += `<td ${dayClass} data-day="${i}" data-month="${D.getMonth()}" data-year="${D.getFullYear()}">${i}</td>`;
         if (new Date(D.getFullYear(), D.getMonth(), i).getDay() === 0) {
-            calendar += '<tr>';
+            calendarHtml += '<tr>';
         }
     }
 
-    for (let i = DNlast; i < 7; i++) calendar += '<td>';
+    for (let i = DNlast; i < 7; i++) calendarHtml += '<td>';
 
-    document.querySelector(`#${id} tbody`).innerHTML = calendar;
-    document.querySelector(`#${id} thead td:nth-child(2)`).textContent = `${monthNames[D.getMonth()]} ${D.getFullYear()}`;
-    document.querySelector(`#${id} thead td:nth-child(2)`).dataset.month = D.getMonth();
-    document.querySelector(`#${id} thead td:nth-child(2)`).dataset.year = D.getFullYear();
+    const calendarElem = document.querySelector(`#${id}`);
+    calendarElem.querySelector('tbody').innerHTML = calendarHtml;
+    const header = calendarElem.querySelector('thead td:nth-child(2)');
+    header.textContent = `${monthNames[D.getMonth()]} ${D.getFullYear()}`;
+    header.dataset.month = D.getMonth();
+    header.dataset.year = D.getFullYear();
 
-    if (document.querySelectorAll(`#${id} tbody tr`).length < 6) {
-        document.querySelector(`#${id} tbody`).innerHTML += '<tr><td> <td> <td> <td> <td> <td> <td>';
+    if (calendarElem.querySelectorAll('tbody tr').length < 6) {
+        calendarElem.querySelector('tbody').innerHTML += '<tr><td> <td> <td> <td> <td> <td> <td>';
     }
 
     if (!selectedDate) {
         selectedDate = new Date();
     }
-    document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
 
-    document.querySelectorAll(`#${id} tbody td[data-day]`).forEach(td => {
-        td.onclick = function() {
-            document.querySelectorAll(`#${id} tbody td.today`).forEach(cell => cell.classList.remove('today'));
+    calendarElem.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
+
+    calendarElem.querySelectorAll('tbody td[data-day]').forEach(td => {
+        td.onclick = function () {
+            calendarElem.querySelectorAll('tbody td.today').forEach(cell => cell.classList.remove('today'));
             selectedDate = new Date(this.dataset.year, this.dataset.month, this.dataset.day);
             this.classList.add('today');
-            document.querySelector(`#${id}`).dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
-            document.querySelector(`#${id} thead td:nth-child(2)`).textContent =
-                `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
+            calendarElem.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
+            header.textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
             fetchRecipes();
         };
     });
-
-    document.querySelector(`#${id} thead td:nth-child(2)`).textContent =
-        `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
 }
 
+// Инициализация обоих календарей
 calendar("calendar", new Date().getFullYear(), new Date().getMonth());
+calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth());
 
-document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+// Навигация для calendar
+document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
     calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year,
         parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) - 1);
 };
 
-document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
     calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year,
         parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month) + 1);
 };
 
+// Навигация для calendarNewVersion
+document.querySelector('#calendarNewVersion thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
+    calendar("calendarNewVersion", document.querySelector('#calendarNewVersion thead td:nth-child(2)').dataset.year,
+        parseFloat(document.querySelector('#calendarNewVersion thead td:nth-child(2)').dataset.month) - 1);
+};
 
-
-// plan recipes
+document.querySelector('#calendarNewVersion thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
+    calendar("calendarNewVersion", document.querySelector('#calendarNewVersion thead td:nth-child(2)').dataset.year,
+        parseFloat(document.querySelector('#calendarNewVersion thead td:nth-child(2)').dataset.month) + 1);
+};
 
 const getSelectedDate = () => {
-    const selectedDateString = document.querySelector('#calendar').dataset.selectedDate;
-    if (selectedDateString) {
-        const splittedSelectedDate = selectedDateString.split('.')
-        return `${splittedSelectedDate[2]}-${splittedSelectedDate[1]}-${splittedSelectedDate[0]}`;
+    const oldCalendar = document.querySelector('#calendar');
+    const newCalendar = document.querySelector('#calendarNewVersion');
+
+    // Проверка видимости старого календаря
+    const isOldCalendarVisible = oldCalendar && oldCalendar.offsetParent !== null;
+
+    const sourceCalendar = isOldCalendarVisible ? oldCalendar : newCalendar;
+
+    if (sourceCalendar?.dataset.selectedDate) {
+        const [day, month, year] = sourceCalendar.dataset.selectedDate.split('.');
+        return `${year}-${month}-${day}`;
     } else {
         return null;
     }
-}
+};
+
 
 const fetchRecipes = () => {
     const selectedDate = getSelectedDate();

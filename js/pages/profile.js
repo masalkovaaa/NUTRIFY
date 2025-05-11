@@ -78,7 +78,7 @@ function toggleEditUserInfo() {
 
 
         try {
-            const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/users", {
+            const response = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/users", {
                 method: "PUT",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -122,7 +122,7 @@ async function toggleEditUserParams() {
     const inputs = userParamsBlock.querySelectorAll("input, select");
     const divs = userParamsBlock.querySelectorAll(".info_values .values > div:not(.values_name)");
 
-    const isEditable = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/personal_data/is_possible_to_update", {
+    const isEditable = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/personal_data/is_possible_to_update", {
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Auth": 'Bearer ' + localStorage.getItem('user_token'),

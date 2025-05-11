@@ -484,11 +484,13 @@ html, body{
     .receipe_name, .cal{
         font-size: 16px;
     }
+    .receipes{
+        height: calc(100vh - 250px);
+    }
 }
 @media (max-width: 400px) {
     .receipes {
         grid-template-columns: repeat(2, 140px);
-        height: calc(100vh - 240px);
     }
     .img_dish_wrapper{
         width: 138px;

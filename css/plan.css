@@ -377,6 +377,53 @@ html, body{
         justify-content: space-between;
 
     }
+    #calendarNewVersion {
+        width:390px;
+        height: 330px;
+        table-layout: fixed;
+        line-height: 47px;
+        font-size: 20px;
+        text-align: center;
+        border-spacing: 7px;
+    }
+
+    #calendarNewVersion tbody td {
+        cursor: pointer;
+    }
+
+    #calendarNewVersion tr.dn td {
+        font-size: 15px;
+    }
+
+    #calendarNewVersion thead tr:last-child {
+        font-size: small;
+        color: #555555;
+    }
+
+    #calendarNewVersion thead tr:nth-child(1) td:nth-child(2) {
+        color: #323232;
+    }
+
+    #calendarNewVersion thead tr:nth-child(1) td:nth-child(1):hover,
+    #calendarNewVersion thead tr:nth-child(1) td:nth-child(3):hover {
+        cursor: pointer;
+    }
+
+    #calendarNewVersion tbody td {
+        color: rgba(24, 23, 40, 1);
+    }
+
+    #calendarNewVersion tbody td:nth-child(n+6),
+    #calendarNewVersion .holiday {
+        color: rgba(24, 23, 40, 1);
+    }
+
+    #calendarNewVersion tbody td.today {
+        background-color: rgba(158, 184, 72, 1);
+        width: 45px;
+        border-radius: 12px;
+        color: #fff;
+    }
     #calendarToggle {
         display: block;
         background: none;
@@ -474,7 +521,7 @@ html, body{
     .look-calendar {
         width: 350px;
     }
-    #calendar {
+    #calendarNewVersion {
         width:300px;
         height: 240px;
         line-height: 35px;
@@ -482,7 +529,7 @@ html, body{
         border-spacing: 5px;
     }
 
-    #calendar tr.dn td {
+    #calendarNewVersion tr.dn td {
         font-size: 15px;
     }
 }
@@ -556,7 +603,7 @@ html, body{
     .look-calendar {
         width: 300px;
     }
-    #calendar {
+    #calendarNewVersion {
         width:240px;
         height: 190px;
         line-height: 25px;
@@ -564,7 +611,7 @@ html, body{
         border-spacing: 5px;
     }
 
-    #calendar tr.dn td {
+    #calendarNewVersion tr.dn td {
         font-size: 15px;
     }
 
