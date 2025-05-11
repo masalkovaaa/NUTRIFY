@@ -399,7 +399,7 @@ ul {
 }
 @media (max-width: 400px){
     .articles{
-        max-height: calc(100vh - 65px);
+        max-height: 79vh;
         gap: 10px;
     }
 
