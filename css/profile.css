@@ -443,7 +443,10 @@ html, body{
         width: 100%;
         padding: 40px 30px 0;
     }
-
+    .modal-item{
+        font-size: 12px;
+        padding: 10px 20px;
+    }
     .main_title {
         font-size: 20px;
     }

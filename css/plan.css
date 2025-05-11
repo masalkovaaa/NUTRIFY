@@ -590,7 +590,7 @@ html, body{
         margin-top: 20px;
     }
     .dish_info{
-        height: 90px;
+        height: auto;
     }
     .dish_image_container {
         height: 120px;
@@ -614,6 +614,10 @@ html, body{
     #calendarNewVersion tr.dn td {
         font-size: 15px;
     }
+    .modal-item{
+        font-size: 12px;
+        padding: 10px 20px;
+    }
 
 }
 @media (max-width: 400px) {
@@ -625,6 +629,7 @@ html, body{
         gap: 5px;
         padding: 3px 10px 3px 20px;
     }
+
 }
 @media (max-width: 375px) {
     .dish {
