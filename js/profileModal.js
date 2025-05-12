@@ -36,8 +36,8 @@ if (user_role) {
       if (clientNameCollapsed) clientNameCollapsed.textContent='Администратор';
       clientName.textContent='Администратор'
   }  else {
-      if (adminPanel) adminPanel.classList.add('disabledItem')
-      if (adminPanelCollapsed) adminPanelCollapsed.classList.add('disabledItem')
+      if (adminPanel) adminPanel.style.display = 'none'
+      if (adminPanelCollapsed) adminPanelCollapsed.style.display = 'none'
       fetchUser()
   }
 }

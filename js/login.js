@@ -39,11 +39,30 @@ async function onSubmit(){
         }
 
         const jsonResponse = await response.json()
+        const accessToken = jsonResponse.accessToken
+        const checkRoleResponse = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/auth/check`, {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+                'Auth': 'Bearer ' + accessToken
+            }
+        })
+        if (!checkRoleResponse.ok) {
+            console.log(response);
+            errorTextElement.textContent = textError
+            throw new Error(response.status)
+        }
 
-        localStorage.setItem('user_token', jsonResponse.accessToken)
-        window.location.href="plan.html"
+        const TextCheckRoleResponse = await checkRoleResponse.text()
 
-        return await response.json()
+        localStorage.setItem('user_token', accessToken)
+        if (TextCheckRoleResponse === 'ADMIN') {
+            window.location.href= window.location.origin + '/NUTRIFY/pages/admin/admin_receipe.html';
+        } else {
+            window.location.href="plan.html"
+        }
+
     } catch (e) {
         console.error(e)
     }

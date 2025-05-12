@@ -174,7 +174,7 @@ async function toggleEditUserParams() {
         });
 
         try {
-            const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/personal_data", {
+            const response = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/personal_data", {
                 method: "PUT",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
@@ -215,7 +215,7 @@ async function toggleEditUserAdditional() {
     const selects = userAdditionalBlock.querySelectorAll("select");
     const divs = userAdditionalBlock.querySelectorAll(".info_values .values > div:not(.values_name)");
 
-    const isEditable = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/personal_data/is_possible_to_update", {
+    const isEditable = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/personal_data/is_possible_to_update", {
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Auth": 'Bearer ' + localStorage.getItem('user_token'),
@@ -279,7 +279,7 @@ async function toggleEditUserAdditional() {
         }
 
         try {
-            const response = await fetch("https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/personal_data", {
+            const response = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/personal_data", {
                 method: "PUT",
                 headers: {
                     "Access-Control-Allow-Origin": "*",

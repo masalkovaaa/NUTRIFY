@@ -87,7 +87,7 @@ recipeForm.addEventListener('submit', async (e) => {
         const formData = new FormData();
         formData.append('file', recipePhoto);
 
-        const uploadResponse = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food/${data.id}`, {
+        const uploadResponse = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food/${data.id}`, {
             method: 'POST',
             headers: {
                 'Auth': 'Bearer ' + localStorage.getItem('user_token')
@@ -111,7 +111,7 @@ recipeForm.addEventListener('submit', async (e) => {
 async function loadReceipes() {
 
     try {
-        const response = await fetch(`https://bbaacidek4p8ta9ovmn1.containers.yandexcloud.net/food`, {
+        const response = await fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food`, {
             method: 'GET',
             headers: {
                 "Access-Control-Allow-Origin": "*",
