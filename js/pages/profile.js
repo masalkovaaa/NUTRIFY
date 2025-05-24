@@ -135,7 +135,7 @@ async function toggleEditUserParams() {
         document
             .querySelector('#user_params')
             .querySelector('.edit_button_wrapper').classList
-            .remove('hidden_edit_button')
+            .remove('weight-alert-is-closed')
     }
 
     // Переключение в режим редактирования

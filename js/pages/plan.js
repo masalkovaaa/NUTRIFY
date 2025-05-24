@@ -248,3 +248,25 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+// weight alert
+
+async function checkWeightChangeNeeded()  {
+    const weightUpdateNeeded = await fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/personal_data/is_possible_to_update", {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Auth": 'Bearer ' + localStorage.getItem('user_token'),
+        }
+    })
+        .then(response => response.json())
+        .catch(() => false);
+
+    if (weightUpdateNeeded) {
+        document
+            .querySelector('.weight-alert-wrapper').classList
+            .remove('weight-alert-is-closed')
+    }
+}
+
+checkWeightChangeNeeded()
+
