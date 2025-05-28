@@ -319,6 +319,46 @@ label input{
     display: none;
 }
 
+/* EDIT MODAL */
+
+#edit-pop-up-body {
+    max-height: 95%;
+    overflow: hidden;
+}
+
+#editRecipeForm {
+    max-height: calc(100vh - 175px);
+    overflow: auto;
+    padding-right: 10px;
+}
+
+#editAddIngredient {
+    background-color: #8BAA36;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#edit-recipe-description {
+    height: 200px;
+}
+
+#editRecipeForm button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #141414;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -376,6 +416,7 @@ label input{
     border-radius: 12px;
     text-decoration: none;
     gap: 15px;
+    cursor: pointer;
 }
 
 .receipe:hover .img_dish {

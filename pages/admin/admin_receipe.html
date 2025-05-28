@@ -117,6 +117,56 @@
                 </div>
             </div>
 
+            <!-- EDIT RECIPE MODAL -->
+
+            <div class="pop_up" id="editPopup">
+                <div class="pop_up_container">
+                    <div class="pop_up_body" id="edit-pop-up-body">
+                        <div class="pop_up_top_line">
+                            <h2>Редактировать рецепт</h2>
+                            <div id="editPopupClose" class="pop_up_close">&#215</div>
+                        </div>
+                        <form id="editRecipeForm">
+                            <input type="text" placeholder="Название блюда" required id="edit-recipe-name"><br>
+
+                            <h4>Тип блюда</h4>
+                            <div class="mealTypes">
+                                <label><input type="checkbox" name="editMealType" value="BREAKFAST">Завтрак</label>
+                                <label><input type="checkbox" name="editMealType" value="LAUNCH">Обед</label>
+                                <label><input type="checkbox" name="editMealType" value="DINNER">Ужин</label>
+                                <label><input type="checkbox" name="editMealType" value="PART_MEAL">Перекус</label>
+                            </div>
+
+                            <textarea placeholder="Пошаговый рецепт" required id="edit-recipe-description"></textarea><br>
+
+                            <div id="edit-ingredients">
+                                <div class="ingredient_row">
+                                    <input class="ingredient-name" type="text" placeholder="Ингредиент" required>
+                                    <input class="ingredient-count" type="number" placeholder="Количество" required>
+                                    <select class="ingredient-measure">
+                                        <option value="GRAM">граммы</option>
+                                        <option value="COUNT">штуки</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="button" id="editAddIngredient">+ Добавить ингредиент</button><br><br>
+
+                            <h4>КБЖУ</h4>
+                            <div class="kbju">
+                                <input id="edit-recipe-calories" type="number" placeholder="Калории (ккал)" required>
+                                <input id="edit-recipe-protein" type="number" placeholder="Белки (г)" required>
+                                <input id="edit-recipe-fats" type="number" placeholder="Жиры (г)" required>
+                                <input id="edit-recipe-carbs" type="number" placeholder="Углеводы (г)" required>
+                            </div>
+
+                            <button type="submit">Сохранить изменения</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="main_2">
                 <div class="client_wrapper">
                     <div class="client" id="client">
