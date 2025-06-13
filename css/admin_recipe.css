@@ -139,7 +139,9 @@ html, body{
     align-items: center;
     justify-content: center;
 }
-
+.receipe_name, .cal{
+    font-family: 'Inter', sans-serif;
+}
 h2 {
     font-size: 24px;
     font-weight: bold;
