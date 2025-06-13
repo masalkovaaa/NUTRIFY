@@ -116,6 +116,7 @@ toggleEditUserInfo()
 
 async function toggleEditUserParams() {
     const editButtonWrapper = document.querySelector('#user_params .edit_button_wrapper');
+    const editButtonWrapperExtra = document.querySelector('#user_additional .edit_button_wrapper');
     const userParamsBlock = document.getElementById("user_params");
     const editButton = userParamsBlock.querySelector(".edit_button");
     const confirmButton = userParamsBlock.querySelector(".confirm_button");
@@ -135,7 +136,7 @@ async function toggleEditUserParams() {
         document
             .querySelector('#user_params')
             .querySelector('.edit_button_wrapper').classList
-            .remove('weight-alert-is-closed')
+            .remove('hidden_edit_button')
     }
 
     // Переключение в режим редактирования
@@ -189,6 +190,8 @@ async function toggleEditUserParams() {
             }
 
             editButtonWrapper.classList.remove('confirm_button_active');
+            editButtonWrapper.classList.add('hidden_edit_button');
+            editButtonWrapperExtra.classList.add('hidden_edit_button');
             confirmButton.classList.add("hidden");
             editButton.classList.remove("hidden");
 
@@ -198,7 +201,7 @@ async function toggleEditUserParams() {
             });
 
             console.log("Параметры обновлены");
-            return response.json();
+
         } catch (e) {
             console.error("Ошибка при обновлении параметров:", e);
         }
@@ -209,6 +212,7 @@ toggleEditUserParams();
 
 async function toggleEditUserAdditional() {
     const editButtonWrapper = document.querySelector('#user_additional .edit_button_wrapper');
+    const editButtonWrapperExtra = document.querySelector('#user_params .edit_button_wrapper');
     const userAdditionalBlock = document.getElementById("user_additional");
     const editButton = userAdditionalBlock.querySelector(".edit_button");
     const confirmButton = userAdditionalBlock.querySelector(".confirm_button");
@@ -294,6 +298,8 @@ async function toggleEditUserAdditional() {
             }
 
             editButtonWrapper.classList.remove('confirm_button_active');
+            editButtonWrapper.classList.add('hidden_edit_button');
+            editButtonWrapperExtra.classList.add('hidden_edit_button');
             confirmButton.classList.add("hidden");
             editButton.classList.remove("hidden");
 
