@@ -444,9 +444,10 @@ html, body{
         padding: 40px 30px 0;
     }
     .modal-item{
-        font-size: 12px;
+        font-size: 16px;
         padding: 10px 20px;
-        width: 150px;
+        width: 180px;
+        text-align: center;
     }
     .main_title {
         font-size: 20px;
