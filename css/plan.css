@@ -417,7 +417,7 @@ html, body{
         padding: 50px 40px 10px 40px;
     }
     .getout_button{
-        display: block;
+        /*display: block;*/
     }
     .title-wrapper{
         display: flex;

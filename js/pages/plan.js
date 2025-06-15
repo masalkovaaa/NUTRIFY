@@ -155,6 +155,7 @@ const displayRecipes = (recipes) => {
     titleWrapper.classList.add('title-wrapper');
     titleWrapper.appendChild(mainTitle);
     titleWrapper.appendChild(getOutButton);
+    getOutButton.classList.remove('getout_button');
 
     const goalWithCalendar = document.createElement('div');
     goalWithCalendar.classList.add('goalWithCalendar');

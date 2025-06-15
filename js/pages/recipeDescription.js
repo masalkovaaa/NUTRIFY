@@ -81,29 +81,35 @@ function renderRecipe(data) {
     }
 
     // Ингредиенты
-    const ingredientsContainer = document.querySelector(".ingredient_positions");
+    const ingredientsContainers = document.querySelectorAll(".ingredient_positions");
 
     const weightTypeMapper = {
         GRAM: " г",
         COUNT: " шт",
     };
 
-    if (ingredientsContainer) {
-        ingredientsContainer.innerHTML = "";
-        data.ingredients.forEach((ingredient) => {
-            const ingredientDiv = document.createElement("div");
-            ingredientDiv.classList.add("position");
-            ingredientDiv.innerHTML = `
+    if (ingredientsContainers) {
+        ingredientsContainers.forEach(ingredientsContainer => {
+            ingredientsContainer.innerHTML = "";
+            data.ingredients.forEach((ingredient) => {
+                const ingredientDiv = document.createElement("div");
+                ingredientDiv.classList.add("position");
+                ingredientDiv.innerHTML = `
                 <div class="position_name">${ingredient.name}</div>
                 <div class="quantity">${ingredient.weight}${weightTypeMapper[ingredient.weightType]}</div>
             `;
-            ingredientsContainer.appendChild(ingredientDiv);
-        });
+                ingredientsContainer.appendChild(ingredientDiv);
+            });
+        })
     }
 
     // Нутриенты
-    const nutrientCal = document.querySelector(".cal");
-    if (nutrientCal) nutrientCal.textContent = `${data.calories} ккал`;
+    const nutrientCals = document.querySelectorAll(".cal");
+    if (nutrientCals) {
+        nutrientCals.forEach(nutrientCal => {
+            nutrientCal.textContent = `${data.calories} ккал`;
+        })
+    }
 
     const nutrients = [
         { selector: ".flex_nutrient_position:nth-child(1) .number", value: data.calories },
@@ -112,7 +118,11 @@ function renderRecipe(data) {
         { selector: ".flex_nutrient_position:nth-child(4) .number", value: data.carbs },
     ];
     nutrients.forEach(({ selector, value }) => {
-        const nutrientElement = document.querySelector(selector);
-        if (nutrientElement) nutrientElement.textContent = value;
+        const nutrientElements = document.querySelectorAll(selector);
+        if (nutrientElements) {
+            nutrientElements.forEach(nutrientElement => {
+                nutrientElement.textContent = value;
+            })
+        }
     });
 }
