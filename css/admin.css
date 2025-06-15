@@ -706,7 +706,7 @@ th {
         height: 5px;
     }
     .modal-item{
-        font-size: 12px;
+        font-size: 16px;
         padding: 10px 20px;
     }
     .receipe_name, .cal{
@@ -715,10 +715,16 @@ th {
     .img_dish_wrapper{
         height: 110px;
     }
+    .TableWrapper{
+            margin-top: 30px;
+    }
+    th, td{
+            font-size: 16px;
+        }
 }
 @media (max-width: 400px) {
     .receipes {
-        grid-template-columns: repeat(2, 150px);
+        grid-template-columns: repeat(2, 140px);
         height: calc(100vh - 210px);
     }
     .receipe_name{

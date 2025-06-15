@@ -432,9 +432,10 @@ html, body{
         height: 5px;
     }
     .modal-item{
-        font-size: 12px;
+        font-size: 16px;
         padding: 10px 20px;
-        width: 150px;
+        width: 180px;
+        text-align: center;
     }
     .receipe_name, .cal{
         font-size: 16px;
@@ -465,6 +466,7 @@ html, body{
         margin-right: 3px;
     }
     .client{
+        min-height: 40px;
         gap: 5px;
         padding: 3px 10px 3px 20px;
     }
@@ -474,7 +476,10 @@ html, body{
     .img_menu{
         width: 17px;
     }
-
+    .modal-item{
+        font-size: 12px;
+        width: 150px
+    }
 }
 
 

@@ -367,7 +367,7 @@ ul {
         gap: 5px;
     }
     .article_details{
-        height: 82vh;
+        height: 85%;
     }
     .article_text{
         font-size: 16px;
@@ -417,6 +417,11 @@ ul {
     .client{
         gap: 5px;
         padding: 3px 10px 3px 20px;
+        min-height: 40px;
+    }
+    .modal-item{
+        font-size: 12px;
+        width: 150px
     }
 }
 

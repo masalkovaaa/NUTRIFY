@@ -455,11 +455,15 @@ html, body{
     .nutrient_title{
         font-size: 20px;
     }
-    .cal{
-        font-size: 20px;
+    .cal {
+        font-size: 16px;
+        text-decoration: center;
+    }
+    .quantity{
+        font-size: 16px;
     }
     .number{
-        font-size: 20px;
+        font-size: 16px;
     }
     .client{
         gap: 10px;
@@ -475,14 +479,19 @@ html, body{
         font-size: 16px;
     }
     .modal-item{
-        font-size: 12px;
-        padding: 10px 20px;
+         font-size: 16px;
+         padding: 10px 20px;
+         width: 180px;
+         text-align: center;
     }
     .recipe_wrapper{
-        height: 87%;
+        height: 84%;
     }
     .position_name{
         font-size: 16px;
+    }
+    .ingredient_positions{
+        gap:10px;
     }
 }
 @media (max-width: 400px){
@@ -496,5 +505,10 @@ html, body{
     .client{
         gap: 5px;
         padding: 3px 10px 3px 20px;
+        min-height: 40px;
+    }
+    .modal-item{
+        font-size: 12px;
+        width: 150px
     }
 }
