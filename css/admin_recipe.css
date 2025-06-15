@@ -81,8 +81,8 @@ html, body{
 }
 
 .open_pop_up {
-    width: 210px;
-    height: 290px;
+    width: 100%;
+    height: 100%;
     border: 2px solid rgba(158, 184, 72, .8);
     background-color: white;
     position: relative;
@@ -183,7 +183,11 @@ input, textarea, select {
 label input{
     margin-top: 0;
 }
-
+#recipeForm{
+    max-height: calc(100vh - 175px);
+    overflow: auto;
+    padding-right: 10px;
+}
 #recipeForm textarea {
     resize: vertical;
     min-height: 60px;
@@ -401,13 +405,13 @@ label input{
 }
 
 
-.receipes{
+.receipes {
     padding-right: 10px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(4, 210px);
-    justify-content: space-between;
-    margin-top:40px ;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    justify-content: start;
+    margin-top: 40px;
     overflow: auto;
     height: calc(100vh - 170px);
 }
@@ -443,7 +447,7 @@ label input{
 }
 
 .img_dish_wrapper {
-    width: 208px;
+    width: 100%;
     height: 170px;
     border-radius: 12px;
     overflow: hidden;
@@ -462,7 +466,6 @@ label input{
     max-height: calc(100vh - 250px);
     overflow: auto;
     margin-top: 60px;
-
 }
 
 table {
@@ -478,6 +481,7 @@ th, td {
 th {
     background-color: #fcfcfc;
 }
+
 @media (max-width: 1600px){
     .main_2{
         display: none;
@@ -499,6 +503,13 @@ th {
     .general_flex{
         gap: 0;
     }
+    .main_1{
+        width: 100%;
+        max-height: calc(100vh - 80px);
+    }
+    .img_menu{
+        display: none;
+    }
 }
 @media (max-width: 1150px){
     .menu{
@@ -511,10 +522,39 @@ th {
         max-height: calc(100vh - 70px);
         overflow: hidden;
     }
+    .position_menu {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+    .general_flex{
+        justify-content: space-evenly;
+    }
+    .new_menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        bottom: 0;
+        background-color: white;
+    }
 }
 @media (max-width: 950px) {
-    .main_title {
-        font-size: 32px;
+    .receipe{
+           gap: 5px;
+        }
+    .img_menu{
+           display: none;
+    }
+    .main_title{
+           font-size: 32px;
+    }
+    .receipe_menu{
+           margin-top: 30px;
+    }
+    .receipe_name, .cal{
+           font-size: 24px;
     }
 }
 
@@ -577,7 +617,7 @@ th {
         align-items: center;
     }
 
-    #addIngredient {
+    #addIngredient, #editAddIngredient {
         background-color: #8BAA36;
         color: white;
         padding: 10px 12px;
@@ -603,6 +643,15 @@ th {
         border-radius: 12px;
         cursor: pointer;
         margin-top: 20px;
+    }
+    .img_menu{
+        width: 20px;
+        }
+    .receipe{
+        gap: 10px;
+    }
+    .new_menu img{
+        width: 26px;
     }
 }
 @media (max-width: 500px) {
@@ -638,21 +687,64 @@ th {
     }
 
     .open_pop_up {
-        width: 100px;
-        height: 150px;
-        margin-top: 20px;
+        width: 100%;
+        height: 100%;
+        margin-top: 0px;
     }
     .plus-sign {
         font-size: 40px;
     }
+    .receipes{
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        padding-right: 3px;
+        gap: 20px;
+        height: calc(100vh - 210px);
+    }
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 5px;
+    }
+    .modal-item{
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    .receipe_name, .cal{
+        font-size: 16px;
+    }
+    .img_dish_wrapper{
+        height: 110px;
+    }
 }
 @media (max-width: 400px) {
+    .receipes {
+        grid-template-columns: repeat(2, 150px);
+        height: calc(100vh - 210px);
+    }
+    .receipe_name{
+        font-size: 16px;
+    }
+    .receipe_cal img{
+         height: 16px;
+    }
+    .receipe_cal{
+         padding: 0 10px 10px;
+    }
+    .cal{
+         font-size: 16px;
+    }
     .name{
-        font-size: 12px;
-        margin-right: 3px;
+         font-size: 12px;
+         margin-right: 3px;
     }
     .client{
-        gap: 5px;
-        padding: 3px 10px 3px 20px;
+         gap: 5px;
+         padding: 3px 10px 3px 20px;
+    }
+    .receipe_menu{
+         margin-top: 10px;
+    }
+    .img_menu{
+         width: 17px;
     }
 }

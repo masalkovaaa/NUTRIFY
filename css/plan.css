@@ -643,14 +643,14 @@ html, body{
         margin-top: 10px;
     }
     .dish {
-        height: 120px;
+        height: 130px;
         margin-top: 20px;
     }
     .dish_info{
         height: auto;
     }
     .dish_image_container {
-        height: 120px;
+        height: 130px;
         min-width: 180px;
         width: 160px;
     }
@@ -674,6 +674,7 @@ html, body{
     .modal-item{
         font-size: 12px;
         padding: 10px 20px;
+        width: 150px;
     }
 
 }

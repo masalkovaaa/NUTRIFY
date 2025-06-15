@@ -446,6 +446,7 @@ html, body{
     .modal-item{
         font-size: 12px;
         padding: 10px 20px;
+        width: 150px;
     }
     .main_title {
         font-size: 20px;

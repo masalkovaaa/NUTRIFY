@@ -254,6 +254,9 @@ select:required:invalid{
     font-family: Inter, sans-serif;
     font-weight: 150;
 }
+.text-error{
+    font-size: 12px;
+}
 @media (max-width: 1250px){
     .general_flex{
         gap: 100px;
@@ -426,6 +429,7 @@ select:required:invalid{
     .general_flex{
         gap: 100px;
     }
+
 }
 
 /* additional classes */

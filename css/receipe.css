@@ -108,13 +108,13 @@ html, body{
     font-weight: 400;
     color: black;
 }
-.receipes{
+.receipes {
     padding-right: 10px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(4, 210px);
-    justify-content: space-between;
-    margin-top:40px ;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    justify-content: start;
+    margin-top: 40px;
     overflow: auto;
     height: calc(100vh - 250px);
 }
@@ -149,7 +149,7 @@ html, body{
 }
 
 .img_dish_wrapper {
-    width: 208px;
+    width: 100%;
     height: 170px;
     border-radius: 12px;
     overflow: hidden;
@@ -287,13 +287,7 @@ html, body{
     .general_flex{
         gap: 20px;
     }
-    .receipes{
-        grid-template-columns: repeat(4, 180px);
-    }
-    .img_dish_wrapper {
-        width: 178px;
-        height: 150px;
-    }
+
     .main_1{
         width: 100%;
     }
@@ -314,14 +308,7 @@ html, body{
     .general_flex{
         gap: 20px;
     }
-    .receipes{
-        grid-template-columns: repeat(4, 210px);
-        height: calc(100vh - 300px);
-    }
-    .img_dish_wrapper {
-        width: 208px;
-        height: 170px;
-    }
+
     .receipe_menu_position{
         width: 230px;
     }
@@ -362,16 +349,10 @@ html, body{
     .receipe_menu_position_text{
         font-size: 16px;
     }
-    .img_dish_wrapper {
-        width: 100%;
-        height: 170px;
-    }
+
 }
 @media (max-width: 950px){
-    .receipes{
-        grid-template-columns: repeat(3, 230px);
-        margin-top: 25px;
-    }
+
     .receipe{
         gap: 5px;
     }
@@ -403,44 +384,13 @@ html, body{
     .receipe_menu_position_text{
         display: none;
     }
-    .img_menu{
-        display: block;
-    }
     .receipe_menu_position_green,.receipe_menu_position {
         width: 100%;
     }
-    .receipes{
-        grid-template-columns: repeat(3, 210px);
-    }
+
 }
-@media (max-width: 780px) {
-    .receipes {
-        grid-template-columns: repeat(3, 180px);
-    }
-    .img_dish_wrapper{
-        width: 178px;
-        height: 150px;
-    }
-}
-@media (max-width: 680px) {
-    .receipes {
-        grid-template-columns: repeat(2, 200px);
-    }
-    .img_dish_wrapper{
-        width: 198px;
-        height: 170px;
-    }
-}
+
 @media (max-width: 550px) {
-    .receipes {
-        grid-template-columns: repeat(2, 160px);
-        justify-content: center;
-        height: calc(100vh - 260px);
-    }
-    .img_dish_wrapper{
-        width: 158px;
-        height: 110px;
-    }
     .img_menu{
         width: 20px;
     }
@@ -460,8 +410,12 @@ html, body{
         padding: 40px 30px 0;
     }
     .receipes{
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        height: calc(100vh - 260px);
         padding-right: 3px;
         gap: 20px;
+        height: calc(100vh - 270px);
     }
     .client{
         gap: 10px;
@@ -480,21 +434,19 @@ html, body{
     .modal-item{
         font-size: 12px;
         padding: 10px 20px;
+        width: 150px;
     }
     .receipe_name, .cal{
         font-size: 16px;
     }
-    .receipes{
-        height: calc(100vh - 250px);
-    }
+    .img_dish_wrapper{
+            height: 110px;
+        }
 }
 @media (max-width: 400px) {
     .receipes {
-        grid-template-columns: repeat(2, 140px);
-    }
-    .img_dish_wrapper{
-        width: 138px;
-        height: 100px;
+        grid-template-columns: repeat(2, 130px);
+        height: calc(100vh - 250px);
     }
     .receipe_name{
         font-size: 16px;
@@ -508,9 +460,6 @@ html, body{
     .cal{
         font-size: 16px;
     }
-    /*.main_title{*/
-    /*    font-size: 16px;*/
-    /*}*/
     .name{
         font-size: 12px;
         margin-right: 3px;
