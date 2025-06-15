@@ -408,7 +408,14 @@ html, body{
 ::-webkit-scrollbar-thumb:hover {
     background: #dadada;
 }
-@media (max-width: 1600px){
+
+@media (min-width: 1600px) {
+    #getout_button{
+        display: none;
+    }
+}
+
+@media (max-width: 1600px) {
     .main_2{
         display: none;
     }
@@ -417,7 +424,7 @@ html, body{
         padding: 50px 40px 10px 40px;
     }
     .getout_button{
-        /*display: block;*/
+        display: block;
     }
     .title-wrapper{
         display: flex;
@@ -506,7 +513,6 @@ html, body{
     #newCalendar.active {
         display: block;
     }
-
 }
 
 @media screen and (max-width: 1420px){
