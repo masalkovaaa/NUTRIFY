@@ -457,7 +457,8 @@ html, body{
     }
     .cal {
         font-size: 16px;
-        text-decoration: center;
+        text-align: end;
+        width: 40px;
     }
     .quantity{
         font-size: 16px;
