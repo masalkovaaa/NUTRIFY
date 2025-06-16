@@ -382,12 +382,20 @@ html, body{
         grid-template-columns: repeat(4, 1fr);
     }
     .receipe_menu_position_text{
-        display: none;
+        font-size: 16px;
     }
     .receipe_menu_position_green,.receipe_menu_position {
         width: 100%;
     }
 
+}
+@media (max-width: 700px){
+    .receipe_menu_position_text{
+         display:none;
+    }
+    .img_menu{
+            display: inline;
+        }
 }
 
 @media (max-width: 550px) {
