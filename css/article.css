@@ -19,7 +19,7 @@ html, body{
     width: 310px;
     background-color: #fcfcfc;
     padding: 50px 40px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,7 +68,7 @@ html, body{
     font-weight: 400;
 }
 .main_1{
-    max-height: 100vh;
+    max-height: 100dvh;
     width: 1100px;
     padding: 50px 40px 10px 40px;
 }
@@ -81,7 +81,7 @@ html, body{
 .articles{
     padding-right: 10px;
     margin-top: 70px;
-    height: 77vh;
+    height: 77dvh;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -117,7 +117,7 @@ html, body{
     max-width: 400px;
     background-color: #fcfcfc;
     padding: 50px 20px;
-    height: 100vh;
+    height: 100dvh;
 }
 /* PROFILE MODAL */
 
@@ -228,7 +228,7 @@ html, body{
 .article_details{
     padding-right: 15px;
     overflow: scroll;
-    height: 80vh;
+    height: 80dvh;
     margin-top: 20px;
 }
 li{
@@ -305,10 +305,10 @@ ul {
     .articles {
         gap: 20px;
         overflow: auto;
-        height: 95vh;
+        height: 95dvh;
     }
     .article_details{
-        height: 87vh;
+        height: 87dvh;
     }
 }
 @media (max-width: 950px) {
@@ -325,7 +325,7 @@ ul {
         font-size: 24px;
     }
     .article_details{
-        height: 85vh;
+        height: 85dvh;
     }
 }
 @media (max-width: 550px) {
@@ -355,7 +355,7 @@ ul {
         gap: 20px;
         overflow: auto;
         margin-top: 20px;
-        max-height: calc(100vh - 180px);
+        max-height: calc(100dvh - 180px);
     }
     .article_title{
         color: black;
@@ -401,7 +401,7 @@ ul {
 }
 @media (max-width: 400px){
     .articles{
-        max-height: 79vh;
+        max-height: 79dvh;
         gap: 10px;
     }
 

@@ -19,7 +19,7 @@ html, body{
     width: 310px;
     background-color: #fcfcfc;
     padding: 50px 40px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,7 +70,7 @@ html, body{
 .main_1{
     width: 1100px;
     padding: 50px 40px 10px 40px;
-    max-height: 100vh;
+    max-height: 100dvh;
 }
 .main_title{
     color: black;
@@ -80,7 +80,7 @@ html, body{
 }
 .profile_all{
     margin-top: 70px;
-    height: 77vh;
+    height: 77dvh;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -209,7 +209,7 @@ html, body{
     max-width: 400px;
     background-color: #fcfcfc;
     padding: 50px 20px;
-    height: 100vh;
+    height: 100dvh;
 }
 /* PROFILE MODAL */
 
@@ -373,7 +373,7 @@ html, body{
         width: 100vw;
     }
     .profile_all{
-        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
         overflow: hidden;
     }
     .new_menu{

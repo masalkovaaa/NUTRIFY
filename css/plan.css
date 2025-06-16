@@ -19,7 +19,7 @@ html, body{
     width: 310px;
     background-color: #fcfcfc;
     padding: 50px 40px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,7 +68,7 @@ html, body{
     font-weight: 400;
 }
 .main_1{
-    max-height: 97vh;
+    max-height: 97dvh;
     width: 900px;
     padding: 50px 20px;
 }
@@ -163,7 +163,7 @@ html, body{
 
 .recipes-container {
     overflow: auto;
-    height: calc(100vh - 200px);
+    height: calc(100dvh - 200px);
     padding-right: 10px;
 }
 
@@ -536,7 +536,7 @@ html, body{
         height: auto;
     }
     .main_1{
-        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
     }
     .position_menu {
         width: 100%;

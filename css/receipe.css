@@ -19,7 +19,7 @@ html, body{
     width: 310px;
     background-color: #fcfcfc;
     padding: 50px 40px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,7 +69,7 @@ html, body{
 .main_1{
     width: 1100px;
     padding: 50px 40px 10px 40px;
-    max-height: 97vh;
+    max-height: 97dvh;
 }
 .main_title{
     color: black;
@@ -116,7 +116,7 @@ html, body{
     justify-content: start;
     margin-top: 40px;
     overflow: auto;
-    height: calc(100vh - 250px);
+    height: calc(100dvh - 250px);
 }
 .receipe {
     display: flex;
@@ -170,7 +170,7 @@ html, body{
     max-width: 400px;
     background-color: #fcfcfc;
     padding: 50px 20px;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .receipe_menu_position, .receipe_menu_position_green {
@@ -316,7 +316,7 @@ html, body{
         width: 230px;
     }
     .main_1{
-        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
     }
     .position_menu {
         width: 100%;
@@ -420,10 +420,10 @@ html, body{
     .receipes{
         grid-template-columns: repeat(2, 160px);
         justify-content: center;
-        height: calc(100vh - 260px);
+        height: calc(100dvh - 260px);
         padding-right: 3px;
         gap: 20px;
-        height: calc(100vh - 270px);
+        height: calc(100dvh - 270px);
     }
     .client{
         gap: 10px;
@@ -455,7 +455,7 @@ html, body{
 @media (max-width: 400px) {
     .receipes {
         grid-template-columns: repeat(2, 130px);
-        height: calc(100vh - 250px);
+        height: calc(100dvh - 250px);
     }
     .receipe_name{
         font-size: 16px;
