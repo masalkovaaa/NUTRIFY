@@ -16,6 +16,7 @@ html, body{
     margin: 0 ;
     margin-top: 150px;
     padding: 20px;
+
 }
 
 input {
@@ -253,6 +254,8 @@ select:required:invalid{
     color: red;
     font-family: Inter, sans-serif;
     font-weight: 150;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 1250px){
