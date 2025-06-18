@@ -24,6 +24,11 @@ recipeForm.addEventListener('submit', async (e) => {
 
     const recipeName = recipeForm.querySelector('#recipe-name').value;
     const recipePhoto = recipeForm.querySelector('#recipe-photo').files[0];
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if (recipePhoto && !allowedTypes.includes(recipePhoto.type)) {
+        alert('Пожалуйста, загрузите изображение в формате JPG или PNG.');
+        return;
+    }
 
     const recipeTypes = recipeForm.querySelector('.mealTypes').querySelectorAll('input[name="mealType"]:checked');
     const recipeTypesArray = Array.from(recipeTypes).map(recipeType => recipeType.value);
