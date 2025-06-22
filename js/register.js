@@ -10,7 +10,7 @@ let password = document.querySelector("#password")
 
 function nextStep(stepNumber) {
     validateAll(name, email, password, age, height, weight, goal, activity, stepNumber)
-    const validate = validateFormBeforeSubmit(name, email, password, age, height, weight, goal, activity);
+    const validate = validateFormBeforeSubmit(name, email, password, age, height, weight, goal, activity, stepNumber);
     if (!validate){
         return
     }
@@ -35,11 +35,17 @@ function previousStep(stepNumber) {
     document.getElementById(`step-${stepNumber - 1}`).style.display = "block";
 
     changeImg(stepNumber - 1)
+
+    if (stepNumber === 3) {
+        document.querySelector("#register-error").textContent = ''
+    }
 }
 
 document.getElementById("step-1").style.display = "block";
 
 function onSubmit(){
+    const registerErrorField = document.querySelector("#register-error");
+
     validateAll(name, email, password, age, height, weight, goal, activity, 3)
     const validate = validateFormBeforeSubmit(name, email, password, age, height, weight, goal, activity);
     if (!validate){
@@ -57,6 +63,9 @@ function onSubmit(){
         target: goal.value,
         activity: activity.value,
     }
+
+    registerErrorField.textContent = ''
+
     fetch("https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/auth/register", {
         method: 'POST',
         headers: {
@@ -66,9 +75,22 @@ function onSubmit(){
         body: JSON.stringify(
             registerRequest
         )
-    }).then(ans => ans.json()).then(ans => {
+    }).then(async res => {
+        const responseData = await res.json();
+
+        if (!res.ok) {
+            throw new Error(responseData.message.includes('User with such')
+                ? 'Пользователь с таким email уже существует'
+                : 'Ошибка регистрации');
+        }
+
+        return responseData
+    }).then(ans => {
         localStorage.setItem('user_token', ans.accessToken)
         window.location.href="plan.html"
+    }).catch(err => {
+        console.log(err.message);
+        registerErrorField.textContent = err.message || err;
     })
 
 
@@ -175,14 +197,27 @@ function validateAll(name, email, password, age, height, weight, goal, activity,
     })
 }
 
-function validateFormBeforeSubmit(name, email, password, age, height, weight, goal, activity) {
+function validateFormBeforeSubmit(name, email, password, age, height, weight, goal, activity, stepNumber) {
     let hasError = false;
-
-    [name, email, password, age, height, weight, goal, activity].forEach(field => {
-        if (field.classList.contains('input-error')) {
-            hasError = true;
-        }
-    });
+    if (stepNumber === 1) {
+        [name, email, password].forEach(field => {
+            if (field.classList.contains('input-error')) {
+                hasError = true;
+            }
+        });
+    } else if (stepNumber === 2) {
+        [age, height, weight].forEach(field => {
+            if (field.classList.contains('input-error')) {
+                hasError = true;
+            }
+        });
+    } else {
+        [name, email, password, age, height, weight, goal, activity].forEach(field => {
+            if (field.classList.contains('input-error')) {
+                hasError = true;
+            }
+        });
+    }
 
     return !hasError;
 }

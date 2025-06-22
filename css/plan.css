@@ -425,6 +425,15 @@ html, body{
     display: none;
 }
 
+.today.disabled {
+    opacity: 1;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -551,6 +560,8 @@ html, body{
         display: block;
     }
 }
+
+
 
 @media screen and (max-width: 1420px){
     .dish_image_container {

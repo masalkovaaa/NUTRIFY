@@ -1,64 +1,139 @@
 let selectedDate = null;
+let lastUpdateGlobal = null;
 
-function calendar(id, year, month) {
-    const Dlast = new Date(year, month + 1, 0).getDate();
-    const D = new Date(year, month, Dlast);
-    const DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay();
-    const DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay();
-    const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-    let calendarHtml = '<tr>';
+function toDateOnly(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
 
-    if (DNfirst !== 0) {
-        for (let i = 1; i < DNfirst; i++) calendarHtml += '<td>';
-    } else {
-        for (let i = 0; i < 6; i++) calendarHtml += '<td>';
+function calendar(id, year, month, lastUpdate) {
+    if (lastUpdate) {
+        lastUpdateGlobal = lastUpdate;
+    } else if (lastUpdateGlobal) {
+        lastUpdate = lastUpdateGlobal;
     }
 
-    for (let i = 1; i <= Dlast; i++) {
-        let dayClass = '';
-        if (i === new Date().getDate() && D.getFullYear() === new Date().getFullYear() && D.getMonth() === new Date().getMonth()) {
-            dayClass = 'class="today"';
-            selectedDate = new Date(D.getFullYear(), D.getMonth(), i);
+    const totalDaysInMonth = new Date(year, month + 1, 0).getDate();
+    const lastDayOfMonth = new Date(year, month, totalDaysInMonth);
+    const weekDayOfLastDate = lastDayOfMonth.getDay();
+    const weekDayOfFirstDate = new Date(year, month, 1).getDay();
+
+    const monthNames = [
+        "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+        "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ];
+
+    let calendarHtml = '<tr>';
+
+    const lastUpdateDate = lastUpdate ? new Date(lastUpdate) : null;
+    const lastAvailableDate = lastUpdateDate ? new Date(lastUpdateDate.getTime() + 13 * 24 * 60 * 60 * 1000) : null;
+
+    if (weekDayOfFirstDate !== 0) {
+        for (let i = 1; i < weekDayOfFirstDate; i++) {
+            calendarHtml += '<td>';
+        }
+    } else {
+        for (let i = 0; i < 6; i++) {
+            calendarHtml += '<td>';
+        }
+    }
+
+    for (let day = 1; day <= totalDaysInMonth; day++) {
+        const currentDayDate = new Date(year, month, day);
+        let isSelectable = false;
+        let isCurrentDay = false;
+
+        if (lastUpdateDate) {
+            const dayOnly = toDateOnly(currentDayDate);
+            const startOnly = toDateOnly(lastUpdateDate);
+            const endOnly = toDateOnly(lastAvailableDate);
+
+            if (dayOnly >= startOnly && dayOnly <= endOnly) {
+                isSelectable = true;
+            }
         }
 
-        calendarHtml += `<td ${dayClass} data-day="${i}" data-month="${D.getMonth()}" data-year="${D.getFullYear()}">${i}</td>`;
-        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() === 0) {
+        const today = new Date();
+        if (
+            day === today.getDate() &&
+            year === today.getFullYear() &&
+            month === today.getMonth()
+        ) {
+            isCurrentDay = true;
+            selectedDate = currentDayDate;
+        }
+
+        const tdClasses = [];
+        if (isCurrentDay) tdClasses.push('today');
+        if (!isSelectable) tdClasses.push('disabled');
+
+        const classAttr = tdClasses.length ? ` class="${tdClasses.join(' ')}"` : '';
+
+        calendarHtml += `<td${classAttr} data-day="${day}" data-month="${month}" data-year="${year}">${day}</td>`;
+
+        if (currentDayDate.getDay() === 0) {
             calendarHtml += '<tr>';
         }
     }
 
-    for (let i = DNlast; i < 7; i++) calendarHtml += '<td>';
+    for (let i = weekDayOfLastDate; i < 7; i++) {
+        calendarHtml += '<td>';
+    }
 
-    const calendarElem = document.querySelector(`#${id}`);
-    calendarElem.querySelector('tbody').innerHTML = calendarHtml;
-    const header = calendarElem.querySelector('thead td:nth-child(2)');
-    header.textContent = `${monthNames[D.getMonth()]} ${D.getFullYear()}`;
-    header.dataset.month = D.getMonth();
-    header.dataset.year = D.getFullYear();
+    const calendarElement = document.querySelector(`#${id}`);
+    calendarElement.querySelector('tbody').innerHTML = calendarHtml;
 
-    if (calendarElem.querySelectorAll('tbody tr').length < 6) {
-        calendarElem.querySelector('tbody').innerHTML += '<tr><td> <td> <td> <td> <td> <td> <td>';
+    const headerCell = calendarElement.querySelector('thead td:nth-child(2)');
+    headerCell.textContent = `${monthNames[lastDayOfMonth.getMonth()]} ${lastDayOfMonth.getFullYear()}`;
+    headerCell.dataset.month = lastDayOfMonth.getMonth();
+    headerCell.dataset.year = lastDayOfMonth.getFullYear();
+
+    const rowCount = calendarElement.querySelectorAll('tbody tr').length;
+    if (rowCount < 6) {
+        calendarElement.querySelector('tbody').innerHTML += '<tr><td> <td> <td> <td> <td> <td> <td>';
     }
 
     if (!selectedDate) {
         selectedDate = new Date();
     }
 
-    calendarElem.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
+    calendarElement.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
 
-    calendarElem.querySelectorAll('tbody td[data-day]').forEach(td => {
-        td.onclick = function () {
-            calendarElem.querySelectorAll('tbody td.today').forEach(cell => cell.classList.remove('today'));
-            selectedDate = new Date(this.dataset.year, this.dataset.month, this.dataset.day);
-            this.classList.add('today');
-            calendarElem.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
-            header.textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
-            fetchRecipes();
-        };
+    calendarElement.querySelectorAll('tbody td[data-day]').forEach(td => {
+        if (!td.classList.contains('disabled')) {
+            td.onclick = function () {
+                calendarElement.querySelectorAll('tbody td.today').forEach(cell => cell.classList.remove('today'));
+                selectedDate = new Date(this.dataset.year, this.dataset.month, this.dataset.day);
+                this.classList.add('today');
+                calendarElement.dataset.selectedDate = selectedDate.toLocaleDateString('ru-RU');
+                headerCell.textContent = `${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
+                fetchRecipes();
+            };
+        }
     });
 }
 
-// Инициализация обоих календарей
+
+(function() {
+    fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/users`, {
+        method: 'GET',
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+            'Auth': 'Bearer ' + localStorage.getItem('user_token')
+        }
+    })
+        .then(ans => ans.json())
+        .then(ans => {
+            calendar("calendar", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt);
+            calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt);
+
+            fetchRecipes();
+        })
+        .catch(error => {
+            console.error('Ошибка при запросе:', error);
+        });
+})()
+
 calendar("calendar", new Date().getFullYear(), new Date().getMonth());
 calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth());
 
@@ -101,7 +176,7 @@ const getSelectedDate = () => {
     }
 };
 
-
+let countOfExecutes = 0
 const fetchRecipes = () => {
     const selectedDate = getSelectedDate();
     if (!selectedDate) {
@@ -109,6 +184,7 @@ const fetchRecipes = () => {
         return;
     }
 
+    countOfExecutes++
     fetch(`https://bbauqjhj0cs4r7i0grq1.containers.yandexcloud.net/food/diet?date=${selectedDate}`, {
         method: 'GET',
         headers: {
@@ -120,8 +196,10 @@ const fetchRecipes = () => {
         .then(ans => ans.json())
         .then(ans => {
             if (Array.isArray(ans) && ans.length === 0) {
-                setTimeout(fetchRecipes, 2000);
+                const delay = countOfExecutes < 3 ? 2500 : 15000;
+                setTimeout(fetchRecipes, delay);
             } else {
+                countOfExecutes = 0
                 displayRecipes(ans);
             }
         })
@@ -228,8 +306,6 @@ const displayRecipes = (recipes) => {
         });
     });
 }
-
-fetchRecipes();
 
 const calendarToggleBtn = document.getElementById('calendarToggle');
 const newCalendar = document.getElementById('newCalendar');
