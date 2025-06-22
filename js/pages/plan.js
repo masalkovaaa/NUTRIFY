@@ -1,15 +1,23 @@
 let selectedDate = null;
 let lastUpdateGlobal = null;
+let createdAtGlobal = null;
 
 function toDateOnly(date) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
 
-function calendar(id, year, month, lastUpdate) {
+function calendar(id, year, month, lastUpdate, createdAt) {
+    // сохраняем lastUpdate глобально
     if (lastUpdate) {
         lastUpdateGlobal = lastUpdate;
     } else if (lastUpdateGlobal) {
         lastUpdate = lastUpdateGlobal;
+    }
+
+    if (createdAt) {
+        createdAtGlobal = createdAt;
+    } else if (createdAtGlobal) {
+        createdAt = createdAtGlobal;
     }
 
     const totalDaysInMonth = new Date(year, month + 1, 0).getDate();
@@ -25,16 +33,11 @@ function calendar(id, year, month, lastUpdate) {
     let calendarHtml = '<tr>';
 
     const lastUpdateDate = lastUpdate ? new Date(lastUpdate) : null;
+    const createdAtDate = createdAt ? new Date(createdAt) : null;
     const lastAvailableDate = lastUpdateDate ? new Date(lastUpdateDate.getTime() + 13 * 24 * 60 * 60 * 1000) : null;
 
-    if (weekDayOfFirstDate !== 0) {
-        for (let i = 1; i < weekDayOfFirstDate; i++) {
-            calendarHtml += '<td>';
-        }
-    } else {
-        for (let i = 0; i < 6; i++) {
-            calendarHtml += '<td>';
-        }
+    for (let i = 0; i < (weekDayOfFirstDate === 0 ? 6 : weekDayOfFirstDate - 1); i++) {
+        calendarHtml += '<td>';
     }
 
     for (let day = 1; day <= totalDaysInMonth; day++) {
@@ -42,9 +45,10 @@ function calendar(id, year, month, lastUpdate) {
         let isSelectable = false;
         let isCurrentDay = false;
 
-        if (lastUpdateDate) {
+        // определяем доступность даты на основе createdAt
+        if (createdAtDate && lastAvailableDate) {
             const dayOnly = toDateOnly(currentDayDate);
-            const startOnly = toDateOnly(lastUpdateDate);
+            const startOnly = toDateOnly(createdAtDate);
             const endOnly = toDateOnly(lastAvailableDate);
 
             if (dayOnly >= startOnly && dayOnly <= endOnly) {
@@ -67,7 +71,6 @@ function calendar(id, year, month, lastUpdate) {
         if (!isSelectable) tdClasses.push('disabled');
 
         const classAttr = tdClasses.length ? ` class="${tdClasses.join(' ')}"` : '';
-
         calendarHtml += `<td${classAttr} data-day="${day}" data-month="${month}" data-year="${year}">${day}</td>`;
 
         if (currentDayDate.getDay() === 0) {
@@ -75,7 +78,7 @@ function calendar(id, year, month, lastUpdate) {
         }
     }
 
-    for (let i = weekDayOfLastDate; i < 7; i++) {
+    for (let i = weekDayOfLastDate; i < 6; i++) {
         calendarHtml += '<td>';
     }
 
@@ -124,8 +127,8 @@ function calendar(id, year, month, lastUpdate) {
     })
         .then(ans => ans.json())
         .then(ans => {
-            calendar("calendar", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt);
-            calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt);
+            calendar("calendar", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt, ans.createdAt);
+            calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth(), ans.personalData.updatedAt, ans.createdAt);
 
             fetchRecipes();
         })
@@ -134,7 +137,7 @@ function calendar(id, year, month, lastUpdate) {
         });
 })()
 
-calendar("calendar", new Date().getFullYear(), new Date().getMonth());
+calendar("calendar", new Date().getFullYear(), new Date().getMonth(), );
 calendar("calendarNewVersion", new Date().getFullYear(), new Date().getMonth());
 
 // Навигация для calendar
