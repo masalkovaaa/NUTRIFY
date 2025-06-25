@@ -338,6 +338,10 @@ html, body{
     .img_menu{
         display: block;
     }
+
+    .receipes {
+        height: calc(100dvh - 300px);
+    }
 }
 
 @media (max-width: 1050px){
@@ -420,7 +424,6 @@ html, body{
     .receipes{
         grid-template-columns: repeat(2, 160px);
         justify-content: center;
-        height: calc(100dvh - 260px);
         padding-right: 3px;
         gap: 20px;
         height: calc(100dvh - 270px);
@@ -453,9 +456,13 @@ html, body{
         }
 }
 @media (max-width: 400px) {
+    .main_1 {
+        padding: 40px 20px 0;
+    }
+
     .receipes {
         grid-template-columns: repeat(2, 130px);
-        height: calc(100dvh - 250px);
+        height: calc(100dvh - 240px);
     }
     .receipe_name{
         font-size: 16px;

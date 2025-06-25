@@ -1,9 +1,7 @@
 const checkAuthFun = () => {
-    console.log(1231331);
     const token = localStorage.getItem('user_token')
 
     if (!token) {
-        console.log('--')
         localStorage.removeItem('user_role')
         window.location.href = window.location.origin + '/NUTRIFY/pages/authorization.html';
     } else {

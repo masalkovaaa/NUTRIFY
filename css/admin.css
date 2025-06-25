@@ -71,7 +71,7 @@ html, body{
     width: 1100px;
     padding: 50px 40px 20px 40px;
     max-height: 100dvh;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 .main_title{
     color: black;
@@ -139,6 +139,17 @@ html, body{
     align-items: center;
     justify-content: center;
 }
+
+.remove-ingredient {
+    cursor: pointer;
+    width: 30px;
+    right: 20px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .receipe_name, .cal{
     font-family: 'Inter', sans-serif;
 }
@@ -159,7 +170,6 @@ input, textarea, select {
     border: 1px solid #ccc;
     border-radius: 12px;
     font-size: 16px;
-    margin-top: 15px;
     font-family: Inter, sans-serif;
 }
 
@@ -191,12 +201,21 @@ label input{
 #recipeForm textarea {
     resize: vertical;
     min-height: 60px;
+    margin-top: 15px;
 }
 
 .ingredient_row {
+    margin-top: 15px;
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.ingredients-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 93%;
 }
 
 #addIngredient {
@@ -350,6 +369,7 @@ label input{
 }
 
 #edit-recipe-description {
+    margin-top: 15px;
     height: 200px;
 }
 
@@ -539,6 +559,10 @@ th {
         bottom: 0;
         background-color: white;
     }
+
+    .receipes {
+        height: calc(100dvh - 230px);
+    }
 }
 @media (max-width: 950px) {
     .receipe{
@@ -657,7 +681,7 @@ th {
 @media (max-width: 500px) {
     .main_1 {
         width: 100%;
-        padding: 40px 30px 0;
+        padding: 40px 20px 0;
     }
 
     .main_title {
@@ -689,7 +713,7 @@ th {
     .open_pop_up {
         width: 100%;
         height: 100%;
-        margin-top: 0px;
+        margin-top: 0;
     }
     .plus-sign {
         font-size: 40px;
@@ -716,7 +740,8 @@ th {
         height: 110px;
     }
     .TableWrapper{
-            margin-top: 30px;
+        margin-top: 30px;
+        max-height: calc(100dvh - 200px)
     }
     th, td{
             font-size: 16px;

@@ -3,18 +3,29 @@ const popup = document.getElementById("pop_up");
 const addIngredientBtn = document.getElementById('addIngredient');
 const ingredientsContainer = document.getElementById('ingredients');
 
+function onDeleteIngredientRow(row) {
+    ingredientsContainer.removeChild(row);
+}
 
 addIngredientBtn.onclick = () => {
     const row = document.createElement('div');
     row.classList.add('ingredient_row');
     row.innerHTML = `
-        <input class="ingredient-name" type="text" placeholder="Ингредиент" required>
-        <input class="ingredient-count" type="number" placeholder="Количество" required>
-        <select class="ingredient-measure">
-            <option value="GRAM">граммы</option>
-            <option value="COUNT">штуки</option>
-        </select>
+        <div class="ingredients-content">
+            <input class="ingredient-name" type="text" placeholder="Ингредиент" required>
+            <input class="ingredient-count" type="number" placeholder="Количество" required>
+            <select class="ingredient-measure">
+                <option value="GRAM">граммы</option>
+                <option value="COUNT">штуки</option>
+            </select>
+        </div>
+        <div class="remove-ingredient">&#215</div>
   `;
+
+    row.querySelector('.remove-ingredient').addEventListener('click', () => {
+        onDeleteIngredientRow(row);
+    });
+
     ingredientsContainer.appendChild(row);
 };
 
@@ -25,6 +36,12 @@ recipeForm.addEventListener('submit', async (e) => {
     const recipeName = recipeForm.querySelector('#recipe-name').value;
     const recipePhoto = recipeForm.querySelector('#recipe-photo').files[0];
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+
+    if (!recipePhoto) {
+        alert('Пожалуйста, загрузите изображение.');
+        return;
+    }
+
     if (recipePhoto && !allowedTypes.includes(recipePhoto.type)) {
         alert('Пожалуйста, загрузите изображение в формате JPG или PNG.');
         return;
@@ -105,6 +122,9 @@ recipeForm.addEventListener('submit', async (e) => {
         }
 
         alert('Рецепт успешно добавлен');
+
+        recipeForm.reset();
+        ingredientsContainer.innerHTML = '';
         popup.classList.remove("active");
         loadReceipes()
     } catch (error) {

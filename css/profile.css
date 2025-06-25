@@ -90,11 +90,11 @@ html, body{
 .profile_info{
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(230, 230, 230, 1) ;
+    border: 1px solid rgba(230, 230, 230, 1);
     border-radius: 24px;
     padding: 30px 40px;
     gap: 10px;
-    height: 210px;
+    height: fit-content;
 
 }
 .info_title_flex{
@@ -188,6 +188,8 @@ html, body{
     width: 800px;
     justify-content: space-between;
     margin-top: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 .values_name{
     color: rgba(136, 136, 136, 1);
@@ -373,8 +375,7 @@ html, body{
         width: 100vw;
     }
     .profile_all{
-        max-height: calc(100dvh - 80px);
-        overflow: hidden;
+        max-height: calc(100dvh - 200px);
     }
     .new_menu{
         display: flex;

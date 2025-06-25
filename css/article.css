@@ -81,7 +81,7 @@ html, body{
 .articles{
     padding-right: 10px;
     margin-top: 70px;
-    height: 77dvh;
+    height: calc(100vh - 190px);
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -227,8 +227,8 @@ html, body{
 }
 .article_details{
     padding-right: 15px;
-    overflow: scroll;
-    height: 80dvh;
+    overflow: auto;
+    height: calc(100dvh - 175px);
     margin-top: 20px;
 }
 li{
@@ -305,10 +305,10 @@ ul {
     .articles {
         gap: 20px;
         overflow: auto;
-        height: 95dvh;
+        height: calc(100dvh - 250px);
     }
     .article_details{
-        height: 87dvh;
+        height: calc(100dvh - 250px);
     }
 }
 @media (max-width: 950px) {
@@ -317,6 +317,7 @@ ul {
     }
     .articles{
         margin-top: 30px;
+        height: calc(100dvh - 225px);
     }
     .article_title{
         font-size: 24px;
@@ -325,7 +326,7 @@ ul {
         font-size: 24px;
     }
     .article_details{
-        height: 85dvh;
+        height: calc(100dvh - 220px);
     }
 }
 @media (max-width: 550px) {
@@ -355,7 +356,7 @@ ul {
         gap: 20px;
         overflow: auto;
         margin-top: 20px;
-        max-height: calc(100dvh - 180px);
+        height: calc(100dvh - 180px);
     }
     .article_title{
         color: black;
@@ -367,7 +368,7 @@ ul {
         gap: 5px;
     }
     .article_details{
-        height: 85%;
+        height: calc(100dvh - 180px);
     }
     .article_text{
         font-size: 16px;
@@ -400,27 +401,29 @@ ul {
     }
 }
 @media (max-width: 400px){
+    .main_1{
+        width: 100%;
+        padding: 40px 20px 0;
+    }
+
     .articles{
-        max-height: 79dvh;
         gap: 10px;
     }
 
     img{
         width: 25px;
     }
-    /*.main_title{*/
-    /*    font-size: 20px;*/
-    /*}*/
-    .name{
+
+    .name {
         font-size: 12px;
         margin-right: 3px;
     }
-    .client{
+    .client {
         gap: 5px;
         padding: 3px 10px 3px 20px;
         min-height: 40px;
     }
-    .modal-item{
+    .modal-item {
         font-size: 12px;
         width: 150px
     }

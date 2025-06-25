@@ -13,10 +13,8 @@ html, body{
 }
 .form-container {
     width: 572px;
-    margin: 0 ;
-    margin-top: 150px;
-    padding: 20px;
-
+    margin: auto 0;
+    padding: 0 20px;
 }
 
 input {
@@ -26,10 +24,10 @@ input {
 .general_flex{
     display: flex;
     justify-content: left;
-    gap: 200px;
+    gap: calc(50vw - 450px);
 }
 .menu{
-    width: 416px;
+    width: fit-content;
     background-color: #fff;
     border-right: 1px solid rgb(245, 245, 245);
     padding: 50px 40px;
@@ -103,7 +101,7 @@ input {
 #step-1 input,
 #step-1 select,
 #step-1 textarea {
-    width: 572px;
+    width: 100%;
     padding: 15px 10px;
     margin: 10px 0 5px 0;
     border: 1px solid #ccc;
@@ -115,7 +113,7 @@ input {
     background-color: rgba(24, 23, 40, 1);
     color: white;
     font-size: 20px;
-    width: 572px;
+    width: 100%;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -131,27 +129,27 @@ input {
     border-radius: 12px;
     cursor: pointer;
     margin-top: 20px;
+    flex-shrink: 0;
 }
 .button_2 {
     padding: 10px 20px;
     background-color: rgba(24, 23, 40, 1);
     color: white;
     font-size: 20px;
-    width: 350px;
+    width: 100%;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     margin-top: 20px;
 }
 .h1{
-    width: 572px;
     color: black;
     font-size: 39px;
     font-family: Inter, sans-serif;
     font-weight: 600;
+    white-space: nowrap;
 }
 .h2{
-    width: 572px;
     color: rgba(136, 136, 136, 1);
     font-size: 24px;
     font-family: Inter, sans-serif;
@@ -200,7 +198,7 @@ label span{
 }
 
 .flex_parameters > div {
-    flex: 0 0 170px;
+    flex: 0 0 150px;
 }
 
 #step-2 input,
@@ -214,6 +212,7 @@ label span{
 .button_flex{
     display: flex;
     justify-content:space-between;
+    gap: 60px;
 }
 #step-3 input,
 #step-3 select {
@@ -260,29 +259,27 @@ select:required:invalid{
 
 @media (max-width: 1250px){
     .general_flex{
-        gap: 100px;
+        /*gap: 100px;*/
     }
 }
 @media (max-width: 1100px){
     #step-1 input,
     #step-1 select,
     #step-1 textarea {
-        width: 500px;
+        width: 100%;
     }
     .h1{
-        width: 500px;
         font-size: 32px;
     }
     .h2{
         font-size: 20px;
-        width: 500px;
     }
     label{
         font-size: 20px;
     }
 
     .button {
-        width: 500px;
+        /*width: 500px;*/
         margin-top: 10px;
     }
     .flex_authorization{
@@ -312,10 +309,10 @@ select:required:invalid{
     }
     .general_flex{
         flex-direction: column;
-        gap: 300px;
+        gap: calc(25dvh - 90px);
     }
     .form-container {
-        width: auto;
+        /*width: auto;*/
         margin: 0 auto;
     }
 
@@ -326,10 +323,11 @@ select:required:invalid{
     .button_flex{
         display: flex;
         justify-content:space-between;
+        gap: 5px;
     }
     #step-3 input,
     #step-3 select {
-        width: 500px;
+        width: 100%;
     }
     .button_back {
         width: 150px;
@@ -357,22 +355,22 @@ select:required:invalid{
     .menu{
         padding: 15px 20px;
     }
-    .general_flex{
-        gap: 200px;
-    }
+    /*.general_flex{*/
+    /*    gap: 200px;*/
+    /*}*/
     .form-container {
-        width: 350px;
+        width: 100%;
         margin: 0 auto;
     }
     #step-1 input,
     #step-1 select,
     #step-1 textarea {
-        width: 310px;
+        width: 100%;
         padding: 10px 10px;
     }
-    .button {
-        width: 310px;
-    }
+    /*.button {*/
+    /*    width: 310px;*/
+    /*}*/
     #step-2 input,
     #step-2 select {
         width: 100px;
@@ -405,12 +403,11 @@ select:required:invalid{
     }
 
     .h1{
-        width: 320px;
         font-size: 20px;
+        white-space: wrap;
     }
     .h2{
         font-size: 16px;
-        width: 320px;
         margin: 5px 0 20px;
     }
     label{
@@ -425,10 +422,15 @@ select:required:invalid{
     .flex_parameters > div {
         flex: 0 0 0;
     }
+
+    #step-2, #step-3 {
+        width: 310px;
+        margin: 0 auto;
+    }
 }
 @media (max-height: 750px){
     .general_flex{
-        gap: 100px;
+        /*gap: 100px;*/
     }
 
 }
